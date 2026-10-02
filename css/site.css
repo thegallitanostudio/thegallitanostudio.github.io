@@ -296,7 +296,7 @@ p{max-width:62ch;text-wrap:pretty}
 .sc-m{font-family:var(--serif);font-size:1.4rem;line-height:1.2;letter-spacing:-.015em;color:var(--seaweed);font-variation-settings:'SOFT' 50,'opsz' 144}
 .rounds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .round{border:1px solid var(--hairline);border-radius:14px;padding:10px 10px 12px;display:grid;gap:8px;align-content:start;min-width:0}
-.round i{font-style:normal;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.round i{font-style:normal;font-size:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
 .round span{font-size:16px;line-height:1.3}
 .blank{display:inline-block;width:1.7em;height:1.25em;border-bottom:2px solid var(--seaweed);vertical-align:-.2em;margin-right:.25em}
 .round .blank.wide{display:block;width:100%;margin:0 0 6px}
@@ -376,11 +376,11 @@ p{max-width:62ch;text-wrap:pretty}
 .site-foot{border-top:1px solid var(--hairline);padding:36px 0 44px;font-size:16px}
 .site-foot .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 40px}
 .foot-nav{display:flex;flex-wrap:wrap;gap:4px 28px}
-.foot-nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;font-weight:500}
+.foot-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;text-decoration:none;font-weight:500}
 .foot-nav a:hover{color:var(--deep-lavender)}
 .foot-meta{display:grid;gap:4px;justify-items:end;text-align:right}
 
-/* phones: menu sheet and sticky Book bar (JS-enhanced; hidden without it) */
+/* phones: menu sheet (JS-enhanced; hidden without it) */
 .sheet-scrim{position:fixed;inset:0;z-index:60;background:rgba(47,64,59,.5)}
 .sheet{position:fixed;left:0;right:0;bottom:0;z-index:61;background:var(--linen);border-radius:28px 28px 0 0;padding:14px 20px calc(24px + env(safe-area-inset-bottom));max-height:92vh;overflow:auto;display:grid;gap:6px}
 .sheet-top{display:flex;align-items:center;justify-content:space-between;padding:4px 0 8px}
@@ -389,9 +389,6 @@ p{max-width:62ch;text-wrap:pretty}
 .sheet nav a{display:flex;align-items:center;justify-content:space-between;min-height:60px;border-top:1px solid var(--hairline);text-decoration:none;font-family:var(--serif);font-size:1.6rem;letter-spacing:-.02em;color:var(--seaweed);font-variation-settings:'SOFT' 50,'opsz' 144}
 .sheet nav a[aria-current="page"]::after{content:"";width:14px;height:14px;border-radius:50%;background:var(--pistachio)}
 .sheet .ctas{flex-direction:column;align-items:stretch;padding-top:16px;border-top:1px solid var(--hairline)}
-.bookbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--linen);border-top:1px solid var(--hairline);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:none;align-items:center;gap:10px}
-.bookbar .btn{flex:1 1 0;min-width:0;min-height:52px;padding:4px 10px;font-size:16px;white-space:normal;text-align:center;line-height:1.15}
-.bookbar .ref{min-height:52px;padding:4px 8px;font-size:16px;white-space:normal;text-align:center;line-height:1.15;flex:0 0 108px}
 [hidden]{display:none!important}
 @media (prefers-reduced-motion:no-preference){
   .sheet{animation:sheet .32s cubic-bezier(.16,1,.3,1)}
@@ -428,9 +425,7 @@ p{max-width:62ch;text-wrap:pretty}
   .js .menu-btn{display:inline-flex}
   html:not(.js) .site-head .wrap{flex-wrap:wrap;padding-bottom:8px}
   html:not(.js) .nav{flex-wrap:wrap;gap:4px 20px}
-  .js .bookbar.on{display:flex}
-  .js body.has-bar{padding-bottom:76px}
-  .hero{padding:8px 0 64px}
+  .js   .hero{padding:8px 0 64px}
   .hero .wrap,.hero.small-photo .wrap{grid-template-columns:minmax(0,1fr);grid-template-areas:"text" "photo" "ctas";row-gap:28px}
   .hero-text{gap:20px}
   .hero-photo,.hero.small-photo .hero-photo{max-width:300px;justify-self:center}
@@ -491,8 +486,7 @@ p{max-width:62ch;text-wrap:pretty}
 }
 @media (max-width:380px){
   .wm{font-size:19px}
-  .bookbar .btn{font-size:16px;padding:0 10px}
-}
+  }
 
 /* Oct 2 fixes: brand board swatches, photo direction, trust panel */
 .pal{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:22px 14px}
@@ -515,7 +509,6 @@ p{max-width:62ch;text-wrap:pretty}
 .trust-panel .display em{color:var(--aubergine)}
 
 /* Oct 2: fewer CTAs, colorful founder chapters */
-.bookbar{display:none!important}
 .chapter .beat{border-top:0!important;padding-top:0!important}
 .chapter .label{margin-bottom:12px}
 .band-pist .pull,.band-candy .pull{color:var(--seaweed)}

@@ -29,21 +29,16 @@
   var btn = doc.getElementById('menu-btn');
   var sheet = doc.getElementById('menu-sheet');
   var scrim = doc.getElementById('menu-scrim');
-  var bar = doc.getElementById('bookbar');
   function openMenu() {
     sheet.hidden = false; scrim.hidden = false;
     btn.setAttribute('aria-expanded', 'true');
     doc.documentElement.style.overflow = 'hidden';
-    if (bar) bar.classList.add('menu-open');
-    syncBar();
     var c = sheet.querySelector('.sheet-close'); if (c) c.focus();
   }
   function closeMenu(refocus) {
     sheet.hidden = true; scrim.hidden = true;
     btn.setAttribute('aria-expanded', 'false');
     doc.documentElement.style.overflow = '';
-    if (bar) bar.classList.remove('menu-open');
-    syncBar();
     if (refocus !== false) btn.focus();
   }
   if (btn && sheet && scrim) {
@@ -64,30 +59,6 @@
       }
     });
     window.addEventListener('resize', function () { if (!sheet.hidden && window.innerWidth > 860) closeMenu(false); });
-  }
-
-  /* Sticky Book bar on phones: after some scroll, never over the page's own close, never over the menu */
-  var closeVisible = false;
-  function syncBar() {
-    if (!bar) return;
-    var on = window.scrollY > 480 && !closeVisible && !bar.classList.contains('menu-open');
-    bar.classList.toggle('on', on);
-    doc.body.classList.toggle('has-bar', on);
-  }
-  if (bar) {
-    var ends = doc.querySelectorAll('[data-hide-bar]');
-    if ('IntersectionObserver' in window && ends.length) {
-      var seen = {};
-      var io = new IntersectionObserver(function (es) {
-        for (var k = 0; k < es.length; k++) seen[es[k].target.getAttribute('data-hide-bar')] = es[k].isIntersecting;
-        closeVisible = false;
-        for (var key in seen) if (seen[key]) closeVisible = true;
-        syncBar();
-      }, { rootMargin: '0px 0px -60px 0px' });
-      for (var n = 0; n < ends.length; n++) { ends[n].setAttribute('data-hide-bar', 'e' + n); io.observe(ends[n]); }
-    }
-    window.addEventListener('scroll', syncBar, { passive: true });
-    syncBar();
   }
 
   /* Referred form: opens a prefilled email (no backend) */
