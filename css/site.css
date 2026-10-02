@@ -491,3 +491,23 @@ p{max-width:62ch;text-wrap:pretty}
   .wm{font-size:19px}
   .bookbar .btn{font-size:16px;padding:0 10px}
 }
+
+/* Oct 2 fixes: brand board swatches, photo direction, trust panel */
+.pal{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:22px 14px}
+.pal li{justify-items:center;text-align:center}
+.pal li i,.pal li:nth-child(odd) i,.pal li:nth-child(even) i{transform:none!important;width:64px;height:64px;border-radius:999px}
+.bb-photos{display:flex;gap:14px;flex:none}
+.bb-photos img{width:120px;height:150px;object-fit:cover;border-radius:60px 60px 16px 16px}
+.bb-photo>div:last-child{flex:1;min-width:0}
+.bb-sec{padding-bottom:calc(var(--section)*.6)}
+.trust{text-align:left}
+.trust-panel{background:var(--candyfloss);border-radius:var(--r-card);padding:clamp(32px,5vw,72px);display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,72px);align-items:end}
+.trust .trust-panel .display{margin:0;max-width:13ch;text-align:left}
+.trust .trust-panel .display em{color:var(--aubergine)}
+.trust-points{display:grid;gap:0}
+.trust .trust-points p{margin:0;padding:18px 0;border-top:1px solid var(--hairline);font-size:clamp(1.05rem,1.4vw,1.2rem);line-height:1.55;color:var(--ink)}
+.trust-points b{font-weight:600;color:var(--seaweed)}
+@media (max-width:860px){.trust-panel{grid-template-columns:1fr;align-items:start}.bb-photos img{width:88px;height:112px}.pal{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.hero-for{font-weight:600;color:var(--seaweed)}
+.hero-sub{color:var(--ink)}
+.trust-panel .display em{color:var(--aubergine)}
