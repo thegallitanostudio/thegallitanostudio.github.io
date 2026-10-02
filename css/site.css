@@ -511,3 +511,15 @@ p{max-width:62ch;text-wrap:pretty}
 .hero-for{font-weight:600;color:var(--seaweed)}
 .hero-sub{color:var(--ink)}
 .trust-panel .display em{color:var(--aubergine)}
+
+/* Oct 2: fewer CTAs, colorful founder chapters */
+.bookbar{display:none!important}
+.chapter .beat{border-top:0!important;padding-top:0!important}
+.chapter .label{margin-bottom:12px}
+.band-pist .pull,.band-candy .pull{color:var(--seaweed)}
+.band-dark .pull{color:var(--candyfloss)}
+.band-dark .body p{color:var(--linen)}
+.qcard{margin:8px 0 0;background:var(--linen);color:var(--ink);border-radius:var(--r-card);padding:28px 30px;display:grid;gap:12px}
+.band-dark .qcard p{color:var(--ink);font-family:var(--serif);font-size:clamp(1.2rem,1.8vw,1.45rem);line-height:1.35}
+.band-dark .qcard .qcard-end{font-style:italic;color:var(--deep-lavender)}
+.band-candy .aside-line{border-color:rgba(61,82,76,.35)}
