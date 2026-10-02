@@ -1,0 +1,179 @@
+/* thegallitanostudio.com · layout layer over the board markup.
+   The boards were drawn at 1440px with inline styles. This sheet makes the
+   root fluid, lets sections take their natural height, and reflows the grid
+   and type on tablets and phones. Garden Party tokens only. */
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: #F4F0E0; color: #2F403B; overflow-x: hidden; }
+#gs-main { display: block; }
+[data-dc-root] { display: block; }
+
+/* the board root: fluid, centered, natural height */
+.gs-board {
+  width: 100% !important;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow-x: clip;
+  position: relative;
+}
+/* sections were given fixed heights to fill the board; let content decide */
+.gs-board > section, .gs-board > header, .gs-board > footer, .gs-board > div[style*="height:"] {
+  height: auto !important;
+  min-height: 0 !important;
+}
+/* keep the generous vertical rhythm the fixed heights gave desktop */
+@media (min-width: 1025px) {
+  .gs-board > section[style*="height:"] { padding-top: 96px !important; padding-bottom: 96px !important; }
+  .gs-board > section[style*="height:"][style*="padding: 20px 80px 80px"] { padding-top: 20px !important; padding-bottom: 80px !important; }
+  .gs-board > section[aria-label="Who I work with"] { padding-top: 0 !important; padding-bottom: 0 !important; }
+}
+img { max-width: 100%; }
+.gs-board img[style*="position: absolute"] { max-width: none; }
+
+/* page controls pill */
+.gsctl { box-shadow: 0 8px 24px rgba(47,64,59,0.25); }
+
+/* ---------- tablet ---------- */
+@media (max-width: 1180px) {
+  .gs-board header, .gs-board section, .gs-board footer { padding-left: 40px !important; padding-right: 40px !important; }
+  .gs-board section[style*="margin: 0 80px"], .gs-board section[style*="margin: 96px 80px"], .gs-board section[style*="margin: 64px 80px"] { margin-left: 40px !important; margin-right: 40px !important; }
+  .gs-board header { height: auto !important; flex-wrap: wrap; row-gap: 8px; padding-top: 16px !important; padding-bottom: 16px !important; }
+  .gs-board header nav { flex-wrap: wrap; gap: 8px 22px !important; }
+  .gs-board [style*="font-size: 200px"] { font-size: 140px !important; }
+  .gs-board [style*="font-size: 140px"] { font-size: 104px !important; }
+  .gs-board [style*="font-size: 120px"] { font-size: 92px !important; }
+  .gs-board [style*="font-size: 104px"] { font-size: 80px !important; }
+  .gs-board [style*="font-size: 100px"] { font-size: 76px !important; }
+  .gs-board [style*="font-size: 88px"] { font-size: 68px !important; }
+  .gs-board [style*="font-size: 84px"] { font-size: 64px !important; }
+  .gs-board [style*="font-size: 80px"] { font-size: 62px !important; }
+  .gs-board [style*="font-size: 76px"] { font-size: 60px !important; }
+  .gs-board [style*="font-size: 72px"] { font-size: 56px !important; }
+  .gs-board [style*="font-size: 64px"] { font-size: 52px !important; }
+}
+
+/* ---------- phone and small tablet ---------- */
+@media (max-width: 860px) {
+  .gs-board header, .gs-board section, .gs-board footer { padding-left: 20px !important; padding-right: 20px !important; }
+  .gs-board section[style*="margin: 0 80px"], .gs-board section[style*="margin: 96px 80px"], .gs-board section[style*="margin: 64px 80px"] { margin-left: 16px !important; margin-right: 16px !important; }
+  .gs-board section[style*="padding: 112px 80px"], .gs-board section[style*="padding: 104px 80px"], .gs-board section[style*="padding: 96px 80px"], .gs-board section[style*="padding: 72px 80px"] { padding-top: 64px !important; padding-bottom: 64px !important; }
+  .gs-board section[style*="padding: 80px"] { padding: 40px 24px !important; }
+  .gs-board header nav { font-size: 15px !important; gap: 4px 18px !important; }
+  .gs-board header nav a[style*="height: 48px"] { height: 44px !important; padding: 0 18px !important; }
+  .gs-board footer { flex-direction: column !important; align-items: flex-start !important; gap: 16px; padding-top: 32px !important; padding-bottom: 40px !important; }
+  .gs-board footer > div { align-items: flex-start !important; }
+
+  /* grids collapse to one column; spans release */
+  .gs-board [style*="grid-template-columns"] { grid-template-columns: minmax(0, 1fr) !important; column-gap: 0 !important; row-gap: 20px; }
+  .gs-board [style*="grid-column"] { grid-column: auto !important; }
+  .gs-board [style*="grid-row"] { grid-row: auto !important; }
+  .gs-board [style*="grid-template-columns: 1fr 70px 70px"] { grid-template-columns: 1fr 56px 56px !important; column-gap: 8px !important; }
+  .gs-board [style*="grid-template-columns: 110px 1fr"], .gs-board [style*="grid-template-columns: 150px 1fr"] { grid-template-columns: 90px 1fr !important; column-gap: 12px !important; }
+
+  /* type */
+  .gs-board [style*="font-size: 200px"] { font-size: 96px !important; }
+  .gs-board [style*="font-size: 140px"] { font-size: 72px !important; }
+  .gs-board [style*="font-size: 120px"] { font-size: 60px !important; }
+  .gs-board [style*="font-size: 104px"] { font-size: 54px !important; }
+  .gs-board [style*="font-size: 100px"] { font-size: 52px !important; }
+  .gs-board [style*="font-size: 88px"] { font-size: 48px !important; }
+  .gs-board [style*="font-size: 84px"] { font-size: 46px !important; }
+  .gs-board [style*="font-size: 80px"] { font-size: 44px !important; }
+  .gs-board [style*="font-size: 76px"] { font-size: 44px !important; }
+  .gs-board [style*="font-size: 72px"] { font-size: 42px !important; }
+  .gs-board [style*="font-size: 64px"] { font-size: 40px !important; }
+  .gs-board [style*="font-size: 60px"] { font-size: 38px !important; }
+  .gs-board [style*="font-size: 56px"] { font-size: 36px !important; }
+  .gs-board [style*="font-size: 52px"] { font-size: 34px !important; }
+  .gs-board [style*="font-size: 48px"] { font-size: 32px !important; }
+  .gs-board [style*="font-size: 44px"] { font-size: 30px !important; }
+  .gs-board [style*="font-size: 40px"] { font-size: 28px !important; }
+  .gs-board [style*="font-size: 38px"], .gs-board [style*="font-size: 36px"] { font-size: 27px !important; }
+  .gs-board [style*="font-size: 34px"], .gs-board [style*="font-size: 32px"] { font-size: 25px !important; }
+  .gs-board [style*="font-size: 30px"], .gs-board [style*="font-size: 28px"] { font-size: 23px !important; }
+  .gs-board [style*="font-size: 26px"] { font-size: 22px !important; }
+  .gs-board [style*="font-size: 24px"] { font-size: 20px !important; }
+  .gs-board [style*="font-size: 22px"] { font-size: 18px !important; }
+  .gs-board [style*="font-size: 21px"], .gs-board [style*="font-size: 20px"] { font-size: 17px !important; }
+  .gs-board p[style*="font-size: 19px"] { font-size: 17px !important; }
+
+  /* flex rows become stacks when their children were drawn wide */
+  .gs-board [style*="display: flex"] > * { min-width: 0; max-width: 100%; }
+  .gs-board [style*="display: flex"][style*="gap: 56px"] > span[style*="width: 400px"] { width: auto !important; }
+  .gs-board [style*="display: flex"][style*="gap: 56px"] { flex-direction: column; align-items: flex-start !important; }
+
+  /* compositions: absolutely placed photos, chips and cards stack in order */
+  .gs-board [style*="position: relative; height:"] { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .gs-board [style*="position: relative; height:"] > [style*="position: absolute"] { position: relative !important; left: auto !important; right: auto !important; top: auto !important; bottom: auto !important; max-width: 100%; }
+  .gs-board [style*="position: relative; height:"] > svg[aria-hidden="true"][style*="position: absolute"] { display: none; }
+
+  /* content cards drawn at a fixed height grow with their text */
+  .gs-board div[style*="height:"][style*="padding:"]:not([style*="height: 3px"]):not([style*="position: absolute"]) { height: auto !important; min-height: 0; }
+  .gs-board div[style*="display: flex; gap: 16px; height: 420px"] { height: auto !important; flex-direction: column; }
+  .gs-board div[style*="display: flex; gap: 16px; height: 420px"] > * { flex: none !important; width: 100%; }
+  /* toggle groups wrap */
+  .gs-board div[style*="display: inline-flex"], .gs-board [role="group"][style*="inline-flex"] { flex-wrap: wrap; max-width: 100%; }
+  /* decorative shapes pinned to section corners stay out of the way */
+  .gs-board section > [aria-hidden="true"][style*="position: absolute"] { display: none !important; }
+  /* rows of buttons and chips wrap instead of clipping */
+  .gs-board div[style*="display: flex"]:not([style*="flex-direction: column"]):not(.marquee > div), .gs-board span[style*="display: flex"]:not([style*="flex-direction: column"]) { flex-wrap: wrap; }
+  .gs-board [style*="border-radius: 999px"] > span, .gs-board button[style*="border-radius: 999px"], .gs-board a[style*="border-radius: 999px"] { white-space: nowrap; }
+  .gs-board section span[style*="white-space: nowrap"]:not(.marquee span) { white-space: normal !important; }
+  /* small compositions (fanned guide, mockups) shrink to fit */
+  .gs-board [style*="position: relative; width:"][style*="height:"] { max-width: 100%; }
+
+  /* the seven-circle program chooser becomes a wrapping row of smaller circles */
+  .gs-board .gs-cluster { display: flex !important; flex-direction: row !important; flex-wrap: wrap; justify-content: center; gap: 12px; height: auto !important; zoom: 1 !important; }
+  .gs-board .gs-cluster > a { position: relative !important; left: auto !important; top: auto !important; width: 150px !important; height: 150px !important; transform: none !important; }
+  .gs-board .gs-cluster > a span[style*="font-size: 26px"] { font-size: 19px !important; }
+  .gs-board .gs-cluster > a span[style*="font-size: 20px"] { font-size: 15px !important; }
+
+  .gs-board figcaption[style*="justify-content: space-between"] { flex-direction: column; align-items: flex-start !important; gap: 8px !important; }
+  .gs-board figcaption[style*="justify-content: space-between"] > span { max-width: none !important; width: auto !important; }
+
+  /* boxes drawn at fixed widths fit the screen */
+  .gs-board [style*="width:"]:not(svg):not(circle):not(img):not([style*="width: 44px"]):not([style*="width: 32px"]):not([style*="width: 18px"]) { max-width: 100%; }
+  .gs-board [style*="position: relative; height:"] { height: auto !important; min-height: 0; }
+  .gs-board img[style*="position: absolute"] { position: relative !important; right: auto !important; left: auto !important; top: auto !important; width: 100% !important; max-width: 420px; height: auto !important; aspect-ratio: 7 / 10; display: block; margin: 0 auto; }
+  .gs-board svg[style*="position: absolute"][style*="left: -"], .gs-board svg[style*="position: absolute"][style*="right: -"], .gs-board svg[style*="position: absolute"][style*="top: -"] { display: none; }
+  .gs-board [style*="height: 600px"], .gs-board [style*="height: 560px"], .gs-board [style*="height: 528px"], .gs-board [style*="height: 480px"] { height: auto !important; min-height: 320px; }
+  .gs-board [style*="white-space: nowrap"]:not(span) { white-space: normal !important; }
+  .gs-board [style*="flex-wrap: nowrap"] { flex-wrap: wrap !important; }
+  .gs-board [style*="display: flex"][style*="gap: 56px"], .gs-board [style*="display: flex"][style*="gap: 48px"], .gs-board [style*="display: flex"][style*="gap: 40px"] { flex-wrap: wrap; gap: 24px !important; }
+  .gs-board [style*="display: flex"][style*="align-items: center"][style*="justify-content: space-between"]:not(header):not(footer):not(.gsctl):not([style*="border-radius: 999px"]) { flex-wrap: wrap; row-gap: 12px; }
+  .gs-board [style*="padding: 36px 40px"], .gs-board [style*="padding: 40px"]:not(section), .gs-board [style*="padding: 48px"] { padding: 24px !important; }
+  .gs-board [style*="padding: 32px"]:not(section) { padding: 20px !important; }
+
+  /* page controls: compact (Back, Home, Top) and out of the way */
+  .gsctl { width: auto !important; height: 52px !important; padding: 4px 6px !important; gap: 2px !important; }
+  .gsctl button[title="Previous section"], .gsctl button[title="Next section"] { display: none !important; }
+  .gsctl a[title^="Back"] { font-size: 15px !important; }
+  .gs-board > div[style*="position: fixed"] { right: 12px !important; bottom: 12px !important; }
+}
+@media (max-width: 480px) {
+  .gs-board header nav a:not([style*="border-radius: 999px"]) { height: 36px !important; }
+  .gs-board [style*="position: relative; width:"][style*="height:"] { zoom: 0.76; }
+}
+
+/* tablet: the chooser zooms to the available width (set by site.js) */
+.gs-cluster { transform-origin: top left; }
+
+/* ---------- letter-size sheets (one-pager, the Five Prompts) ---------- */
+.gs-sheetpage { background: #E9E4CF; }
+.gs-sheetbar { max-width: 816px; margin: 0 auto; padding: 20px 16px 8px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: 'Outfit', system-ui, sans-serif; }
+.gs-sheetbar-home { display: inline-flex; align-items: center; gap: 10px; color: #2B1B3F; text-decoration: none; font-family: 'Fraunces', Georgia, serif; font-size: 20px; }
+.gs-sheetbar-home svg { width: 36px; height: 30px; }
+.gs-sheetbar-pdf { display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 999px; background: #3D524C; color: #F4F0E0; text-decoration: none; font-weight: 600; font-size: 15px; white-space: nowrap; }
+.gs-sheetpage #gs-main { display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 8px 0 48px; }
+.gs-sheetpage [data-dc-root] { width: 816px; max-width: 100%; transform-origin: top center; }
+.gs-sheet { box-shadow: 0 12px 40px rgba(47,64,59,0.18); margin: 0 auto; }
+@media print {
+  .gs-sheetbar { display: none; }
+  .gs-sheetpage { background: #fff; }
+  .gs-sheetpage #gs-main { gap: 0; padding: 0; }
+  .gs-sheet { box-shadow: none; page-break-after: always; break-after: page; }
+  .gs-sheetpage [data-dc-root] { transform: none !important; height: auto !important; }
+}
