@@ -1,0 +1,21 @@
+The Gallitano Studio: security and search update (Oct 2)
+
+Upload the cleanup zip from earlier today FIRST (gallitano-cleanup-upload.zip). Then this one.
+Before uploading, check: if index.html or work-with-me/index.html is also in the cleanup zip,
+stop and tell Claude, so the two versions get merged instead of one overwriting the other.
+
+1. Upload with GitHub's "Add file > Upload files" (drag the folder so the path matches):
+   index.html                  (business and founder details for Google and AI search)
+   work-with-me/index.html     (new Questions section)
+
+2. Create two files with "Add file > Create new file" (Mac hides files starting with a dot,
+   so typing them is easier). Paste each file's contents from this zip.
+   Name: _config.yml                  (takes the build files, README and old PDFs off the live site;
+                                       they stay in the repo. No need to delete them by hand.)
+   Name: .well-known/security.txt     (typing the slash makes the folder)
+
+3. Wait a minute, then check:
+   thegallitanostudio.com/work-with-me/              Questions section above the closing box
+   thegallitanostudio.com/.well-known/security.txt   shows four lines
+   thegallitanostudio.com/build.js                   page not found
+   thegallitanostudio.com/the-five-prompts.pdf       page not found

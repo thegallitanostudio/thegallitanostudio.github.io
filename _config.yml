@@ -1,0 +1,29 @@
+# The Gallitano Studio: what GitHub Pages publishes.
+# Files listed under "exclude" stay in the repository but are not put on the live site.
+include:
+  - .well-known
+exclude:
+  - README.md
+  - build.js
+  - check.js
+  - prerender.js
+  - interact.js
+  - dc.js
+  - og.html
+  - icon.html
+  - site.css
+  - site.js
+  - qr-book.svg
+  - logo-lockup.svg
+  - logo-stacked.svg
+  - angela-office.jpg
+  - angela-outdoors.jpg
+  - angela-seated.jpg
+  - Fraunces.woff2
+  - Fraunces-Italic.woff2
+  - Outfit.woff2
+  - OFL-Fraunces.txt
+  - OFL-Outfit.txt
+  - the-five-prompts.pdf
+  - known-for-accelerator.pdf
+  - accelerator/one-pager/known-for-accelerator.pdf
