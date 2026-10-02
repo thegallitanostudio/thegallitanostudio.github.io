@@ -202,6 +202,8 @@ p{max-width:62ch;text-wrap:pretty}
 .program h3 .kf{font-size:1.2em}
 .program .length{font-weight:600}
 .program .dots{font-size:17px}
+.program .group{display:grid;gap:12px}
+.program .group .label{font-size:12px;letter-spacing:.24em;max-width:none}
 .program .fine{margin-top:auto;padding-top:16px;border-top:1px solid var(--hairline);font-size:17px}
 .program.dark .fine{border-color:var(--hairline-dark)}
 .program .fine strong{display:block;font-family:var(--serif);font-weight:400;font-size:1.25rem;line-height:1.25;margin-top:10px;color:var(--seaweed);font-variation-settings:'SOFT' 50,'opsz' 144}
