@@ -1,0 +1,31 @@
+The Gallitano Studio: new look and site update (Oct 7, 2026)
+
+What this upload changes
+  - New colors and type: sage, mahogany and purple, set in Instrument Sans.
+  - New wordmark in the header and footer: the table mark is the "o" in Studio.
+  - New homepage headline: "Right now you are known for your title. Be known for how you think."
+  - Known For is a raspberry pill in headlines and program names, raspberry italic in sentences.
+  - Duotone icons on the method steps and the "right places" row.
+  - Photos: the striped-dress photo only, once on Home and once on About.
+  - Audience labels: C-suite, SVPs & VPs, Firm partners, Board directors, Executive teams.
+  - First Look now says "2 weeks, with drafts and revisions."
+  - For companies: the Gartner press-release panel, and the McKinsey line reads cleanly.
+  - The sample Look board on Work with me has its own colors.
+  - New link-preview image and phone icon.
+
+How to upload (about 5 minutes)
+1. Unzip gallitano-site-update-2026-10-07.zip. You'll see a folder called "upload".
+2. In GitHub, open the repository thegallitanostudio.github.io.
+3. Choose Add file > Upload files.
+4. Open the "upload" folder on your computer, select EVERYTHING inside it
+   (the files and the folders), and drag it all onto the GitHub page.
+   Dragging the folders keeps each file in the right place.
+5. Scroll down and press "Commit changes".
+6. Wait about a minute, then open thegallitanostudio.com and refresh.
+
+Check after it's live
+  thegallitanostudio.com/                 sage background, purple circles by your photo
+  thegallitanostudio.com/for-companies/   the Gartner panel under "What's already happening."
+  thegallitanostudio.com/work-with-me/    First Look shows "2 weeks, with drafts and revisions."
+
+Nothing needs deleting. The old font and photo files stay in the repository unused.
