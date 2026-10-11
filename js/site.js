@@ -29,7 +29,9 @@
   var btn = doc.getElementById('menu-btn');
   var sheet = doc.getElementById('menu-sheet');
   var scrim = doc.getElementById('menu-scrim');
-  function openMenu() {
+  var opener = null;
+  function openMenu(e) {
+    opener = (e && e.currentTarget) || btn;
     sheet.hidden = false; scrim.hidden = false;
     btn.setAttribute('aria-expanded', 'true');
     doc.documentElement.style.overflow = 'hidden';
@@ -39,7 +41,7 @@
     sheet.hidden = true; scrim.hidden = true;
     btn.setAttribute('aria-expanded', 'false');
     doc.documentElement.style.overflow = '';
-    if (refocus !== false) btn.focus();
+    if (refocus !== false) { try { (opener || btn).focus({ preventScroll: true }); } catch (err) { (opener || btn).focus(); } }
   }
   if (btn && sheet && scrim) {
     btn.addEventListener('click', openMenu);
@@ -59,6 +61,74 @@
       }
     });
     window.addEventListener('resize', function () { if (!sheet.hidden && window.innerWidth > 860) closeMenu(false); });
+  }
+
+  /* ---- Phone edition (Oct 8, 2026). Each piece is an enhancement: without it the page reads as before. ---- */
+
+  /* The dock: Book and Menu within reach once the top of the page has scrolled away.
+     It steps aside whenever the page's own buttons, or the footer, are on screen. Not on the Book page. */
+  var head = doc.querySelector('.site-head');
+  var navBook = doc.querySelector('.nav .btn');
+  if (btn && sheet && head && navBook && !doc.getElementById('gs-booking') && 'IntersectionObserver' in window) {
+    var dock = doc.createElement('div');
+    dock.className = 'dock';
+    var dBook = doc.createElement('a');
+    dBook.className = 'btn'; dBook.href = navBook.getAttribute('href'); dBook.textContent = 'Book a 20-minute conversation';
+    var dMenu = doc.createElement('button');
+    dMenu.className = 'dock-menu'; dMenu.type = 'button';
+    dMenu.setAttribute('aria-label', 'Menu'); dMenu.setAttribute('aria-haspopup', 'dialog'); dMenu.setAttribute('aria-controls', 'menu-sheet');
+    var ico = btn.querySelector('svg'); if (ico) dMenu.appendChild(ico.cloneNode(true));
+    dMenu.addEventListener('click', openMenu);
+    dock.appendChild(dBook); dock.appendChild(dMenu);
+    doc.body.insertBefore(dock, scrim);
+    doc.documentElement.className += ' has-dock';
+    var seen = [];
+    var setDock = function () {
+      var on = seen.length === 0;
+      dock.className = on ? 'dock on' : 'dock';
+      dBook.tabIndex = on ? 0 : -1; dMenu.tabIndex = on ? 0 : -1;
+    };
+    var io = new IntersectionObserver(function (entries) {
+      for (var k = 0; k < entries.length; k++) {
+        var at = seen.indexOf(entries[k].target);
+        if (entries[k].isIntersecting && at < 0) seen.push(entries[k].target);
+        if (!entries[k].isIntersecting && at >= 0) seen.splice(at, 1);
+      }
+      setDock();
+    });
+    var watch = [head].concat([].slice.call(doc.querySelectorAll('main .ctas, .site-foot')));
+    seen = watch.slice(0, 1);
+    for (var w = 0; w < watch.length; w++) io.observe(watch[w]);
+    setDock();
+  }
+
+  /* Programs: on phones each card shows the outcome, the name and the length. The detail opens on tap. */
+  var progs = doc.querySelectorAll('.program');
+  for (var p = 0; p < progs.length; p++) {
+    (function (card, n) {
+      var first = card.querySelector('.group');
+      if (!first) return;
+      var b = doc.createElement('button');
+      b.type = 'button'; b.className = 'more-btn';
+      b.setAttribute('aria-expanded', 'false');
+      var name = card.querySelector('h3');
+      b.innerHTML = '<span>What\u2019s included<span class="vh"> in ' + (name ? name.textContent : 'this program') + '</span></span><span class="pm" aria-hidden="true"></span>';
+      card.insertBefore(b, first);
+      b.addEventListener('click', function () {
+        var open = card.className.indexOf(' open') < 0;
+        card.className = open ? card.className + ' open' : card.className.replace(' open', '');
+        b.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    })(progs[p], p);
+  }
+
+  /* What success looks like: on phones the five pairs sit side by side and swipe. */
+  var pairs = doc.querySelectorAll('.pair');
+  if (pairs.length > 1) {
+    var rail = doc.createElement('div');
+    rail.className = 'rail';
+    pairs[0].parentNode.insertBefore(rail, pairs[0]);
+    for (var q = 0; q < pairs.length; q++) rail.appendChild(pairs[q]);
   }
 
   /* Referred form: opens a prefilled email (no backend) */
