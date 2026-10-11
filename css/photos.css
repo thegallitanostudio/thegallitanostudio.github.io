@@ -5,3 +5,46 @@
 .access-photo::before{content:"";position:absolute;width:34%;aspect-ratio:1;border-radius:50%;background:var(--purple);right:-9%;bottom:8%;z-index:2}
 .access-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:var(--r-arch) var(--r-arch) var(--r-card) var(--r-card)}
 @media (max-width:860px){.story-photo{margin-bottom:28px}.access-photo{max-width:220px}}
+
+/* About: the close now opens the page (Oct 11 2026, evening) */
+.open-hero{padding:24px 0 96px}
+.open-hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:center}
+.open-text{display:grid;gap:22px;justify-items:start}
+.open-hero h1{font-size:clamp(2.2rem,4.1vw,4rem);max-width:14ch}
+.open-photo{margin:0}
+.open-photo img{width:100%;aspect-ratio:17/13;object-fit:cover;object-position:50% 40%;border-radius:var(--r-card)}
+.hero.phases{padding-top:88px;border-top:1px solid var(--hairline)}
+.hero.phases h2{font-size:clamp(2.4rem,5vw,4.8rem);line-height:1.05}
+@media (max-width:1180px){.open-hero .wrap{gap:36px}}
+@media (max-width:860px){
+  .open-hero{padding:8px 0 56px}
+  .open-hero .wrap{grid-template-columns:minmax(0,1fr);gap:24px}
+  .open-photo{order:-1}
+  .open-text{gap:16px}
+  .hero.phases{padding-top:48px}
+}
+@media (prefers-reduced-motion:no-preference){.open-text{animation:rise .8s cubic-bezier(.16,1,.3,1) both}.open-photo{animation:rise 1s .1s cubic-bezier(.16,1,.3,1) both}}
+
+/* Gartner mark, same white badge as the LinkedIn one (Oct 11 2026, evening) */
+.g-badge{display:inline-flex;align-items:center;background:#fff;border-radius:12px;padding:11px 16px;width:max-content;max-width:100%}
+.g-badge img{height:22px;width:auto;display:block}
+.g-badge.sm{padding:8px 12px;border-radius:9px}
+.g-badge.sm img{height:14px}
+.band-dark .g-badge{margin-top:22px}
+.badge-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.whoband .badge-row{margin-top:20px}
+.whoband .badge-row .li-badge{margin-top:0}
+
+/* Salesforce mark: current day job (Oct 11 2026, evening) */
+.sf-badge{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#2B0D03;border-radius:12px;padding:8px 14px 8px 10px;font-size:15px;font-weight:600;line-height:1.2;width:max-content;max-width:100%;letter-spacing:0;text-transform:none}
+.sf-badge svg{width:30px;height:30px;flex:none}
+.sf-badge svg path{fill:#00A1E0}
+.sf-badge.sm{padding:5px 10px 5px 8px;border-radius:9px;font-size:14px;gap:8px}
+.sf-badge.sm svg{width:22px;height:22px}
+.aside-line.today{gap:14px;background:rgba(255,255,255,.35)}
+.credbar.four ul{grid-template-columns:repeat(4,minmax(0,1fr))}
+.credbar.four li:nth-child(3){background:var(--pistachio);color:var(--ink)}
+.credbar.four li:nth-child(4){background:var(--lilac);color:var(--ink)}
+.credbar.four p{font-size:17px}
+@media (max-width:1180px){.credbar.four ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){.credbar.four ul{grid-template-columns:minmax(0,1fr)}}
