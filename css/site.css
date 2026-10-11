@@ -656,7 +656,7 @@ h1 .kf,h2 .kf,h3 .kf,.display .kf,.program h3 .kf,.dark h1 .kf,.dark h2 .kf,.dar
    Phones only (700px and under). Desktop and tablet are untouched.
    One idea per screen, the Book button on the first screen and always within reach,
    parallel things swipe sideways, and long detail opens on tap. */
-.dock,.more-btn{display:none}
+.dock,.more-btn,.doors-ctas{display:none}
 .rail{display:contents}
 @media (max-width:700px){
   :root{--section:56px;--r-card:22px}
@@ -687,6 +687,13 @@ h1 .kf,h2 .kf,h3 .kf,.display .kf,.program h3 .kf,.dark h1 .kf,.dark h2 .kf,.dar
   .hero-for,.hero-for~.chips,.hero-sub{order:2}
   .hero-for{margin-top:16px}
   .chip{white-space:normal;padding:6px 14px;line-height:1.25;border-radius:18px}
+
+  /* Home (Oct 11): the first Book button sits under the two doors, not at the top */
+  .home-hero .hero-ctas.ctas{display:none}
+  .home-hero .hero-photo{margin-top:8px}
+  .doors-ctas{display:block;margin-top:20px}
+  .doors-ctas .ctas{gap:10px}
+  .doors-ctas .ref{min-height:50px}
 
   /* For companies: one row of the circles, under the buttons */
   .hero-photo.art{order:1;max-width:none;width:100%;aspect-ratio:400/84;overflow:hidden;margin-top:20px}

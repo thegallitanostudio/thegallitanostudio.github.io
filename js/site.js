@@ -66,7 +66,8 @@
   /* ---- Phone edition (Oct 8, 2026). Each piece is an enhancement: without it the page reads as before. ---- */
 
   /* The dock: Book and Menu within reach once the top of the page has scrolled away.
-     It steps aside whenever the page's own buttons, or the footer, are on screen. Not on the Book page. */
+     It steps aside whenever the page's own buttons, or the footer, are on screen. Not on the Book page.
+     On Home it also waits until the hero and the two doors have scrolled past, so the first Book button is the one under the doors. */
   var head = doc.querySelector('.site-head');
   var navBook = doc.querySelector('.nav .btn');
   if (btn && sheet && head && navBook && !doc.getElementById('gs-booking') && 'IntersectionObserver' in window) {
@@ -96,7 +97,7 @@
       }
       setDock();
     });
-    var watch = [head].concat([].slice.call(doc.querySelectorAll('main .ctas, .site-foot')));
+    var watch = [head].concat([].slice.call(doc.querySelectorAll('main .ctas, .home-hero, .doors, .site-foot')));
     seen = watch.slice(0, 1);
     for (var w = 0; w < watch.length; w++) io.observe(watch[w]);
     setDock();
