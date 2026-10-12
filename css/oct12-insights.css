@@ -1,0 +1,17 @@
+/* Oct 12, 2026 (afternoon): Gartner findings on ExecutiveOS and the business case. Loaded after pages.css, before silk and motion. */
+.xos-stats{display:grid;gap:clamp(28px,4vw,44px);align-content:start}
+.xos-why .xos-stats .stat-big b{font-size:clamp(3.8rem,7.5vw,6.5rem)}
+.xos-why .xos-stats .stat-big+.stat-big{border-top:1px solid rgba(226,226,205,.4);padding-top:clamp(24px,3vw,36px)}
+.xos-rehearse{margin-top:clamp(28px,4vw,48px);background:#EDE7FB;border:1px solid var(--hairline);border-radius:var(--r-card);padding:clamp(24px,3.2vw,40px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);column-gap:clamp(24px,5vw,72px);row-gap:12px;align-items:center}
+.xos-rehearse .label{grid-column:1/-1;margin:0;color:var(--violet)}
+.xos-rehearse h3{margin:0;font-size:clamp(1.7rem,3vw,2.7rem);line-height:1.08;letter-spacing:-.025em;font-weight:600;color:var(--seaweed)}
+.xos-rehearse h3 em{font-style:normal;color:var(--violet)}
+.xos-rehearse p:not(.label){margin:0;font-size:clamp(1.05rem,1.35vw,1.25rem);line-height:1.5}
+.statrow.four{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2.4vw,36px)}
+.statrow.four b{font-size:clamp(2.8rem,4.6vw,4.6rem);white-space:nowrap}
+.statrow.four p{font-size:clamp(1rem,1.1vw,1.1rem)}
+@media (max-width:1180px){.statrow.four{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:32px}}
+@media (max-width:860px){
+  .xos-rehearse{grid-template-columns:minmax(0,1fr)}
+  .statrow.four{grid-template-columns:minmax(0,1fr);row-gap:0}
+}
