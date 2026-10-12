@@ -1,0 +1,22 @@
+/* silk.css · Oct 12, 2026 · a pearl, silk finish on the sage page color.
+   Applies only where the page itself shows (sage). Bands, cards and photos are untouched.
+   To remove: delete this file. Every page still reads on flat sage. */
+body{
+  background-color:#E2E2CD;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9 .32' numOctaves='2' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 -.2'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E"),
+    radial-gradient(46% 15% at 82% 17%,rgba(255,255,255,.62),rgba(255,255,255,0) 72%),
+    radial-gradient(40% 13% at 30% 30%,rgba(255,255,255,.34),rgba(255,255,255,0) 72%),
+    radial-gradient(44% 15% at 10% 52%,rgba(205,189,246,.24),rgba(205,189,246,0) 72%),
+    radial-gradient(38% 12% at 62% 62%,rgba(255,255,255,.4),rgba(255,255,255,0) 72%),
+    radial-gradient(46% 15% at 90% 82%,rgba(255,250,236,.5),rgba(255,250,236,0) 72%),
+    radial-gradient(36% 12% at 24% 84%,rgba(242,167,195,.09),rgba(242,167,195,0) 72%);
+  background-size:220px 220px,100% 1700px,100% 1700px,100% 1700px,100% 1700px,100% 1700px,100% 1700px;
+  background-repeat:repeat,repeat-y,repeat-y,repeat-y,repeat-y,repeat-y,repeat-y;
+}
+
+/* About: the new groundwork chapter sits on the silk page color */
+.chapter.ground::before{width:380px;height:380px;background:var(--lilac);right:-170px;top:-190px;opacity:.55}
+.chapter.ground::after{width:120px;height:120px;background:var(--purple);right:150px;top:-50px;opacity:.5}
+.chapter.ground .beat{border-top:0}
+.aside-line.today{grid-template-columns:1fr}
