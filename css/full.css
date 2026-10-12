@@ -1,0 +1,126 @@
+/* The Gallitano Studio · Oct 11, 2026 (late): the color and type treatment on the rest of the site.
+   Loaded last on all five pages, after oct11.css. Styles only; no wording changes.
+   What it does: one content width, larger type on desktop, more violet, circles at band edges,
+   highlights in place of bold, and the sections oct11.css left alone
+   (the heroes, the method, the pace band, the numbers band, the programs, the sample board, the outcomes,
+   "What success looks like", the questions, the company stats, the offers, the scorecard, the Book page). */
+
+/* ---------- type and width, desktop ---------- */
+@media (min-width:861px){
+  body{font-size:clamp(18px,1.3vw,21px)}
+  .hero.plain h1{font-size:clamp(2.5rem,4.6vw,4.5rem);max-width:22ch}
+  .book-top h1{font-size:clamp(2.5rem,4.6vw,4.5rem)}
+  .sec-head h2,.layer h2,.method h2{font-size:clamp(2.2rem,4vw,4rem);line-height:1.04}
+  .sec-head{max-width:1000px}
+  .narrow{max-width:1440px}
+  .pace .display{font-size:clamp(2rem,3.6vw,3.6rem);line-height:1.08}
+  .cost .display{font-size:clamp(2.2rem,4.2vw,4.2rem);line-height:1.04;max-width:20ch}
+  .carry .display{font-size:clamp(2.2rem,4.4vw,4.2rem)}
+  .trust .display{font-size:clamp(2.4rem,4.6vw,4.4rem)}
+  .steps h3{font-size:clamp(1.5rem,2.1vw,2rem)}
+  .program .changes{font-size:clamp(1.7rem,2.4vw,2.3rem)}
+  .proof b{font-size:clamp(2.8rem,4.6vw,4.4rem)}
+  .proof span{font-size:18px}
+}
+
+/* highlights in place of bold, wherever a paragraph carried a bold lead-in */
+.trust-points strong,.trust-points b{font-weight:500;background:linear-gradient(transparent 58%,rgba(91,65,192,.28) 58%);padding:0 .08em}
+
+/* ---------- circles at the edges of bands ---------- */
+.work-hero,.pace,.cost,.sec.tight.band-dark,.method,.book-top,.sec.faq,.hero.small-photo,.open-hero{position:relative;overflow:hidden}
+.work-hero>.wrap,.pace>.wrap,.cost>.wrap,.sec.tight.band-dark>.wrap,.method>.wrap,.book-top>.wrap,.sec.faq>.wrap{position:relative;z-index:1}
+.work-hero::before,.work-hero::after,.pace::before,.pace::after,.cost::before,.cost::after,.sec.tight.band-dark::before,.sec.tight.band-dark::after,.method::after,.book-top::after,.sec.faq::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+
+/* Work with me, top of page: the empty right side carries the circles */
+.work-hero::before{width:520px;height:520px;background:var(--violet);right:-150px;top:-170px}
+.work-hero::after{width:190px;height:190px;background:var(--lilac);right:170px;top:190px}
+@media (min-width:861px){.work-hero .hero-text{max-width:64%}}
+
+/* the lilac bands */
+.pace::before{width:300px;height:300px;background:var(--purple);right:-190px;bottom:-190px}
+.pace::after{width:110px;height:110px;background:var(--violet);left:-50px;top:-50px}
+.cost::before{width:460px;height:460px;background:var(--violet);right:-170px;top:-230px}
+.cost::after{width:170px;height:170px;background:var(--purple);right:230px;bottom:-80px}
+.cost .display em{color:var(--violet);font-style:normal}
+
+/* the numbers band */
+.sec.tight.band-dark::before{width:260px;height:260px;background:var(--violet);right:-150px;top:-180px}
+.sec.tight.band-dark::after{width:90px;height:90px;background:var(--purple);left:-40px;bottom:-45px}
+
+/* the method */
+.method::after{width:240px;height:240px;background:var(--lilac);right:-150px;top:-120px}
+.steps h3{color:var(--seaweed)}
+.steps li .duo,.steps svg{color:var(--violet)}
+
+/* the questions */
+.sec.faq::after{width:320px;height:320px;background:var(--lilac);left:-150px;bottom:-170px}
+.faq-mark{border-color:var(--violet);color:var(--violet)}
+
+/* Book */
+.book-top::after{width:360px;height:360px;background:var(--lilac);right:-170px;top:-200px}
+
+/* ---------- Work with me ---------- */
+/* first program card takes the lilac tint so the row has three colors: lilac, mahogany, then the lilac "Short on time?" card below reads as its partner */
+.programs.two .program:not(.dark):not(.short){background:#EDE7FB;border-color:transparent}
+.program .dots li::before{background:var(--violet)}
+.program.dark .dots li::before{background:var(--lilac)}
+.program.short{background:var(--violet);color:var(--linen)}
+.program.short .changes,.program.short h3,.program.short .length{color:#fff}
+.program.short h3{border-color:rgba(226,226,205,.35)}
+.program.short p{color:var(--linen)}
+.program.short .group .label{color:var(--lilac)}
+.program.short .dots li::before{background:var(--lilac)}
+.program.short h3 .kf{box-shadow:0 0 0 1.5px var(--linen)}
+.program.short .kf:not(h3 .kf){color:var(--raspberry-light)}
+.program.short .chip{background:var(--linen);color:var(--ink);border-color:transparent}
+.program.short .more-btn{border-color:rgba(226,226,205,.35);color:#fff}
+.every{background:var(--seaweed)}
+.every .tick{background:var(--lilac)}
+.every .tick::after{border-color:var(--seaweed)}
+
+/* "What success looks like" and the questions: heading on the left, content on the right */
+@media (min-width:1000px){
+  section[aria-labelledby="success-h"]>.wrap,.sec.faq>.wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);column-gap:72px;align-items:start}
+  section[aria-labelledby="success-h"]>.wrap>.sec-head,.sec.faq>.wrap>.sec-head{grid-column:1;grid-row:1 / span 12;position:sticky;top:40px;margin-bottom:0}
+  section[aria-labelledby="success-h"]>.wrap>:not(.sec-head),.sec.faq>.wrap>:not(.sec-head){grid-column:2}
+  .pair h3{font-size:clamp(1.5rem,2vw,1.9rem)}
+  .faq-item summary h3{font-size:clamp(1.35rem,1.8vw,1.7rem)}
+  .faq-item summary{padding:28px 0}
+}
+.pair h3{color:var(--violet)}
+
+/* outcomes */
+.outcomes li{font-size:clamp(1.15rem,1.6vw,1.45rem)}
+
+/* ---------- For companies ---------- */
+/* "What's already happening": the stats sit on violet, the Gartner panel stays a sage card */
+.band-vio{background:var(--violet);color:var(--linen);position:relative;overflow:hidden}
+.band-vio>.wrap{position:relative;z-index:1}
+.band-vio::before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;background:#6A51CC;right:-240px;top:-280px}
+.band-vio h2{color:#fff}
+.band-vio .stat-big b{color:var(--lilac)}
+.band-vio .stat-big p{color:#fff}
+.band-vio .stats li{border-color:rgba(226,226,205,.35)}
+.band-vio .stats b{color:var(--lilac)}
+.band-vio .stats p{color:var(--linen)}
+.band-vio .src{color:var(--linen);opacity:.9}
+.band-vio .cite-panel{background:var(--linen);color:var(--ink)}
+.band-vio .cite-panel .label{color:var(--violet)}
+.band-vio .cite-panel b,.band-vio .cite-panel .cite-q,.band-vio .cite-panel p{color:var(--ink)}
+.band-vio .cite-panel .src{color:var(--ink);opacity:1}
+.band-vio .cite-panel .src a{color:var(--violet)}
+
+/* the scorecard: the three rounds read as filled tiles */
+.round{background:#EDE7FB;border-color:transparent}
+.round i{color:var(--violet)}
+.sc-m{color:var(--violet)}
+
+/* the offers */
+.offer2 .card:not(.dark){background:#EDE7FB;border-color:transparent}
+
+/* ---------- phones ---------- */
+@media (max-width:860px){
+  .work-hero::before,.work-hero::after,.pace::after,.cost::after,.sec.tight.band-dark::after,.method::after,.sec.faq::after,.book-top::after{display:none}
+  .pace::before,.cost::before,.sec.tight.band-dark::before{width:220px;height:220px;right:-120px}
+  .band-vio::before{width:280px;height:280px;right:-140px;top:-150px}
+}
