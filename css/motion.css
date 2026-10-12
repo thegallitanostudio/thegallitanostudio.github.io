@@ -1,0 +1,85 @@
+/* The Gallitano Studio · Oct 11, 2026 (night): the motion layer.
+   Loaded last on all five pages, after full.css. Motion only: no wording, color or layout changes.
+   Everything sits behind html.gs-motion, which the one-line script in each page's <head> adds
+   only when the visitor has not asked for reduced motion. Without it, the site is exactly as before.
+   What it does: headlines arrive word by word, sections rise in as you reach them, highlights draw in,
+   numbers count up, buttons lean toward the cursor, a soft purple circle follows the cursor,
+   pages open from a circle, and on Home the circles are alive (js/motion.js). */
+
+/* ---------- headline: held for a moment so it can arrive word by word ---------- */
+/* If js/motion.js never loads, the headline shows itself after 2.5s. */
+.gs-motion:not(.gs-ready) main h1{animation:gs-show 0s 2.5s both}
+@keyframes gs-show{from{visibility:hidden}to{visibility:visible}}
+
+.gs-motion .gw{display:inline-block;opacity:0;transform:translateY(.55em);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i,0)*42ms);will-change:transform,opacity}
+.gs-motion .gw-on .gw{opacity:1;transform:none}
+.gs-motion .gw-done .gw{will-change:auto}
+.gs-motion .gnb{white-space:nowrap}
+
+/* ---------- sections rise in as you reach them ---------- */
+.gs-motion .rv{opacity:0;transform:translateY(34px)}
+.gs-motion .rv.rv-in{opacity:1;transform:none;transition:opacity .8s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0ms)}
+
+/* ---------- highlights draw in from the left ---------- */
+.gs-motion mark,.gs-motion .trust-points b,.gs-motion .trust-points strong{background-repeat:no-repeat;background-size:0% 100%;transition:background-size .9s cubic-bezier(.16,1,.3,1) .25s}
+.gs-motion mark.hl-on,.gs-motion .trust-points b.hl-on,.gs-motion .trust-points strong.hl-on{background-size:100% 100%}
+
+/* ---------- numbers count up without the row jumping ---------- */
+.gs-motion .proof b{font-variant-numeric:tabular-nums}
+
+/* ---------- buttons and cards lean toward the cursor ---------- */
+@media (hover:hover) and (pointer:fine){
+  .gs-motion .btn{transition:transform .35s cubic-bezier(.16,1,.3,1),background-color .2s,color .2s,border-color .2s}
+  .gs-motion .door{transition:transform .5s cubic-bezier(.16,1,.3,1);transform-style:preserve-3d}
+  .gs-motion .door .go svg{transition:transform .35s cubic-bezier(.16,1,.3,1)}
+  .gs-motion .door:hover .go svg{transform:translateX(6px)}
+}
+
+/* ---------- the circle that follows the cursor ---------- */
+.gs-cursor{position:fixed;left:0;top:0;z-index:2147483000;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:rgba(127,99,201,.5);border:1.5px solid rgba(205,189,246,.85);pointer-events:none;opacity:0;transition:opacity .3s,width .35s cubic-bezier(.16,1,.3,1),height .35s cubic-bezier(.16,1,.3,1),margin .35s cubic-bezier(.16,1,.3,1),background-color .3s}
+.gs-cursor.on{opacity:1}
+.gs-cursor.big{width:64px;height:64px;margin:-32px 0 0 -32px;background:rgba(127,99,201,.2)}
+@media print{.gs-cursor{display:none}}
+
+/* ---------- Home: the circles around the portrait are alive ---------- */
+.gs-motion .home-hero{position:relative}
+.gs-motion .home-hero>.wrap{position:relative;z-index:1}
+.gs-field{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.gs-field.front{z-index:2}
+/* the drawn circles stand in for the still ones */
+.gs-field-on .home-hero .hero-photo{background:none}
+.gs-field-on .home-hero .hero-photo::before,.gs-field-on .home-hero .hero-photo::after{display:none}
+.gs-field-on .home-hero .hero-photo img{will-change:transform}
+
+/* ---------- Home, the method: the circles gather into the ring as you scroll ---------- */
+.gs-ring-on .method-photo.cluster-art{position:relative}
+.gs-ring-on .method-photo.cluster-art svg{visibility:hidden}
+.gs-ring{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
+@media (min-width:861px){
+  @supports (overflow:clip){
+    .gs-ring-on .method{overflow:clip}
+    .gs-ring-on .method-photo.cluster-art{position:sticky;top:16vh}
+  }
+}
+
+/* ---------- the circles at the edges of bands drift as you scroll ---------- */
+@supports (animation-timeline:view()){
+  .gs-motion .work-hero::before,.gs-motion .pace::before,.gs-motion .cost::before,.gs-motion .sec.tight.band-dark::before{animation:gs-drift-a linear both;animation-timeline:view()}
+  .gs-motion .work-hero::after,.gs-motion .pace::after,.gs-motion .cost::after,.gs-motion .sec.tight.band-dark::after,.gs-motion .method::after,.gs-motion .sec.faq::after,.gs-motion .book-top::after{animation:gs-drift-b linear both;animation-timeline:view()}
+  @keyframes gs-drift-a{from{translate:0 70px}to{translate:0 -70px}}
+  @keyframes gs-drift-b{from{translate:0 -40px}to{translate:0 50px}}
+}
+
+/* ---------- pages open from a circle; the header stays put ---------- */
+@media (prefers-reduced-motion:no-preference){
+  @view-transition{navigation:auto}
+  .site-head{view-transition-name:gs-head}
+  ::view-transition-old(root){animation:gs-vt-out .4s ease both}
+  ::view-transition-new(root){animation:gs-vt-in .75s cubic-bezier(.16,1,.3,1) both}
+  @keyframes gs-vt-out{to{opacity:.55}}
+  @keyframes gs-vt-in{from{clip-path:circle(0% at 50% 42%)}to{clip-path:circle(125% at 50% 42%)}}
+}
+
+/* ---------- never leave anything hidden ---------- */
+@media print{.gs-motion .rv,.gs-motion .gw{opacity:1!important;transform:none!important}.gs-motion main h1{visibility:visible!important}}
+@media (prefers-reduced-motion:reduce){.rv,.gw{opacity:1!important;transform:none!important}.gs-field,.gs-ring,.gs-cursor{display:none!important}}
