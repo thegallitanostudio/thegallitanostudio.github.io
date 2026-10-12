@@ -1,0 +1,23 @@
+/* The Gallitano Studio · Oct 12, 2026 (morning): fixes from the site audit.
+   Loaded after oct12-contact.css and before motion.css on every page. New rules only. */
+
+/* Source lines under statistics: easier to read, on sage and on violet */
+.src{font-size:13.5px;opacity:.92}
+.band-vio .src{opacity:.95}
+.cite-panel .src,.band-vio .cite-panel .src{font-size:13.5px;opacity:.92}
+.srcs summary{opacity:1;font-size:12.5px}
+.srcs ul{opacity:.95}
+.srcs p{opacity:.85}
+@media (max-width:860px){.src,.cite-panel .src{font-size:13px}}
+
+/* Home, desktop: close the gap between the testimonials and the trust card */
+@media (min-width:861px){.sec.trust{padding-top:0}}
+
+/* Contact: the three card labels sit on one line, whatever the length of the value */
+@media (min-width:861px){.ct-v{min-height:2.3em;display:flex;align-items:flex-end}}
+
+/* Questions: no circle behind "Email me", and the credential line under the list */
+.q-list.sec.faq::after{display:none}
+.q-cred{margin-top:40px}
+.q-list{padding-bottom:72px}
+@media (max-width:860px){.q-cred{margin-top:28px}.q-list{padding-bottom:48px}}
