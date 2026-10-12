@@ -1,0 +1,160 @@
+/* The Gallitano Studio · Oct 11, 2026 (late night): the sub-pages and the navigation that opens to them.
+   Loaded on every page, just before motion.css. Holds: the navigation menus, the questions component,
+   the three program pages, the business case page, and the "Download the fact sheet" link. */
+
+/* ---------- navigation: Work with me and For companies open to their pages ---------- */
+.site-head{position:relative;z-index:40}
+.nav .nav-item{position:relative;display:flex;align-items:center}
+.nav .chev{width:12px;height:12px;margin-left:6px;opacity:.6;transition:transform .25s ease}
+.nav a.top.on:not(.btn){box-shadow:inset 0 -2px 0 var(--seaweed)}
+.nav .sub{position:absolute;left:-18px;top:100%;min-width:290px;padding:8px;background:var(--linen);border:1px solid var(--hairline);border-radius:18px;display:grid;gap:0;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .2s ease,transform .25s cubic-bezier(.22,1,.36,1),visibility 0s linear .25s;z-index:5}
+.nav .sub::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.nav .nav-item:hover .sub,.nav .nav-item:focus-within .sub{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.nav .nav-item:hover .chev,.nav .nav-item:focus-within .chev{transform:rotate(180deg)}
+.nav .sub a:not(.btn){display:flex;min-height:46px;padding:0 14px;border-radius:12px;font-size:16px;white-space:nowrap;box-shadow:none}
+.nav .sub a:not(.btn):hover,.nav .sub a:not(.btn):focus-visible{background:rgba(127,99,201,.16);color:var(--seaweed)}
+.nav .sub a[aria-current="page"]:not(.btn){background:rgba(127,99,201,.16);box-shadow:none}
+.nav .sub .kf{margin-right:.3em}
+@media (prefers-reduced-motion:reduce){.nav .sub,.nav .chev{transition:none}}
+/* the phone menu: sub-pages sit indented under their parent */
+.sheet nav a.sub{min-height:44px;border-top:0;padding-left:18px;font-family:var(--sans);font-size:1.05rem;letter-spacing:0;font-weight:500;justify-content:flex-start}
+.sheet nav a.sub .kf{margin-right:.3em}
+.sheet nav a.sub[aria-current="page"]::after{margin-left:auto}
+
+/* ---------- small shared pieces ---------- */
+.dl{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-weight:600;font-size:16px;color:var(--violet);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
+.dl svg{width:20px;height:20px;flex:none}
+.dark .dl{color:var(--lilac)}
+.dl-row{margin:6px 0 0}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.tlink{color:var(--violet);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.dark .tlink{color:var(--lilac)}
+.crumb{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 18px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+.crumb a{color:var(--violet);text-decoration:none}
+.crumb a:hover{text-decoration:underline;text-underline-offset:3px}
+.more-page{margin:auto 0 0;padding-top:12px}
+.more-page a{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-weight:600;color:inherit;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
+.more-page a svg{width:18px;height:18px;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.more-page a:hover svg{transform:translateX(5px)}
+.more-page .kf{margin:0 .3em}
+.program.short .more-page{grid-column:1/-1}
+.offer-next{margin:28px 0 0;font-size:clamp(1.05rem,1.3vw,1.2rem)}
+
+/* ---------- the questions ---------- */
+.faq-list{border-bottom:1px solid var(--hairline)}
+.faq-item{border-top:1px solid var(--hairline)}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 0}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary h3{font-size:1.35rem;margin:0}
+.faq-item summary:focus-visible{outline:3px solid var(--deep-lavender);outline-offset:4px;border-radius:8px}
+.faq-mark{flex:none;width:28px;height:28px;border-radius:50%;border:1px solid var(--violet);position:relative}
+.faq-mark::before,.faq-mark::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--seaweed);transform:translate(-50%,-50%)}
+.faq-mark::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq-item[open] .faq-mark::after{transform:translate(-50%,-50%) rotate(0deg)}
+.faq-item p{max-width:62ch;padding:0 0 28px;margin:0}
+.faq-item p a{color:var(--violet);font-weight:600}
+@media (prefers-reduced-motion:no-preference){.faq-mark::after{transition:transform .2s ease}}
+/* grouped by topic (For companies) */
+.faq-topics .sec-head{max-width:none;display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px 40px}
+.faq-topics .sec-head .label{flex-basis:100%}
+.faq-cols{display:grid;gap:44px}
+.faq-group{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:clamp(20px,4vw,64px);align-items:start}
+.faq-topic{margin:0;padding-top:22px;font-size:clamp(1.3rem,1.9vw,1.75rem);line-height:1.1;letter-spacing:-.02em;color:var(--violet)}
+.faq-topic .kf{font-style:italic;background:none;color:var(--raspberry);padding:0;display:inline}
+
+/* ---------- sub-page hero ---------- */
+.p-hero{position:relative;overflow:hidden}
+.p-hero>.wrap{position:relative;z-index:1}
+.p-hero::before,.p-hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.p-hero::before{width:520px;height:520px;background:var(--violet);right:-150px;top:-170px}
+.p-hero::after{width:190px;height:190px;background:var(--lilac);right:170px;top:190px}
+@media (min-width:861px){.p-hero .hero-text{max-width:66%}}
+.p-hero h1 em{font-style:normal;color:var(--violet)}
+.p-name{margin:26px 0 0;font-weight:600;font-size:clamp(1.5rem,2.4vw,2.2rem);letter-spacing:-.02em;line-height:1.1}
+.p-name .kf{display:inline-block;font-style:normal;background:var(--raspberry);color:var(--linen);padding:.03em .42em .09em;border-radius:var(--r-pill);letter-spacing:-.01em;margin-right:.15em}
+.p-hero .lead{margin-top:14px}
+.p-hero .chips{margin-top:18px}
+
+/* ---------- what's in it ---------- */
+.inout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+.inout .card{padding:40px;display:grid;gap:18px;align-content:start}
+.inout .card:not(.dark){background:#EDE7FB;border-color:transparent}
+.inout .label{margin:0}
+.inout .card.dark .label{color:var(--lilac)}
+.inout .dots{font-size:clamp(1.1rem,1.4vw,1.3rem);line-height:1.4}
+.p-in .every{margin-top:24px}
+
+/* ---------- how it runs, and any numbered sequence ---------- */
+.p-how,.bc-count{position:relative;overflow:hidden}
+.p-how>.wrap,.bc-count>.wrap{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px);align-items:start}
+.p-how-head h2{font-size:clamp(2.1rem,4vw,3.8rem);line-height:1.06;margin:14px 0 0;max-width:13ch}
+.p-how-head h2 em{font-style:normal;color:var(--violet)}
+.p-how-head>p:not(.label):not(.homework){margin:22px 0 0;font-size:clamp(1.1rem,1.4vw,1.3rem);max-width:32ch}
+.p-how-head .homework{margin-top:28px}
+.steps4{list-style:none;margin:0;padding:0;display:grid}
+.steps4 li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;padding:24px 0;border-top:1px solid rgba(43,13,3,.3)}
+.steps4 li:last-child{border-bottom:1px solid rgba(43,13,3,.3)}
+.steps4 .n{width:44px;height:44px;border-radius:50%;background:var(--violet);color:#fff;display:grid;place-items:center;font-weight:600;font-size:18px}
+.steps4 h3{margin:0;font-size:clamp(1.3rem,1.8vw,1.7rem);line-height:1.15}
+.steps4 h3 .kf{font-size:.92em}
+.steps4 p{margin:6px 0 0;font-size:17px}
+.p-how::after,.bc-count::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:var(--purple);left:-190px;bottom:-190px;pointer-events:none}
+
+/* ---------- who you're working with (short form) ---------- */
+.who-lite .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px);align-items:start}
+.who-lite h2{font-size:clamp(2rem,3.6vw,3.4rem);line-height:1.04;margin:14px 0 0;max-width:15ch}
+.who-lite h2 em{font-style:normal;color:var(--violet)}
+.who-lite .body{display:grid;gap:16px}
+.who-lite .body p{margin:0;font-size:clamp(1.1rem,1.4vw,1.3rem);line-height:1.5;max-width:52ch}
+.who-lite .badge-row{display:flex;flex-wrap:wrap;gap:10px}
+.who-lite .badge-row>span{border:1px solid var(--hairline)}
+
+/* ---------- the other two programs ---------- */
+.others{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+.others .other{padding:36px;display:grid;gap:12px;align-content:start;text-decoration:none;color:inherit;background:var(--linen);transition:border-color .2s,transform .5s cubic-bezier(.22,1,.36,1)}
+.others .other:hover{border-color:var(--violet);transform:translateY(-3px)}
+.others .other .label{color:var(--violet);margin:0}
+.others .other h3{margin:0;font-size:clamp(1.6rem,2.4vw,2.2rem)}
+.others .other p{margin:0}
+.others .other .len{font-weight:600}
+
+/* ---------- the business case ---------- */
+.statrow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,48px)}
+.statrow li{border-top:1px solid rgba(226,226,205,.4);padding-top:22px}
+.statrow b{display:block;font-size:clamp(3.4rem,6.5vw,6rem);line-height:.95;letter-spacing:-.04em;font-weight:600;color:var(--lilac)}
+.statrow p{margin:14px 0 0;color:#fff;font-size:clamp(1.02rem,1.25vw,1.2rem);line-height:1.45}
+.bc-stats{position:relative;overflow:hidden;color:var(--linen)}
+.bc-stats>.wrap{position:relative;z-index:1}
+.bc-stats .label{color:var(--lilac)}
+.bc-stats h2{color:#fff}
+.bc-stats .src{color:var(--linen)}
+.bc-stats::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:#6A51CC;right:-140px;bottom:-190px;pointer-events:none}
+.qa{margin:0;border-top:1.5px solid var(--seaweed)}
+.qa>div{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,4vw,64px);padding:32px 0;border-bottom:1px solid var(--hairline)}
+.qa dt{font-weight:600;font-size:clamp(1.25rem,1.8vw,1.65rem);line-height:1.2;letter-spacing:-.015em;color:var(--seaweed)}
+.qa dd{margin:0;display:grid;gap:12px}
+.qa dd p{margin:0;font-size:clamp(1.05rem,1.25vw,1.2rem);line-height:1.55;max-width:60ch}
+.qa-foot{margin-top:36px;display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between}
+.qa-foot p{margin:0;font-weight:600;font-size:clamp(1.2rem,1.6vw,1.5rem)}
+.bc-next{margin:32px 0 0;line-height:2}
+
+@media (max-width:860px){
+  .p-hero::before,.p-hero::after,.p-how::after,.bc-count::after{display:none}
+  .inout,.p-how>.wrap,.bc-count>.wrap,.who-lite .wrap,.others,.statrow,.qa>div,.faq-group{grid-template-columns:minmax(0,1fr)}
+  .inout,.others{gap:12px}
+  .inout .card,.others .other{padding:26px 22px}
+  .steps4 li{gap:14px;padding:20px 0}
+  .steps4 .n{width:36px;height:36px;font-size:16px}
+  .statrow{gap:0}
+  .statrow li{padding:22px 0}
+  .qa>div{gap:12px;padding:24px 0}
+  .qa-foot{flex-direction:column;align-items:stretch}
+  .faq-group{gap:0}
+  .faq-topic{padding:0 0 14px}
+  .faq-cols{gap:36px}
+  .faq-item summary h3{font-size:1.15rem}.faq-item summary{padding:20px 0}
+  .crumb{font-size:12px;letter-spacing:.16em}
+}
+
+/* the footer keeps to one row on wide screens now that it has five links */
+@media (min-width:1180px){.site-foot .wrap{flex-wrap:nowrap}.foot-nav{flex-wrap:nowrap;gap:4px 22px}.foot-meta{flex:none}}

@@ -87,7 +87,7 @@
 
   /* ================= 2. Sections rise in as you reach them ================= */
   var topSection = doc.querySelector('main > section');
-  var GROUPS = 'ul,ol,.grid2,.quotes,.programs,.trust-points,.steps,.proof,.track,.pairs,.outcomes,.tiles,.offer2,.chapters';
+  var GROUPS = 'ul,ol,dl,.grid2,.quotes,.programs,.trust-points,.steps,.proof,.track,.pairs,.outcomes,.tiles,.offer2,.chapters,.inout,.others,.xos-offers,.faq-cols';
   var EXTRA = '.steps > li,.track > .stop,.trust-points > p,.method h2,.homework,.close-box > *,.close-foot > *';
   function matches(el, sel) { var m = el.matches || el.msMatchesSelector || el.webkitMatchesSelector; return m ? m.call(el, sel) : false; }
   function sideScrolls(el) {
