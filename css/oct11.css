@@ -198,3 +198,72 @@ mark{background:linear-gradient(transparent 58%,rgba(127,99,201,.3) 58%);color:i
 /* small corrections after review */
 .whoband.v2 .nom .label{color:var(--violet)}
 @media (max-width:860px){.who-photo::after{left:auto;right:-7%;bottom:8%}}
+
+/* work with me, Oct 11 late: two programs, and the Accelerator as the "Short on time?" callout below */
+.programs.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.programs.two .program{padding:44px 40px}
+.programs.two .program.dark{grid-column:auto}
+.program.short{margin-top:24px;background:var(--lilac);border-color:transparent;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) minmax(0,1fr);gap:20px 48px;padding:40px;align-items:start}
+.program.short .short-main{display:grid;gap:14px;justify-items:start}
+.program.short .changes{font-size:clamp(1.45rem,1.9vw,1.8rem)}
+.program.short h3{width:100%;border-color:rgba(43,13,3,.3)}
+.program.short .group{padding-top:6px}
+.program.short .group .label{color:var(--ink)}
+.program.short .dots li::before{background:var(--violet)}
+.program.short .more-btn{grid-column:1/-1}
+@media (max-width:1180px){
+  .program.short{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .program.short .short-main{grid-column:1/-1}
+}
+@media (max-width:860px){
+  .programs.two{grid-template-columns:minmax(0,1fr)}
+  .programs.two .program{padding:24px 20px 14px}
+  .program.short{display:flex;margin-top:12px;padding:24px 20px 14px;gap:12px}
+  .program.short .short-main{gap:12px}
+  .program.short .more-btn{border-color:rgba(43,13,3,.3)}
+}
+
+/* work with me: what every program includes */
+.every{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:16px 40px;margin-bottom:24px;padding:22px 40px;border-radius:var(--r-card);background:var(--violet);color:var(--linen)}
+.every .label{color:var(--lilac);max-width:none;margin:0}
+.every ul{display:flex;flex-wrap:wrap;gap:12px 36px;list-style:none;margin:0;padding:0}
+.every li{display:flex;align-items:center;gap:12px;font-weight:600;font-size:18px;line-height:1.3}
+.every .tick{flex:none;width:26px;height:26px;border-radius:50%;background:var(--lilac);position:relative}
+.every .tick::after{content:"";position:absolute;left:9px;top:5px;width:6px;height:11px;border:solid var(--violet);border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+@media (max-width:1180px){.every{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:860px){.every{padding:20px;margin-bottom:12px}.every ul{flex-direction:column;gap:12px}.every li{font-size:17px;align-items:flex-start}}
+
+/* sample Look board on phones: fits the screen, no sideways scrolling */
+@media (max-width:700px){
+  .layer figure{margin-right:0}
+  .board{container-type:inline-size;overflow:visible;padding:10px;border-right:1px solid var(--hairline);border-radius:var(--r-card)}
+  .lb{container-type:normal;width:auto;gap:8px}
+  .lb>div{border-radius:14px}
+  .lb .tag{font-size:9px;letter-spacing:.1em;right:10px;bottom:8px}
+  .board-cap{padding-right:0;text-align:center}
+  .lb-banner{aspect-ratio:3/1;gap:3.6cqw;padding:0 5cqw}
+  .lb-banner::before{width:24cqw;height:24cqw;right:-8cqw;top:-10cqw}
+  .lb-banner::after{display:none}
+  .lb-banner .av{width:16cqw;font-size:6cqw}
+  .lb-banner .nm{font-size:6.2cqw}
+  .lb-banner .ttl{font-size:2.5cqw;letter-spacing:.14em;margin-top:1.2cqw}
+  .lb-banner .kfl{font-size:3.2cqw;margin-top:1.6cqw}
+  .lb-deck,.lb-site{grid-column:1/-1}
+  .lb>.lb-deck{font-size:3.3cqw;padding:6.5cqw 6.5cqw 9cqw}
+  .lb-deck::before{width:26cqw;height:26cqw;right:5cqw;top:5cqw}
+  .lb-deck .nm{font-size:7.6cqw}
+  .lb-deck .by{margin-top:2.4cqw}
+  .lb-site{font-size:3.6cqw}
+  .lb-site .chrome{gap:1.6cqw;padding:2.8cqw 3.6cqw}
+  .lb-site .chrome i{width:2.4cqw;height:2.4cqw}
+  .lb-site .navr{padding:3.4cqw 4.6cqw;font-size:3.3cqw;gap:2cqw}
+  .lb-site .navr .nm{font-size:4.8cqw}
+  .lb-site .navr span:last-child{gap:3cqw}
+  .lb-site .hl{padding:4cqw 4.6cqw 12cqw;font-size:8cqw}
+  .lb-page{aspect-ratio:auto;padding:4.5cqw 4cqw 34px}
+  .lb-page .nm{font-size:4.6cqw}
+  .lb-page .ttl{font-size:2.1cqw;letter-spacing:.1em}
+  .lb-page .kfl{font-size:2.7cqw}
+  .lb-page .h{font-size:2.5cqw}
+  .lb-bio .nm{font-size:4cqw}
+}
