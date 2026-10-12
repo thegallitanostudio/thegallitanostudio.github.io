@@ -3,5 +3,5 @@
    contactEmail: where "email me" and the Referred form go */
 window.GS_CONFIG = {
   bookUrl: 'https://cal.com/angela-gallitano/20-minute-conversation',
-  contactEmail: 'angela.gallitano@gmail.com'
+  contactEmail: 'angela@thegallitanostudio.com'
 };
