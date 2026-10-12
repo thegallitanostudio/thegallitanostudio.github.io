@@ -23,7 +23,9 @@
 <link rel="stylesheet" href="../css/oct11.css?v=1011c">
 <link rel="stylesheet" href="../css/full.css?v=1011d">
 <link rel="stylesheet" href="../css/oct12.css?v=1012a">
-<script>document.documentElement.className += ' js';</script>
+<link rel="stylesheet" href="../css/companies.css?v=1011h">
+<link rel="stylesheet" href="../css/motion.css?v=1011h">
+<script>document.documentElement.className += ' js';if(window.matchMedia&&'IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.className+=' gs-motion';</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to the page</a>
@@ -147,7 +149,7 @@
             <ul class="dots">
               <li>Their <span class="kf">Known For</span> Story</li>
               <li>Their LinkedIn</li>
-              <li>Their ExecutiveOS</li>
+              <li>Their <a class="xos-link" href="../executiveos/" style="color:inherit;font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px">ExecutiveOS</a></li>
             </ul>
           </div>
           <div>
@@ -161,6 +163,23 @@
         <p style="font-size:17px"><span class="kf">Known For</span> Website and Look stay with programs a leader pays for personally.</p>
       </article>
     </div>
+  </div>
+</section>
+
+<section class="sec band-dark dark eos" id="executiveos" aria-labelledby="eos-h">
+  <div class="wrap">
+    <div class="eos-head">
+      <p class="label">ExecutiveOS · For a cohort, or one leader</p>
+      <h2 id="eos-h">Most leaders use AI <em>one chat at a time</em>. Yours won’t have to.</h2>
+      <p class="eos-lead">An ExecutiveOS remembers your leader’s story, their voice and the work in front of them. So every draft starts sounding like them, instead of starting from nothing.</p>
+      <p class="eos-say">A chatbot forgets you the moment you close the tab. An ExecutiveOS doesn’t.</p>
+      <p class="eos-more"><a class="btn" href="../executiveos/">See ExecutiveOS for companies</a></p>
+    </div>
+    <ol class="eos-points">
+      <li><span class="n" aria-hidden="true">1</span><div><h3>Built inside the AI tools you already approve.</h3><p>Copilot, Claude, Gemini or ChatGPT. Your company’s AI and data policies come first.</p></div></li>
+      <li><span class="n" aria-hidden="true">2</span><div><h3>Built around what takes too much of their time.</h3><p>We start there. Your leader sets the priorities, I build it for them, and we test it before they rely on it.</p></div></li>
+      <li><span class="n" aria-hidden="true">3</span><div><h3>They set the direction. It does the first pass.</h3><p>Hours back, every week.</p></div></li>
+    </ol>
   </div>
 </section>
 
@@ -205,14 +224,12 @@
         <li>Real numbers only. The before is the baseline, and the after is the proof.</li>
       </ul>
     </div>
-    <div class="carry"><p class="display">When your team can repeat your story, they can <em>carry</em> it.</p></div>
   </div>
 </section>
 
-<section class="sec trust band-candy" aria-label="Trust">
+<section class="sec band-candy carry-band" aria-label="Why the story matters to the team">
   <div class="wrap">
-    <p class="display">I earn trust, and then I <em>protect</em> it.</p>
-    <p>I never name clients.</p>
+    <div class="carry"><p class="display">When your team can repeat your story, they can <em>carry</em> it.</p></div>
   </div>
 </section><div style="height:var(--section)"></div>
 <section class="close" aria-labelledby="close-h">
@@ -231,17 +248,18 @@
 <footer class="site-foot">
   <div class="wrap">
     <a class="logo" href="../" aria-label="The Gallitano Studio, home"><span class="wm"><svg class="lead" viewBox="18 4 190 190" aria-hidden="true" focusable="false"><circle class="s" cx="100" cy="42" r="14"/><circle class="s" cx="147" cy="61" r="14"/><circle class="s" cx="166" cy="108" r="14"/><circle class="s" cx="147" cy="155" r="14"/><circle class="s" cx="100" cy="174" r="14"/><circle class="s" cx="53" cy="155" r="14"/><circle class="l" cx="34" cy="108" r="24"/><circle class="m" cx="56" cy="62" r="18"/><circle class="r" cx="174" cy="30" r="17"/></svg><span class="txt">The Gallitano Stud<span class="i">ı</span><svg class="om" viewBox="14 22 184 172" aria-hidden="true" focusable="false"><circle class="s" cx="100" cy="42" r="17"/><circle class="s" cx="53" cy="61" r="17"/><circle class="s" cx="34" cy="108" r="17"/><circle class="s" cx="53" cy="155" r="17"/><circle class="s" cx="100" cy="174" r="17"/><circle class="s" cx="147" cy="155" r="17"/><circle class="l" cx="166" cy="108" r="28"/><circle class="m" cx="141" cy="61" r="22"/></svg></span></span></a>
-    <nav class="foot-nav" aria-label="Footer"><a href="../work-with-me/">Work with me</a><a href="../for-companies/">For companies</a><a href="../about/">About</a><a href="../book/">Book</a></nav>
+    <nav class="foot-nav" aria-label="Footer"><a href="../work-with-me/">Work with me</a><a href="../for-companies/">For companies</a><a href="../executiveos/">ExecutiveOS</a><a href="../about/">About</a><a href="../book/">Book</a></nav>
     <div class="foot-meta"><span class="label">Executive story and presence advisory</span><span>Huntsville · Madison, Alabama</span></div>
   </div>
 </footer>
 <div class="sheet-scrim" id="menu-scrim" hidden></div>
 <div class="sheet" id="menu-sheet" role="dialog" aria-modal="true" aria-label="Menu" hidden>
   <div class="sheet-top"><span class="label">Menu</span><button class="sheet-close" type="button" aria-label="Close menu"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg></button></div>
-  <nav aria-label="Pages"><a href="../">Home</a><a href="../work-with-me/">Work with me</a><a href="../for-companies/" aria-current="page">For companies</a><a href="../about/">About</a><a href="../book/">Book</a></nav>
+  <nav aria-label="Pages"><a href="../">Home</a><a href="../work-with-me/">Work with me</a><a href="../for-companies/" aria-current="page">For companies</a><a href="../executiveos/">ExecutiveOS</a><a href="../about/">About</a><a href="../book/">Book</a></nav>
   <div class="ctas"><a class="btn" href="../book/">Book a 20-minute conversation</a><a class="ref" href="../book/#referred">Referred? Start here.</a></div>
 </div>
 <script src="../config.js"></script>
 <script src="../js/site.js?v=1011c"></script>
+<script src="../js/motion.js?v=1011h"></script>
 </body>
 </html>

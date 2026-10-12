@@ -1,0 +1,39 @@
+/* Oct 11, 2026 (night): For companies only.
+   1. "When your team can repeat your story, they can carry it." sits in the lilac band, where the trust line used to be.
+   2. ExecutiveOS gets its own band, right under the two offers. */
+.carry-band{position:relative;overflow:hidden}
+.carry-band>.wrap{position:relative;z-index:1}
+.carry-band .carry{margin-top:0}
+.carry-band .carry .display{font-size:clamp(2.1rem,4.8vw,4.6rem);line-height:1.04;max-width:18ch}
+.carry-band .carry .display em{color:var(--violet);font-style:normal}
+.carry-band::before,.carry-band::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.carry-band::before{width:320px;height:320px;background:var(--purple);right:-180px;bottom:-190px}
+.carry-band::after{width:120px;height:120px;background:var(--violet);left:-55px;top:-55px}
+@media (max-width:860px){.carry-band::after{display:none}.carry-band::before{width:200px;height:200px;right:-120px;bottom:-130px}}
+
+/* ---------- ExecutiveOS ---------- */
+.eos{position:relative;overflow:hidden;margin-bottom:var(--section)}
+.eos>.wrap{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,6vw,96px);align-items:start}
+.eos .label{color:var(--lilac);margin:0 0 20px}
+.eos h2{font-size:clamp(2.1rem,4vw,3.9rem);line-height:1.04;letter-spacing:-.025em;margin:0;color:#fff;max-width:15ch}
+.eos h2 em{font-style:normal;color:var(--lilac)}
+.eos .eos-lead{margin:28px 0 0;font-size:clamp(1.15rem,1.5vw,1.4rem);line-height:1.5;color:var(--linen);max-width:34ch}
+.eos .eos-say{margin:28px 0 0;padding:18px 22px;border:1.5px solid rgba(205,189,246,.55);border-radius:var(--r-card);color:var(--lilac);font-weight:500;font-size:clamp(1.05rem,1.3vw,1.2rem);line-height:1.4;max-width:36ch}
+.eos-points{list-style:none;margin:0;padding:0;display:grid}
+.eos-points li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;padding:26px 0;border-top:1px solid var(--hairline-dark)}
+.eos-points li:last-child{border-bottom:1px solid var(--hairline-dark)}
+.eos-points .n{width:44px;height:44px;border-radius:50%;background:var(--violet);color:#fff;display:grid;place-items:center;font-weight:600;font-size:18px}
+.eos-points h3{margin:0;font-size:clamp(1.25rem,1.7vw,1.6rem);line-height:1.2;color:#fff}
+.eos-points p{margin:8px 0 0;color:var(--linen);font-size:clamp(1rem,1.2vw,1.15rem);line-height:1.5}
+.eos::before,.eos::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.eos::before{width:420px;height:420px;background:var(--violet);right:-240px;top:-250px}
+.eos::after{width:130px;height:130px;background:var(--purple);left:-60px;bottom:-60px}
+@media (max-width:860px){
+  .eos>.wrap{grid-template-columns:minmax(0,1fr);gap:28px}
+  .eos::after{display:none}
+  .eos::before{width:220px;height:220px;right:-140px;top:-140px}
+  .eos-points li{gap:14px;padding:20px 0}
+  .eos-points .n{width:36px;height:36px;font-size:16px}
+}
+.eos .eos-more{margin:28px 0 0}
+.eos .eos-more .btn{background:var(--lilac);color:var(--seaweed)}

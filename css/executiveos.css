@@ -1,0 +1,121 @@
+/* The Gallitano Studio · Oct 11, 2026 (night): the ExecutiveOS page (/executiveos/). Loaded on that page only. */
+
+/* hero */
+.xos-hero{position:relative;overflow:hidden}
+.xos-hero>.wrap{position:relative;z-index:1}
+.xos-hero::before,.xos-hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.xos-hero::before{width:520px;height:520px;background:var(--violet);right:-150px;top:-170px}
+.xos-hero::after{width:190px;height:190px;background:var(--lilac);right:170px;top:190px}
+@media (min-width:861px){.xos-hero .hero-text{max-width:66%}}
+.xos-hero h1 em{font-style:normal;color:var(--violet)}
+
+/* why this matters */
+.xos-why{position:relative;overflow:hidden;color:var(--linen)}
+.xos-why>.wrap{position:relative;z-index:1}
+.xos-why .label{color:var(--lilac)}
+.xos-why h2{color:#fff}
+.xos-why-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px);align-items:start;margin-top:8px}
+.xos-why .stat-big b{display:block;font-size:clamp(4.5rem,10vw,9rem);line-height:.9;letter-spacing:-.04em;font-weight:600;color:var(--lilac)}
+.xos-why .stat-big p{margin:18px 0 0;color:#fff;font-size:clamp(1.05rem,1.3vw,1.25rem);line-height:1.45;max-width:30ch}
+.xos-truth .display{margin:0;color:#fff;font-size:clamp(1.9rem,3.4vw,3.3rem);line-height:1.06;letter-spacing:-.025em;font-weight:600;max-width:19ch}
+.xos-truth .display em{font-style:normal;color:var(--lilac)}
+.xos-truth .after{margin:24px 0 0;font-size:clamp(1.15rem,1.5vw,1.4rem);color:var(--linen)}
+.xos-why::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:#6A51CC;right:-140px;bottom:-170px;pointer-events:none}
+
+/* two ways */
+.xos-offers{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:24px;align-items:stretch}
+.xos-offers .card{padding:44px;display:flex;flex-direction:column;gap:18px}
+.xos-offers h3{font-size:clamp(2rem,3.4vw,3.1rem);line-height:1.02;letter-spacing:-.025em;margin:0}
+.xos-offers .sub{font-weight:600;font-size:clamp(1.3rem,1.9vw,1.65rem);line-height:1.2;margin:0}
+.xos-offers .card p{margin:0}
+.xos-offers .xos-lead .label{color:var(--lilac)}
+.xos-offers .xos-lead .chips{margin-top:auto;padding-top:8px}
+.xos-offers .xos-one{background:#EDE7FB;border-color:transparent}
+.xos-offers .xos-one .label{color:var(--violet)}
+.xos-self{margin:28px 0 0;font-size:17px}
+.xos-ways .tlink,.xos-self .tlink{color:var(--violet);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+/* four parts */
+.xos-parts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.xos-parts li{background:var(--linen);border:1px solid var(--hairline);border-radius:var(--r-card);padding:28px;display:grid;gap:14px;align-content:start}
+.xos-parts li:nth-child(2){background:var(--violet);border-color:transparent;color:var(--linen)}
+.xos-parts li:nth-child(4){background:var(--seaweed);border-color:transparent;color:var(--linen)}
+.xos-parts .k{font-weight:600;font-size:clamp(1.25rem,1.6vw,1.5rem);line-height:1.15;letter-spacing:-.015em}
+.xos-parts li:nth-child(2) .k,.xos-parts li:nth-child(4) .k{color:#fff}
+.xos-parts p{margin:0;font-size:17px;line-height:1.5}
+.xos-say{margin:32px 0 0;font-size:clamp(1.4rem,2.4vw,2.2rem);line-height:1.15;letter-spacing:-.02em;font-weight:600;max-width:26ch;color:var(--seaweed)}
+
+/* how I build it */
+.xos-how{position:relative;overflow:hidden}
+.xos-how>.wrap{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px);align-items:start}
+.xos-how h2{font-size:clamp(2.1rem,4vw,3.8rem);line-height:1.04;margin:14px 0 0;max-width:13ch}
+.xos-how h2 em{font-style:normal;color:var(--violet)}
+.xos-how-head p:not(.label){margin:24px 0 0;font-size:clamp(1.1rem,1.4vw,1.3rem);max-width:30ch}
+.xos-steps{list-style:none;margin:0;padding:0;display:grid}
+.xos-steps li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;padding:24px 0;border-top:1px solid rgba(43,13,3,.3)}
+.xos-steps li:last-child{border-bottom:1px solid rgba(43,13,3,.3)}
+.xos-steps .n{width:44px;height:44px;border-radius:50%;background:var(--violet);color:#fff;display:grid;place-items:center;font-weight:600;font-size:18px}
+.xos-steps h3{margin:0;font-size:clamp(1.3rem,1.8vw,1.7rem);line-height:1.15}
+.xos-steps p{margin:6px 0 0;font-size:17px}
+.xos-how::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:var(--purple);left:-190px;bottom:-190px;pointer-events:none}
+
+/* the business case */
+.xos-qa{margin:0;border-top:1.5px solid var(--seaweed)}
+.xos-qa>div{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,4vw,64px);padding:32px 0;border-bottom:1px solid var(--hairline)}
+.xos-qa dt{font-weight:600;font-size:clamp(1.25rem,1.8vw,1.65rem);line-height:1.2;letter-spacing:-.015em;color:var(--seaweed)}
+.xos-qa dd{margin:0;display:grid;gap:12px}
+.xos-qa dd p{margin:0;font-size:clamp(1.05rem,1.25vw,1.2rem);line-height:1.55;max-width:60ch}
+.xos-case-foot{margin-top:36px;display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between}
+.xos-case-foot p{margin:0;font-weight:600;font-size:clamp(1.2rem,1.6vw,1.5rem)}
+
+/* your policies come first */
+.xos-guard{position:relative;overflow:hidden}
+.xos-guard>.wrap{position:relative;z-index:1}
+.xos-guard h2{color:#fff;font-size:clamp(2.2rem,4.4vw,4.2rem);line-height:1.02;margin:0 0 40px}
+.xos-guard h2 em{font-style:normal;color:var(--lilac)}
+.xos-guards{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,48px)}
+.xos-guards li{border-top:1px solid var(--hairline-dark);padding-top:22px}
+.xos-guards h3{margin:0;color:#fff;font-size:clamp(1.25rem,1.7vw,1.6rem);line-height:1.2}
+.xos-guards p{margin:10px 0 0;color:var(--linen);font-size:17px;line-height:1.5}
+.xos-guard::before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:var(--violet);right:-150px;top:-180px;pointer-events:none}
+
+/* who you're working with */
+.xos-who .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px);align-items:start}
+.xos-who h2{font-size:clamp(2rem,3.6vw,3.4rem);line-height:1.04;margin:14px 0 0;max-width:14ch}
+.xos-who h2 em{font-style:normal;color:var(--violet)}
+.xos-who .body{display:grid;gap:16px}
+.xos-who .body p{margin:0;font-size:clamp(1.1rem,1.4vw,1.3rem);line-height:1.5;max-width:52ch}
+.xos-who .badge-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.xos-who .badge-row>span{border:1px solid var(--hairline)}
+
+/* questions (same component as Work with me) */
+.faq-list{border-bottom:1px solid var(--hairline)}
+.faq-item{border-top:1px solid var(--hairline)}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 0}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary h3{font-size:1.35rem;margin:0}
+.faq-item summary:focus-visible{outline:3px solid var(--deep-lavender);outline-offset:4px;border-radius:8px}
+.faq-mark{flex:none;width:28px;height:28px;border-radius:50%;border:1px solid var(--violet);position:relative}
+.faq-mark::before,.faq-mark::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--seaweed);transform:translate(-50%,-50%)}
+.faq-mark::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq-item[open] .faq-mark::after{transform:translate(-50%,-50%) rotate(0deg)}
+.faq-item p{max-width:62ch;padding:0 0 28px;margin:0}
+@media (prefers-reduced-motion:no-preference){.faq-mark::after{transition:transform .2s ease}}
+
+@media (max-width:1100px){.xos-parts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){
+  .xos-hero::before,.xos-hero::after,.xos-how::after{display:none}
+  .xos-why-grid,.xos-offers,.xos-how>.wrap,.xos-qa>div,.xos-guards,.xos-who .wrap{grid-template-columns:minmax(0,1fr)}
+  .xos-why-grid{gap:36px}
+  .xos-offers{gap:12px}
+  .xos-offers .card{padding:26px 22px}
+  .xos-parts{grid-template-columns:minmax(0,1fr);gap:10px}
+  .xos-parts li{padding:22px}
+  .xos-qa>div{gap:12px;padding:24px 0}
+  .xos-guards{gap:0}
+  .xos-guards li{padding:20px 0}
+  .xos-steps li{gap:14px;padding:20px 0}
+  .xos-steps .n{width:36px;height:36px;font-size:16px}
+  .xos-case-foot{flex-direction:column;align-items:stretch}
+  .faq-item summary h3{font-size:1.15rem}.faq-item summary{padding:20px 0}
+}

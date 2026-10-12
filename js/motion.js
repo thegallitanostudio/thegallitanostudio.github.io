@@ -73,7 +73,7 @@
   }
   function playWords(el, n) {
     el.className += ' gw-on';
-    setTimeout(function () { el.className += ' gw-done'; }, 1100 + n * 42);
+    setTimeout(function () { el.className += ' gw-done'; }, 1500 + n * 30);
   }
 
   var h1 = doc.querySelector('main h1');
@@ -137,12 +137,12 @@
     each(batch, function (el, i) {
       io.unobserve(el);
       if (el._gw) { playWords(el, el._gw); return; }
-      el.style.setProperty('--d', Math.min(i, 5) * 90 + 'ms');
+      el.style.setProperty('--d', Math.min(i, 5) * 110 + 'ms');
       el.className += ' rv-in';
       setTimeout(function () {
         el.className = el.className.replace(' rv-in', '').replace(/(^|\s)rv(?=\s|$)/, '').replace(/^\s+/, '');
         el.style.removeProperty('--d');
-      }, 1700 + Math.min(i, 5) * 90);
+      }, 2200 + Math.min(i, 5) * 110);
     });
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
   each(targets, function (el) {
@@ -184,7 +184,7 @@
       each(entries, function (en) {
         if (!en.isIntersecting) return;
         var b = en.target; no.unobserve(b);
-        var t0 = null, dur = 1400;
+        var t0 = null, dur = 1900;
         b.style.minWidth = b.getBoundingClientRect().width + 'px'; b.style.display = 'inline-block';
         var step = function (t) {
           if (t0 === null) t0 = t;
@@ -206,7 +206,7 @@
     doc.body.appendChild(dot);
     var cx = 0, cy = 0, tx = 0, ty = 0, started = false, moving = false;
     var follow = function () {
-      cx = lerp(cx, tx, 0.22); cy = lerp(cy, ty, 0.22);
+      cx = lerp(cx, tx, 0.15); cy = lerp(cy, ty, 0.15);
       dot.style.transform = 'translate3d(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px,0)';
       if (Math.abs(cx - tx) > 0.2 || Math.abs(cy - ty) > 0.2) win.requestAnimationFrame(follow); else moving = false;
     };
@@ -238,6 +238,22 @@
       });
       c.addEventListener('mouseleave', function () { c.style.transform = ''; });
     });
+  }
+
+  /* ---- pages ease out before the next one loads, where the browser has no page-to-page transition of its own ---- */
+  if (!('CSSViewTransitionRule' in win)) {
+    doc.addEventListener('click', function (e) {
+      if (e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a || a.target || a.hasAttribute('download')) return;
+      var href = a.getAttribute('href');
+      if (!href || /^(#|mailto:|tel:|sms:|javascript:)/i.test(href)) return;
+      if (a.host !== location.host || (a.pathname === location.pathname && a.hash)) return;
+      e.preventDefault();
+      root.className += ' gs-leaving';
+      setTimeout(function () { location.href = a.href; }, 280);
+    });
+    win.addEventListener('pageshow', function () { root.className = root.className.replace(/ gs-leaving/g, ''); });
   }
 
   /* ================= 4. Home: the circles ================= */
@@ -276,12 +292,12 @@
   /* shared: spring each circle toward where it belongs, and let the pointer push it aside */
   function physics(list, px, py, dt, reach) {
     each(list, function (c) {
-      var ax = (c.tx - c.x) * 0.045, ay = (c.ty - c.y) * 0.045;
+      var ax = (c.tx - c.x) * 0.026, ay = (c.ty - c.y) * 0.026;
       if (pointer.on) {
         var dx = c.x - px, dy = c.y - py, d = Math.sqrt(dx * dx + dy * dy) || 1, R = c.r + reach;
-        if (d < R) { var f = (1 - d / R); f = f * f * 2.6 / c.mass; ax += dx / d * f; ay += dy / d * f; }
+        if (d < R) { var f = (1 - d / R); f = f * f * 1.5 / c.mass; ax += dx / d * f; ay += dy / d * f; }
       }
-      c.vx = (c.vx + ax * dt) * Math.pow(0.86, dt); c.vy = (c.vy + ay * dt) * Math.pow(0.86, dt);
+      c.vx = (c.vx + ax * dt) * Math.pow(0.8, dt); c.vy = (c.vy + ay * dt) * Math.pow(0.8, dt);
       c.x += c.vx * dt; c.y += c.vy * dt;
     });
   }
@@ -346,7 +362,7 @@
       mx = lerp(mx, gx, 0.06 * dt); my = lerp(my, gy, 0.06 * dt);
       var scrolled = clamp(-hr.top, 0, H);
       each(live, function (c) {
-        var age = (t - born - c.i * 90) / 900;
+        var age = (t - born - c.i * 110) / 1400;
         c.s = age <= 0 ? 0 : age >= 1 ? 1 : 1 - Math.pow(1 - age, 4);
         c.tx = c.hx + Math.sin(t / 2300 + c.phase) * 7 * c.depth - mx * 46 * c.depth;
         c.ty = c.hy + Math.cos(t / 2900 + c.phase * 1.3) * 9 * c.depth - my * 34 * c.depth - scrolled * 0.16 * c.depth;
@@ -360,7 +376,7 @@
     hero.addEventListener('pointerdown', function (e) {
       var hr = hero.getBoundingClientRect(), x = e.clientX - hr.left, y = e.clientY - hr.top;
       each(live, function (c) {
-        var dx = c.x - x, dy = c.y - y, d = Math.sqrt(dx * dx + dy * dy) || 1, f = clamp(1 - d / 520, 0, 1) * 16 / c.mass;
+        var dx = c.x - x, dy = c.y - y, d = Math.sqrt(dx * dx + dy * dy) || 1, f = clamp(1 - d / 520, 0, 1) * 11 / c.mass;
         c.vx += dx / d * f; c.vy += dy / d * f;
       });
     }, { passive: true });
@@ -397,7 +413,7 @@
     whileVisible(sec, function (dt, t) {
       var sr = sec.getBoundingClientRect(), view = vh();
       var want = clamp((view * 0.78 - sr.top) / (view * 0.62), 0, 1);
-      prog = lerp(prog, want, 1 - Math.pow(0.9, dt));
+      prog = lerp(prog, want, 1 - Math.pow(0.94, dt));
       var br = box.getBoundingClientRect();
       if (Math.abs(br.width - W) > 1) size();
       var px = (pointer.x - br.left) / k, py = (pointer.y - br.top) / k;
