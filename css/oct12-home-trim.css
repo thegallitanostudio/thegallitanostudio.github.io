@@ -1,0 +1,5 @@
+/* The Gallitano Studio · Oct 12, 2026 (evening): Home trim.
+   Loaded after oct12-fixes.css and before motion.css, on Home only. New rules only.
+   The credential bar on Home carries three employer tiles; 350+ and 125+ now appear once, in the proof band. */
+.credbar.three li:nth-child(3){background:var(--pistachio);color:var(--ink)}
+.credbar.three p{font-size:17px}
