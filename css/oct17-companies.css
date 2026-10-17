@@ -58,3 +58,7 @@
 .one-offer .cols3 ul.dots{margin:0}
 .one-offer .offer-next{margin-top:18px}
 @media (max-width:900px){.one-offer .card.big{padding:30px 24px}.one-offer .cols3{grid-template-columns:1fr;gap:22px}}
+/* business case: six stats */
+.statrow.six{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:1180px){.statrow.six{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.statrow.six{grid-template-columns:minmax(0,1fr)}}
