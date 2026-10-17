@@ -1,0 +1,12 @@
+/* Oct 17, 2026: the employer marks are the companies' own logo files (assets/logo-linkedin.svg, logo-gartner.svg, logo-salesforce.svg, taken from linkedin.com, gartner.com and salesforce.com), shown as-is on the white badge. Loads after oct17-pill.css, before motion.css, on every page with a badge. Changes no older rule. */
+.li-badge img,.sf-badge img,.g-badge img{display:block;width:auto;flex:none}
+.li-badge img{height:22px}
+.li-badge.sm img{height:17px}
+.g-badge img{height:22px}
+.g-badge.sm img{height:16px}
+.sf-badge img{height:38px}
+.sf-badge.sm img{height:32px}
+.li-badge,.sf-badge{padding:9px 14px}
+.li-badge.sm,.sf-badge.sm,.g-badge.sm{padding:7px 12px;min-height:34px;box-sizing:border-box}
+.sf-badge.sm{padding:1px 12px}
+.badge-cap{font-weight:600}
