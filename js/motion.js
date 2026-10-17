@@ -317,7 +317,7 @@
     /* positions are fractions of the portrait box: fx and r of its width, fy of its height (ry adds a share of the width) */
     var defs = [
       { fx: 0.18, fy: -0.02, ry: 0.26, r: 0.26, color: C.purple, layer: 0, depth: 0.35 },   /* the big one behind her shoulder */
-      { fx: 0.82, fy: 0.20, ry: 0, r: 0.17, color: C.lilac, layer: 0, depth: 0.55 },
+      { fx: 0.99, fy: 0.58, ry: 0, r: 0.15, color: C.lilac, layer: 0, depth: 0.55 },   /* Oct 17: moved down and right, off her head */
       { fx: 0.94, fy: 0.94, ry: -0.12, r: 0.12, color: C.purple, layer: 1, depth: 0.9 },    /* in front, lower right */
       { fx: 0.028, fy: 0.86, ry: 0, r: 0.026, color: C.violet, layer: 1, depth: 1.2 },
       { fx: -0.17, fy: 0.25, ry: 0, r: 0.05, color: C.lilac, layer: 0, depth: 0.8, wide: true },

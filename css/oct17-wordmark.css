@@ -1,0 +1,3 @@
+/* Oct 17, 2026: the wordmark. The visible letters are drawn from data-wm and a pseudo-element, so the only text in the page is the real name "The Gallitano Studio" (visually hidden). Copy-paste, crawlers and AI readers now see the name spelled right; the dotless i with the raspberry dot still shows exactly as before. Loads after oct17.css, before motion.css, on every page. Changes no older rule. */
+.wm .txt::before{content:attr(data-wm)}
+.wm .i::before{content:"\0131"}

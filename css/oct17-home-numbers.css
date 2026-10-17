@@ -1,0 +1,15 @@
+/* Oct 17, 2026 · Home only. Loaded after oct17-wordmark.css, before motion.css.
+   1. The proof band now carries three numbers (the "100 sessions" line came off Home), so the
+      grid is three columns instead of four. On phones the third number spans the row so no
+      cell is left empty.
+   2. Motion-off fallback: the lilac circle that site.css paints behind the top right of the
+      portrait sat behind her head. Moved into the open corner beside it. With motion on,
+      js/motion.js draws the circles and this background is turned off by motion.css. */
+section[aria-label="Proof"] .proof{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:860px){
+  section[aria-label="Proof"] .proof{grid-template-columns:repeat(2,minmax(0,1fr))}
+  section[aria-label="Proof"] .proof li:nth-child(3){grid-column:1 / -1}
+}
+.home-hero .hero-photo{background:
+  radial-gradient(ellipse 9% 7.2% at 90% 11%,var(--lilac) 98%,transparent 100%),
+  radial-gradient(ellipse 2.6% 2.08% at 2.8% 86%,var(--violet) 96%,transparent 100%)}
