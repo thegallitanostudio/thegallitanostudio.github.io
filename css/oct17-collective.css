@@ -1,0 +1,68 @@
+/* Oct 17, 2026: For companies only. The "After the Collective" callout, the five "What you leave with" cards as one set, and the compact stat tiles (rings) in the violet band. Loads after oct17-pill.css, before motion.css, on For companies only. Changes no older rule. */
+
+/* ---- What you leave with: five cards, one set ---- */
+.leave5 li{border:1px solid rgba(43,13,3,.28);padding:30px 32px}
+.leave5 li.wide{border-color:var(--lilac,#CDBDF6)}
+
+/* ---- After the Collective: a bordered callout between the cards and How it runs ---- */
+.after-col{margin:18px 0 0;border:1px solid var(--violet,#5B41C0);border-radius:var(--r-card,22px);padding:26px 32px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:10px 40px;align-items:baseline;background:transparent}
+.after-col .label{grid-column:1 / -1;margin:0 0 2px;color:var(--violet,#5B41C0)}
+.after-col h3{margin:0;font-size:clamp(1.3rem,1.8vw,1.7rem);line-height:1.12;letter-spacing:-.02em;color:var(--seaweed,#2B0D03)}
+.after-col p:not(.label){margin:0;font-size:1.02rem;line-height:1.5;color:var(--seaweed,#2B0D03)}
+@media (max-width:900px){
+  .leave5 li{padding:26px 24px}
+  .after-col{grid-template-columns:1fr;padding:24px 22px;gap:8px}
+}
+
+/* ---- The stats band: five ring tiles in a row, one detail panel ---- */
+.stat-ringwrap{margin-top:8px}
+.stat-ring{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.stat-ring li{min-width:0}
+.stat-tile{display:grid;justify-items:center;gap:10px;width:100%;margin:0;padding:18px 10px 16px;background:transparent;border:1px solid rgba(226,226,205,.35);border-radius:var(--r-card,22px);color:var(--linen,#E2E2CD);font:inherit;font-family:var(--sans);text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.stat-tile:hover{border-color:rgba(205,189,246,.8)}
+.stat-tile:focus-visible{outline:2px solid var(--lilac,#CDBDF6);outline-offset:3px}
+.stat-tile[aria-expanded="true"]{border-color:var(--lilac,#CDBDF6);background:rgba(43,13,3,.14)}
+.stat-tile .ring{position:relative;width:clamp(96px,9vw,124px);aspect-ratio:1;display:grid;place-items:center}
+.stat-tile .ring svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.stat-tile .ring circle{fill:none;stroke-width:6}
+.stat-tile .ring .track{stroke:rgba(226,226,205,.22)}
+.stat-tile .ring .fill{stroke:var(--lilac,#CDBDF6);stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:var(--off,100)}
+.stat-tile .ring b{position:relative;font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,2.3vw,2.3rem);line-height:1;letter-spacing:-.03em;color:var(--lilac,#CDBDF6);font-variant-numeric:tabular-nums}
+.stat-tile .ring b small{font-size:.55em;letter-spacing:0;font-weight:500;margin-left:1px}
+.stat-tile .cap{font-size:.92rem;line-height:1.3;color:var(--linen,#E2E2CD);max-width:16ch;text-wrap:balance}
+.stat-tile[aria-expanded="true"] .cap{color:#fff}
+
+/* Ring motion: from empty to the value when the band scrolls in (class added by js/oct17-stats.js). Scripts off: final state. */
+.js .stat-ring:not(.in) .fill{stroke-dashoffset:100}
+.js .stat-ring.in .fill{animation:stat-ring-fill 1.4s cubic-bezier(.22,1,.36,1) both;animation-delay:calc(var(--i,0)*90ms)}
+@keyframes stat-ring-fill{from{stroke-dashoffset:100}to{stroke-dashoffset:var(--off,100)}}
+@media (prefers-reduced-motion:reduce){
+  .js .stat-ring:not(.in) .fill,.js .stat-ring.in .fill{animation:none;stroke-dashoffset:var(--off,100)}
+}
+
+/* The Gartner panel sits closer under the tiles now that the row is short. */
+.band-vio .stat-ringwrap+.cite-panel{margin-top:40px}
+
+/* The detail panels: all five readable with scripts off; with scripts on, only the open one. */
+.stat-panels{margin-top:14px;border:1px solid rgba(226,226,205,.35);border-radius:var(--r-card,22px);padding:6px 26px}
+.stat-panel{padding:16px 0;border-top:1px solid rgba(226,226,205,.22)}
+.stat-panel:first-child{border-top:0}
+.stat-panel p{margin:0;font-size:clamp(1.05rem,1.35vw,1.25rem);line-height:1.4;color:#fff;max-width:70ch;text-wrap:pretty}
+.stat-panel .pn{color:var(--lilac,#CDBDF6);font-weight:600;font-variant-numeric:tabular-nums}
+.stat-panel .src{display:block;margin-top:6px}
+.stat-panels.one .stat-panel{display:none;border-top:0}
+.stat-panels.one .stat-panel.open{display:block}
+
+@media (max-width:1100px){
+  .stat-ring{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .stat-tile .ring{width:clamp(100px,14vw,124px)}
+}
+@media (max-width:640px){
+  .stat-ring{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .stat-tile{padding:14px 8px 12px;gap:8px}
+  .stat-tile .ring{width:92px}
+  .stat-tile .ring b{font-size:1.6rem}
+  .stat-tile .cap{font-size:.86rem}
+  .stat-panels{padding:4px 18px}
+  .stat-panel p{font-size:1.02rem}
+}

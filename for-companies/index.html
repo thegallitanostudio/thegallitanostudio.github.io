@@ -31,6 +31,8 @@
 <link rel="stylesheet" href="../css/oct12-voice.css?v=1012v">
 <link rel="stylesheet" href="../css/oct17.css?v=1017a">
 <link rel="stylesheet" href="../css/oct17-wordmark.css?v=1017w">
+<link rel="stylesheet" href="../css/oct17-pill.css?v=1017p">
+<link rel="stylesheet" href="../css/oct17-collective.css?v=1017c">
 <link rel="stylesheet" href="../css/oct17-moments.css?v=1017m">
 <link rel="stylesheet" href="../css/oct17-companies.css?v=1017a">
 <link rel="stylesheet" href="../css/motion.css?v=1011j">
@@ -101,7 +103,7 @@
    "name": "Who do you answer to?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Two people: your leader, and you. Your leader’s conversations stay with me."
+    "text": "The person investing, the outcome they’re paying for, and the goals of the executive in the room. Your executive’s conversations stay with me."
    }
   },
   {
@@ -250,29 +252,56 @@
 <h2 id="stats-h">What’s already happening.</h2>
 <p class="v12-eq-lead"><mark>Digital presence is equity.</mark> Reputation is not vanity. Investors, boards and candidates look you up before they commit.</p>
 </div>
-    <div class="stat-lead">
-      <div class="stat-big">
-        <b>10%</b>
-        <p>Just 10% of board directors say the new CEO is already fully connected to and trusted by the board.<span class="src"><a href="https://www.kornferry.com/about-us/press/new-korn-ferry-study-finds-ceo-transitions-are-outpacing-succession-readiness" rel="noopener">Korn Ferry</a>&nbsp;· CEO &amp; Board Survey&nbsp;· July 2026</span></p>
+    <div class="stat-ringwrap">
+    <ul class="stat-ring">
+      <li>
+        <button type="button" class="stat-tile" id="stat-b1" aria-expanded="true" aria-controls="stat-p1" style="--pct:10;--off:90">
+          <span class="ring" aria-hidden="true"><svg viewBox="0 0 100 100" focusable="false"><circle class="track" cx="50" cy="50" r="44"/><circle class="fill" cx="50" cy="50" r="44" pathLength="100"/></svg><b>10<small>%</small></b></span>
+          <span class="cap">boards fully trust the new CEO</span>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="stat-tile" id="stat-b2" aria-expanded="false" aria-controls="stat-p2" style="--pct:15;--off:85">
+          <span class="ring" aria-hidden="true"><svg viewBox="0 0 100 100" focusable="false"><circle class="track" cx="50" cy="50" r="44"/><circle class="fill" cx="50" cy="50" r="44" pathLength="100"/></svg><b>15<small>%</small></b></span>
+          <span class="cap">first-time CEOs strongly prepared</span>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="stat-tile" id="stat-b3" aria-expanded="false" aria-controls="stat-p3" style="--pct:14;--off:86">
+          <span class="ring" aria-hidden="true"><svg viewBox="0 0 100 100" focusable="false"><circle class="track" cx="50" cy="50" r="44"/><circle class="fill" cx="50" cy="50" r="44" pathLength="100"/></svg><b>14<small>%</small></b></span>
+          <span class="cap">leaders consistently champion AI</span>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="stat-tile" id="stat-b4" aria-expanded="false" aria-controls="stat-p4" style="--pct:66;--off:34">
+          <span class="ring" aria-hidden="true"><svg viewBox="0 0 100 100" focusable="false"><circle class="track" cx="50" cy="50" r="44"/><circle class="fill" cx="50" cy="50" r="44" pathLength="100"/></svg><b>66<small>%</small></b></span>
+          <span class="cap">trust “my CEO” to do right</span>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="stat-tile" id="stat-b5" aria-expanded="false" aria-controls="stat-p5" style="--pct:76;--off:24">
+          <span class="ring" aria-hidden="true"><svg viewBox="0 0 100 100" focusable="false"><circle class="track" cx="50" cy="50" r="44"/><circle class="fill" cx="50" cy="50" r="44" pathLength="100"/></svg><b>76<small>%</small></b></span>
+          <span class="cap">investors would pay a trust premium</span>
+        </button>
+      </li>
+    </ul>
+    <div class="stat-panels">
+      <div class="stat-panel" id="stat-p1" role="region" aria-labelledby="stat-b1">
+        <p><b class="pn">10%</b> Just 10% of board directors say the new CEO is already fully connected to and trusted by the board.<span class="src"><a href="https://www.kornferry.com/about-us/press/new-korn-ferry-study-finds-ceo-transitions-are-outpacing-succession-readiness" rel="noopener">Korn Ferry</a>&nbsp;· CEO &amp; Board Survey&nbsp;· July 2026</span></p>
       </div>
-      <ul class="stats">
-        <li>
-<b>15%</b>
-<p>Only 15% of board members say their organization did a very strong job preparing its first-time CEO.<span class="src"><a href="https://www.kornferry.com/about-us/press/new-korn-ferry-study-finds-ceo-transitions-are-outpacing-succession-readiness" rel="noopener">Korn Ferry</a>&nbsp;· CEO &amp; Board Survey&nbsp;· July 2026</span></p>
-</li>
-        <li>
-<b>14%</b>
-<p>Only 14 percent of organizations see leaders consistently championing AI adoption and experimentation with clear strategies and action.<span class="src"><a href="https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-state-of-organizations" rel="noopener">McKinsey</a>&nbsp;· The State of Organizations&nbsp;· 2026</span></p>
-</li>
-        <li>
-<b>66%</b>
-<p>Trust is local: 66% trust “my CEO” to do what is right, against 54% for CEOs in general.<span class="src"><a href="https://www.edelman.com/sites/g/files/aatuss191/files/2026-04/2026%20Edelman%20Trust%20Barometer%20CEO%20Insights.pdf" rel="noopener">Edelman</a>&nbsp;· 2026 Trust Barometer, CEO Insights&nbsp;· 2026</span></p>
-</li>
-        <li>
-<b>76%</b>
-<p>of institutional investors would be likely to assign a valuation premium to a company led by a highly trusted and credible executive team.<span class="src"><a href="https://fticommunications.com/wp-content/uploads/2026/09/FTI-Consulting-Exeutive-Reputation-Priced-Prized-and-Easily-Lost-September-2026.pdf" rel="noopener">FTI Consulting</a>&nbsp;· Executive Reputation&nbsp;· Sept 2026</span></p>
-</li>
-      </ul>
+      <div class="stat-panel" id="stat-p2" role="region" aria-labelledby="stat-b2">
+        <p><b class="pn">15%</b> Only 15% of board members say their organization did a very strong job preparing its first-time CEO.<span class="src"><a href="https://www.kornferry.com/about-us/press/new-korn-ferry-study-finds-ceo-transitions-are-outpacing-succession-readiness" rel="noopener">Korn Ferry</a>&nbsp;· CEO &amp; Board Survey&nbsp;· July 2026</span></p>
+      </div>
+      <div class="stat-panel" id="stat-p3" role="region" aria-labelledby="stat-b3">
+        <p><b class="pn">14%</b> Only 14 percent of organizations see leaders consistently championing AI adoption and experimentation with clear strategies and action.<span class="src"><a href="https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-state-of-organizations" rel="noopener">McKinsey</a>&nbsp;· The State of Organizations&nbsp;· 2026</span></p>
+      </div>
+      <div class="stat-panel" id="stat-p4" role="region" aria-labelledby="stat-b4">
+        <p><b class="pn">66%</b> Trust is local: 66% trust “my CEO” to do what is right, against 54% for CEOs in general.<span class="src"><a href="https://www.edelman.com/sites/g/files/aatuss191/files/2026-04/2026%20Edelman%20Trust%20Barometer%20CEO%20Insights.pdf" rel="noopener">Edelman</a>&nbsp;· 2026 Trust Barometer, CEO Insights&nbsp;· 2026</span></p>
+      </div>
+      <div class="stat-panel" id="stat-p5" role="region" aria-labelledby="stat-b5">
+        <p><b class="pn">76%</b> of institutional investors would be likely to assign a valuation premium to a company led by a highly trusted and credible executive team.<span class="src"><a href="https://fticommunications.com/wp-content/uploads/2026/09/FTI-Consulting-Exeutive-Reputation-Priced-Prized-and-Easily-Lost-September-2026.pdf" rel="noopener">FTI Consulting</a>&nbsp;· Executive Reputation&nbsp;· Sept 2026</span></p>
+      </div>
+    </div>
     </div>
     <figure class="cite-panel">
       <div class="cite-num">
@@ -330,15 +359,20 @@
       <h2 id="col-h"><span class="kf">Known For</span> Leadership Collective</h2>
       <p class="lead">Each leader’s story, and the one your team tells together.</p>
     </div>
-    <p class="for-line">For the full leadership bench, or your own. A CHRO brings me in for her VPs, AVPs and directors. A CEO for the executive committee. Tightly curated cohorts see the best results. The format is yours to set: on-site or virtual, inside a leadership summit, an ELT offsite or a board retreat.</p>
+    <p class="for-line">For the full leadership bench, or your own. A CHRO brings me in for their VPs, AVPs and directors. A CEO for the executive committee. Tightly curated cohorts see the best results. On-site or virtual, inside the summit, offsite or board retreat already on your calendar.</p>
     <p class="label" style="margin-bottom:16px">What you leave with</p>
     <ol class="leave5">
       <li><span class="n">01</span><h3>A bespoke <span class="kf">Known For</span> Story for every executive.</h3><p>Who they are, how they lead, where they’re taking the enterprise. In their own words, built, tested and codified in structured 1:1 sessions.</p></li>
-      <li><span class="n">02</span><h3>Aligned public profiles across the entire bench.</h3><p>Every executive’s LinkedIn and market positioning rewritten in their own words, with the step-by-step playbook. One bench, one standard.</p></li>
-      <li class="wide"><span class="n">03</span><h3>A unified Collective Leadership Narrative.</h3><p>One story the whole bench can tell. Once every executive’s story is captured, I draft a few versions of the team’s, review and refine them with your facilitator and your executive committee, and hand it back. Every individual narrative reinforces it.</p></li>
+      <li><span class="n">02</span><h3>Aligned public profiles across the entire bench.</h3><p>Every executive’s LinkedIn and market positioning rewritten in their own words, with the playbook to keep it current. One bench, one standard.</p></li>
+      <li class="wide"><span class="n">03</span><h3>A unified Collective Leadership Narrative.</h3><p>One story the whole bench can tell. I write it from every executive’s story, refine it with your executive committee, and hand it back. Every individual narrative reinforces it.</p></li>
       <li><span class="n">04</span><h3>Your enterprise <span class="kf">Known For</span> Leadership Hub.</h3><p>The leadership page on your company’s site, built from the narratives. Investors, boards, candidates and customers who look your executives up find one story, told on purpose.</p></li>
       <li><span class="n">05</span><h3>An ExecutiveOS operational cadence for every leader.</h3><p>Their own AI, built for them inside the tools your enterprise already approves. It knows their story, their voice and the work in front of them. <a class="xos-link" href="../executiveos/" style="color:inherit;font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px">See ExecutiveOS</a></p></li>
     </ol>
+    <aside class="after-col" aria-labelledby="after-col-h">
+      <p class="label">After the Collective</p>
+      <h3 id="after-col-h">A new executive joins? I come back.</h3>
+      <p>Their story gets written and woven into the team’s, so there’s never a lapse in your leadership story. The bench stays one bench.</p>
+    </aside>
     <p class="scale">Every asset is yours and built to travel. Your executives own their live working documents, their files, every login in their name. LinkedIn first, then wherever the market looks them up: your Leadership Hub, X, Instagram, the stage. The <span class="kf">Known For</span> Scorecard measures presence throughout: day one, midpoint, end.</p>
     <div class="runs">
       <p class="label">How it runs</p>
@@ -367,7 +401,7 @@
         <p class="small">For a single executive</p>
         <h2>1:1 Executive Advisory</h2>
         <p class="sub">When the enterprise invests in one of its leaders.</p>
-        <p><span class="kf">Known For</span> Executive, sponsored by the company. I answer to two people: your executive, and you. Your executive’s conversations stay with me.</p>
+        <p><span class="kf">Known For</span> Executive, sponsored by the company. I answer to the person investing, the outcome they’re paying for, and the goals of the executive in the room. Your executive’s conversations stay with me.</p>
         <div class="gets">
           <div>
             <p class="label">Your executive gets</p>
@@ -496,11 +530,11 @@
       </details>
       <details class="faq-item">
         <summary><h3>Does it have to be the whole leadership team?</h3><span class="faq-mark" aria-hidden="true"></span></summary>
-        <p>No. It can be your own bench. A CHRO brings me in for her VPs, AVPs and directors. A CEO for the executive committee. Tightly curated cohorts see the best results.</p>
+        <p>No. It can be your own bench. A CHRO brings me in for their VPs, AVPs and directors. A CEO for the executive committee. Tightly curated cohorts see the best results.</p>
       </details>
       <details class="faq-item">
         <summary><h3>How is the collective narrative written?</h3><span class="faq-mark" aria-hidden="true"></span></summary>
-        <p>Every executive’s story first, in 1:1 sessions. Then I draft a few versions of the team’s story, review and refine them with your facilitator and your executive committee, and hand it back. Every individual narrative reinforces it.</p>
+        <p>Every executive’s story first, in 1:1 sessions. Then I write the team’s story from every executive’s, refine it with your executive committee, and hand it back. Every individual narrative reinforces it.</p>
       </details>
       </div>
     </div>
@@ -517,7 +551,7 @@
       </details>
       <details class="faq-item">
         <summary><h3>Who do you answer to?</h3><span class="faq-mark" aria-hidden="true"></span></summary>
-        <p>Two people: your executive, and you. Your executive’s conversations stay with me.</p>
+        <p>The person investing, the outcome they’re paying for, and the goals of the executive in the room. Your executive’s conversations stay with me.</p>
       </details>
       </div>
     </div>
@@ -608,5 +642,6 @@
 <script src="../config.js?v=1012d"></script>
 <script src="../js/site.js?v=1011c"></script>
 <script src="../js/motion.js?v=1011j"></script>
+<script src="../js/oct17-stats.js?v=1017c"></script>
 </body>
 </html>

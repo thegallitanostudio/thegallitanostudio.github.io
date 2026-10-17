@@ -1,0 +1,2 @@
+/* Oct 17, 2026 (Angela: "can we make the pill tighter?"): the raspberry Known For pill inside headlines sits closer to the letters and a touch smaller, so it reads as typography, not a tag. Loads after oct17-wordmark.css, before motion.css, on every page. Changes no older rule. */
+h1 .kf,h2 .kf,h3 .kf,.display .kf,.program h3 .kf,.dark h1 .kf,.dark h2 .kf,.dark h3 .kf,.program.dark h3 .kf{font-size:.9em;padding:.01em .28em .06em;line-height:1.1;vertical-align:baseline;letter-spacing:0}
