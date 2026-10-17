@@ -1,0 +1,16 @@
+/* Oct 17, 2026: fixes from a former client's read of the site. Loads after oct12-voice.css, before motion.css, on every page. Changes no older rule. */
+
+/* Work with me: the lilac circle sat behind her head like a hat. It now sits low, behind the shoulder. */
+.who-photo::before{top:auto;bottom:-7%;right:-16%;width:46%}
+@media (max-width:860px){.who-photo::before{bottom:-5%;right:-12%;width:42%}}
+
+/* Captions under the big numbers: brighter and a little larger on the dark and violet bands. */
+.proof span{font-size:19px;font-weight:500;color:#fff}
+.v12-nums .proof span{color:#fff}
+@media (max-width:700px){.proof span{font-size:17px}}
+
+/* Source lines under the stats: full strength instead of faded. */
+.src{opacity:.92;font-size:13.5px}
+.band-vio .src{opacity:.95}
+.cite-panel .src,.band-vio .cite-panel .src{opacity:.9}
+@media (max-width:700px){.src{font-size:13px}}
