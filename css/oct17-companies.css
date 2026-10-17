@@ -1,0 +1,48 @@
+/* Oct 17, 2026: For companies only. The three offer cards under the hero, the Known For Leadership Collective section, the smaller Sponsor one leader card. Loads after oct17.css, before motion.css. */
+.offers3{padding-top:0}
+.offers3 .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch}
+.offers3 a.card,.offers3 a.card *{text-decoration:none;color:inherit}
+.offers3 .card{display:flex;flex-direction:column;gap:14px;padding:34px 30px}
+.offers3 .card.lead-offer{outline:2px solid var(--violet);outline-offset:-2px}
+.offers3 .card .who{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:.8;margin:0}
+.offers3 .card h3{font-size:clamp(1.35rem,1.8vw,1.7rem);line-height:1.15;letter-spacing:-.02em;margin:0}
+.offers3 .card p.one{font-size:1.05rem;line-height:1.45;margin:0}
+.offers3 .card ul.dots{margin:4px 0 0;font-size:.98rem;line-height:1.5}
+.offers3 .card .go{margin-top:auto;padding-top:10px;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.offers3 .card.quiet{background:#EDE7FB;border-color:transparent}
+.offers3 .sec-head{margin-bottom:26px}
+
+.collective .sec-head{max-width:62ch}
+.collective .for-line{font-size:clamp(1.05rem,1.3vw,1.2rem);line-height:1.5;max-width:62ch;margin:0 0 34px}
+.leave5{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:0;padding:0;list-style:none;counter-reset:lv}
+.leave5 li{position:relative;background:#EDE7FB;border-radius:var(--r-card,22px);padding:28px 28px 28px 30px;display:grid;gap:8px}
+.leave5 li.wide{grid-column:1 / -1;background:var(--violet);color:#fff}
+.leave5 li.wide .n{color:var(--lilac)}
+.leave5 .n{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--violet)}
+.leave5 h3{font-size:clamp(1.25rem,1.6vw,1.55rem);line-height:1.15;letter-spacing:-.02em;margin:0}
+.leave5 p{margin:0;font-size:1.02rem;line-height:1.5}
+.leave5 li.wide p{color:#fff}
+.collective .runs{margin-top:46px;padding-top:30px;border-top:1px solid var(--hairline)}
+.collective .runs .label{margin-bottom:16px}
+.runs5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;margin:0;padding:0;list-style:none}
+.runs5 li{display:grid;gap:6px;padding-top:14px;border-top:2px solid var(--violet)}
+.runs5 b{font-size:1.05rem;letter-spacing:-.01em}
+.runs5 p{margin:0;font-size:.95rem;line-height:1.45;color:var(--moss,#818275)}
+.collective .scale{margin-top:34px;font-size:clamp(1.05rem,1.3vw,1.2rem);line-height:1.5;max-width:66ch}
+.two-more{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:22px;margin-top:22px}
+.two-more .card{display:flex;flex-direction:column;gap:16px;padding:40px}
+.two-more .card.quiet{background:#EDE7FB;border-color:transparent}
+.two-more .card h2{font-size:clamp(1.7rem,2.6vw,2.3rem)}
+.two-more .card .sub{font-weight:600;font-size:clamp(1.15rem,1.6vw,1.4rem);line-height:1.25;margin:0}
+.two-more .card .small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:.8;margin:0}
+@media (max-width:900px){
+  .offers3 .grid3{grid-template-columns:1fr}
+  .leave5{grid-template-columns:1fr}
+  .runs5{grid-template-columns:1fr;gap:14px}
+  .two-more{grid-template-columns:1fr}
+  .two-more .card{padding:30px 24px}
+}
+.offers3 .card.dark,.offers3 a.card.dark *{color:#fff}
+.offers3 .card.dark .who{color:var(--lilac);opacity:1}
+.offers3 .card.dark .go{color:var(--lilac)}
+.leave5 li.wide h3,.leave5 li.wide p{color:#fff}
