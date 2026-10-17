@@ -46,3 +46,15 @@
 .offers3 .card.dark .who{color:var(--lilac);opacity:1}
 .offers3 .card.dark .go{color:var(--lilac)}
 .leave5 li.wide h3,.leave5 li.wide p{color:#fff}
+/* One offer (Angela, Oct 17, 3:45pm): a single wide card. */
+.one-offer .card.big{padding:40px 44px;gap:18px}
+.one-offer .card.big h3{font-size:clamp(1.9rem,3vw,2.6rem)}
+.one-offer .card.big p.one{font-size:clamp(1.15rem,1.6vw,1.4rem)}
+.one-offer .cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:10px;padding-top:24px;border-top:1px solid rgba(226,226,205,.3)}
+.one-offer .cols3 .sub{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--lilac);margin:0 0 10px}
+.one-offer .cols3 p{margin:0;font-size:1rem;line-height:1.5}
+.one-offer .cols3 .chips{margin-top:14px}
+.one-offer .cols3 .chip.line{color:#fff;border-color:rgba(226,226,205,.5)}
+.one-offer .cols3 ul.dots{margin:0}
+.one-offer .offer-next{margin-top:18px}
+@media (max-width:900px){.one-offer .card.big{padding:30px 24px}.one-offer .cols3{grid-template-columns:1fr;gap:22px}}
