@@ -2464,3 +2464,16 @@ h2{letter-spacing:-.015em}
 .who-lite .body p{margin:0}
 .who-lite h2{max-width:18ch}
 @media (max-width:860px){.who-lite .body{justify-content:flex-start}}
+
+/* Oct 18, Angela: the Home audience line bold, centered, not a list */
+.home-hero .chips.chips-roles{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:6px 0;margin-top:10px}
+.home-hero .chips.chips-roles .chip:not(.flag){display:inline;font-size:17px;font-weight:600;color:var(--ink,#2B0D03);line-height:1.5}
+.home-hero .chips.chips-roles .chip:not(.flag)+.chip:not(.flag)::before{content:"\00a0\00a0\00b7\00a0\00a0";color:var(--violet,#5B41C0);opacity:1;font-weight:600}
+@media (max-width:700px){
+  .home-hero .hero-text .hero-for{text-align:center}
+  .home-hero .chips.chips-roles{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 0;padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+  .home-hero .chips.chips-roles .chip:not(.flag){display:inline;font-size:17px;line-height:1.6}
+  .home-hero .chips.chips-roles .chip:not(.flag)+.chip:not(.flag)::before{content:"\00a0\00a0\00b7\00a0\00a0"}
+}
+.home-hero .chips.chips-roles .chip:not(.flag)+.chip:not(.flag)::before{content:none}
+.home-hero .chips.chips-roles .chip:not(.flag):not(:last-child)::after{content:"\00a0\00a0\00b7\00a0\00a0";color:var(--violet,#5B41C0);font-weight:600}
