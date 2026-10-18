@@ -1,0 +1,10 @@
+/* Oct 17, 2026 (evening): For companies only, the Leadership Collective section. Loads after oct17-companies.css, before motion.css. Changes no older rule. Angela's call from an outside teardown: the intro paragraph gets a measure and more leading; the 03 card goes mahogany (her pick B) so it stops outweighing 01 and 02. */
+
+.collective .sec-head .lead{max-width:44ch;line-height:1.3}
+.collective .for-line{max-width:56ch;line-height:1.62;margin:0 0 42px;text-wrap:pretty}
+
+.leave5 li.wide{background:var(--seaweed,#2B0D03);border-color:var(--seaweed,#2B0D03)}
+.leave5 li.wide .n{color:#F2A7C3}
+.leave5 li.wide h3{color:var(--linen,#E2E2CD)}
+.leave5 li.wide p{color:#D2D2B6}
+.leave5 li.wide h3,.leave5 li.wide p{max-width:62ch}
