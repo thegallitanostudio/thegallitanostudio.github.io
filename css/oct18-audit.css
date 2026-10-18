@@ -1,0 +1,29 @@
+/* oct18-audit.css · Oct 18, 2026 · audit item C1 steps 3 and 4: the Book page calendar sits in a Studio card.
+   Loaded last, after motion.css. Book page only for now. */
+
+/* The live booking box becomes a quiet lilac card around the Cal.com iframe */
+#gs-booking.live{
+  background:#EDE7FB;
+  border:1px solid var(--lilac, #CDBDF6);
+  border-radius:24px;
+  padding:16px;
+  overflow:visible;
+}
+#gs-booking.live #gs-cal{min-height:600px}
+#gs-booking.live #gs-cal iframe{border-radius:16px;overflow:hidden;background:#fff}
+
+/* The fallback line reads as a caption under the card, not part of the widget */
+#gs-booking.live .cal-fallback{
+  margin:14px 0 0;
+  padding:0;
+  text-align:center;
+  font-size:14px;
+  color:var(--moss, #818275);
+}
+#gs-booking.live .cal-fallback a{color:var(--ink, #2B0D03)}
+
+@media (max-width:640px){
+  #gs-booking.live{margin:0;padding:10px;border-radius:18px;border-left:1px solid var(--lilac, #CDBDF6);border-right:1px solid var(--lilac, #CDBDF6)}
+  #gs-booking.live #gs-cal iframe{border-radius:12px}
+  #gs-booking.live .cal-fallback{padding:0 8px 4px}
+}
