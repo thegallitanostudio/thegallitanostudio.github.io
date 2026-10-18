@@ -1,0 +1,90 @@
+/* oct18-structure-b.css: the structural pass (Oct 18, 2026), group B overrides. For companies and The business case only.
+   Loads last, after oct18-structure.css. Changes no older rule. Tokens as in oct18-structure.css. */
+
+/* ---- hero credential stack inside the lilac card ---- */
+.hero-photo.cred-card .cred .cs-cred li{grid-template-columns:auto minmax(0,1fr);gap:14px}
+.hero-photo.cred-card .cred .cs-cred li p{font-size:15px;line-height:1.45}
+.hero-photo.cred-card .cred .cs-cred .li-badge.sm,.hero-photo.cred-card .cred .cs-cred .g-badge.sm,.hero-photo.cred-card .cred .cs-cred .sf-badge.sm{min-width:84px;justify-content:center}
+@media (max-width:390px){.hero-photo.cred-card .cred .cs-cred li{grid-template-columns:minmax(0,1fr);gap:8px}}
+
+/* ---- chip rows (the one-offer door, the Gartner card): the shared text chips, in the card's own color ---- */
+.one-offer .card.dark.lead-offer ul.cs-b-chips{margin-top:12px;padding-top:22px;border-top:1px solid var(--hairline-dark);color:var(--linen,#E2E2CD);font-size:16px}
+.one-offer .card.dark.lead-offer ul.cs-b-chips li+li::before{color:var(--lilac,#CDBDF6)}
+.why3 li ul.cs-b-chips{margin:2px 0;font-size:16px;display:grid;gap:4px}
+.why3 li ul.cs-b-chips li+li::before{content:none}
+.why3 li ul.cs-b-chips li,.why3 li:nth-child(1) ul.cs-b-chips li,.why3 li:nth-child(2) ul.cs-b-chips li,.why3 li:nth-child(3) ul.cs-b-chips li{background:transparent;color:inherit;padding:0;border-radius:0;display:block;min-height:0}
+.why3 li:nth-child(1) ul.cs-b-chips{color:var(--linen,#E2E2CD)}
+.why3 li:nth-child(1) ul.cs-b-chips li+li::before,.why3 li:nth-child(2) ul.cs-b-chips li+li::before{color:var(--lilac,#CDBDF6)}
+
+/* ---- Collective: the split card where the two for-lines were ---- */
+.collective .cs-b-for{margin:0 0 42px}
+.collective .cs-b-for .cs-lead{max-width:30ch}
+.collective .cs-b-for .cs-row p{font-size:16px;font-weight:500}
+
+/* ---- What you leave with: every card leads with its first sentence; the rest is a tail ---- */
+.leave5 li p.lead-line{font-size:1.1rem;line-height:1.4;font-weight:500;color:var(--ink,#2B0D03);margin:0}
+.leave5 li p.cs-b-support{font-size:15px;line-height:1.5;color:var(--ink,#2B0D03);opacity:.78;margin:0}
+.leave5 li.wide p.lead-line{font-size:1.25rem;line-height:1.35;color:var(--linen,#E2E2CD)}
+.leave5 li.wide p.cs-b-support{color:#D2D2B6;opacity:1}
+
+/* ---- Yours to keep: the three-column bento where the .scale paragraph was ---- */
+.collective .cs-b-keep{margin-top:34px}
+.collective .cs-b-keep>.label{margin:0 0 16px}
+.collective .cs-b-keep .cs-bento li{border-color:var(--lilac,#CDBDF6)}
+.collective .cs-b-keep .cs-bento h3{font-size:1.05rem;line-height:1.35;letter-spacing:0}
+.collective .cs-b-keep .cs-bento h3 .kf{font-size:1.05em}
+.collective .cs-b-keep .cs-chips{font-size:15px;gap:4px 0}
+.collective .cs-b-keep .cs-chips li{display:inline;padding:0;border:0;background:transparent;border-radius:0;min-width:0}
+@media (max-width:700px){.collective .cs-b-keep .cs-chips{display:grid}.collective .cs-b-keep .cs-chips li{display:block}}
+.collective .cs-b-keep ul.cs-b-rounds{list-style:none;margin:2px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.collective .cs-b-keep .cs-b-rounds .round{background:transparent;border:1px solid var(--hairline);border-radius:14px;padding:10px 8px;display:grid;place-items:center;min-width:0}
+.collective .cs-b-keep .cs-b-rounds .round i{font-style:normal;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--violet,#5B41C0);text-align:center}
+
+/* ---- How it runs: one anchor line per stop ---- */
+.runs5 p{font-size:.98rem;line-height:1.5}
+
+/* ---- Known For Live card: a venue list where the paragraph was ---- */
+.two-more .card.dark .cs-b-where{margin:4px 0 0;color:var(--lilac,#CDBDF6)}
+.two-more .card.dark .cs-rows{margin:0}
+.two-more .card.dark .cs-row{padding:12px 0}
+.two-more .card.dark .cs-row p{font-size:16px;font-weight:500}
+.two-more .card.dark .cs-rows+p{margin:0;font-size:16px;line-height:1.5;color:var(--linen,#E2E2CD)}
+/* 1:1 Executive Advisory: the answer line under the two columns */
+.two-more .card.quiet .cs-b-answer{margin:0;padding-top:18px;border-top:1px solid var(--hairline);font-size:15px;line-height:1.55;color:var(--ink,#2B0D03)}
+
+/* ---- ExecutiveOS band: the sharpest line first, the lead as its support ---- */
+.eos .eos-say.cs-b-say{margin:28px 0 0;padding:0;border:0;color:var(--linen,#E2E2CD);font-weight:600;font-size:clamp(1.25rem,1.8vw,1.6rem);line-height:1.3;letter-spacing:-.01em;max-width:30ch}
+.eos .eos-lead.cs-b-eoslead{margin:14px 0 0;font-size:16px;line-height:1.55;color:var(--linen,#E2E2CD);opacity:.85;max-width:40ch}
+
+/* ---- FAQ answers: lead, then the two columns ---- */
+.faq-item .cs-b-gets{padding-top:16px;margin-top:6px;gap:18px 28px}
+.faq-item .cs-b-gets .label{margin-bottom:10px}
+.faq-item .cs-b-gets .dots{font-size:15px;line-height:1.45}
+.faq-item .cs-b-gets .dots li+li{margin-top:6px}
+.faq-item .cs-b-gets+p{margin-top:14px}
+.faq-item .cs-note{font-size:15px;color:var(--ink,#2B0D03)}
+.faq-item p .cs-link{margin-top:0;margin-left:6px}
+@media (max-width:700px){.faq-item .cs-b-gets{grid-template-columns:minmax(0,1fr)}}
+
+/* ---- The business case ---- */
+.bc-hero .cs-b-eyebrow{margin:0 0 14px;font-size:14px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--moss,#818275)}
+.bc-hero .cs-b-herosupport{margin:12px 0 0;font-size:clamp(1.02rem,1.2vw,1.15rem);line-height:1.5;max-width:52ch}
+.qa dd .cs-bento{margin-top:4px}
+.qa dd .cs-bento li{padding:20px 22px}
+.qa dd .cs-bento p{font-size:15px;line-height:1.5;max-width:none}
+.qa dd .cs-bento p.cs-h{font-size:17px;font-weight:600;line-height:1.35}
+.qa dd .cs-bento p.label{font-size:13px;letter-spacing:.2em;color:var(--violet,#5B41C0)}
+.qa dd .cs-metric.inline{margin-top:6px;padding-top:14px;border-top:1px solid var(--hairline)}
+.qa dd .cs-metric.inline b{display:block;font-size:clamp(2.2rem,3vw,2.6rem);line-height:1}
+.qa dd .cs-metric.inline p{font-size:15px;line-height:1.45}
+.qa dd .cs-metric .src{font-size:14px;color:var(--moss,#818275)}
+.qa dd .cs-b-dim{font-weight:400}
+.qa dd .cs-track{margin:6px 0 4px}
+.qa dd .cs-track h3.cs-h{font-size:16px}
+.qa dd .cs-track p{font-size:15px;line-height:1.5;max-width:none}
+.qa dd .cs-b-gets{padding-top:18px;gap:18px 28px}
+.qa dd .cs-b-gets .dots{font-size:15px;line-height:1.45}
+.qa dd .cs-b-gets .dots li+li{margin-top:6px}
+.qa dd .cs-b-gets p.label{margin-bottom:10px;font-size:13px;line-height:1.3;letter-spacing:.2em}
+@media (max-width:700px){.qa dd .cs-b-gets{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.qa dd .cs-track{grid-template-columns:minmax(0,1fr)}}

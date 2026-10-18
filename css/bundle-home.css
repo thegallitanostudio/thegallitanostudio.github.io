@@ -2101,3 +2101,296 @@ h2{letter-spacing:-.015em}
   .xos-coach .coach-three li,
   .xos-coach .coach-field .cases li{padding:22px 20px}
 }
+
+/* ===== oct18-structure.css ===== */
+/* oct18-structure.css: the structural pass (Oct 17, 2026, night). Shared components.
+   Loaded after oct18-audit.css on every page; page-specific rules live in oct18-structure-a/b/c.css.
+   Tokens: sage #E2E2CD, mahogany #2B0D03, violet #5B41C0, purple #7F63C9 (shapes), lilac #CDBDF6,
+   quiet fill #EDE7FB, deeper sage #D2D2B6, moss #818275 (labels only). Instrument Sans only. Borders, not shadows. */
+
+/* ---- shared glyph sizing ---- */
+.cs-row .duo,.cs-cred .duo,.cs-bento .duo,.cs-track .duo{width:28px;height:28px;color:var(--ink,#2B0D03)}
+.dark .cs-row .duo,.dark .cs-bento .duo,.dark .cs-track .duo,.dark .cs-cred .duo{color:var(--linen,#E2E2CD)}
+.dark .cs-row .duo .f,.dark .cs-bento .duo .f,.dark .cs-track .duo .f{fill:var(--lilac,#CDBDF6)}
+
+/* ---- 1. credential stack: one logo badge per row, one clause per row ---- */
+.cs-cred{display:grid;gap:0;margin:0;padding:0;list-style:none}
+.cs-cred li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center;padding:12px 0;border-top:1px solid var(--hairline)}
+.cs-cred li:first-child{border-top:0;padding-top:0}
+.cs-cred li:last-child{padding-bottom:0}
+.cs-cred li p{margin:0;font-size:15px;line-height:1.45;color:var(--ink,#2B0D03)}
+.cs-cred li b{display:block;font-size:22px;font-weight:600;line-height:1.1;letter-spacing:-.01em;color:var(--ink,#2B0D03)}
+.cs-cred .li-badge,.cs-cred .g-badge,.cs-cred .sf-badge{flex:none}
+.dark .cs-cred li{border-top-color:var(--hairline-dark)}
+.dark .cs-cred li p,.dark .cs-cred li b{color:var(--linen,#E2E2CD)}
+/* inside the lilac hero credential card */
+.hero-photo.cred-card .cred .cs-cred li{padding:10px 0}
+.hero-photo.cred-card .cred .badge-row{display:none}
+/* three-card variant */
+.cs-cred.cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.cs-cred.cards li{display:grid;grid-template-columns:none;grid-template-rows:auto auto 1fr;gap:12px;align-content:start;padding:22px 24px;border:1px solid var(--lilac,#CDBDF6);border-radius:20px;background:#EDE7FB}
+.cs-cred.cards li:first-child{border-top:1px solid var(--lilac,#CDBDF6);padding-top:22px}
+.cs-cred.cards li:last-child{padding-bottom:22px}
+.dark .cs-cred.cards li{background:rgba(226,226,205,.08);border-color:var(--hairline-dark)}
+.cs-cred .cs-era{display:block;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--moss,#818275);margin-bottom:2px}
+@media (max-width:760px){.cs-cred.cards{grid-template-columns:minmax(0,1fr)}}
+
+/* ---- 2. split card: a lead line left, anchor rows right ---- */
+.cs-split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,56px);align-items:start;padding:clamp(24px,3vw,36px);border:1px solid var(--lilac,#CDBDF6);border-radius:var(--r-card,24px);background:#EDE7FB}
+.cs-split.plain{background:transparent;border-color:var(--hairline)}
+.dark .cs-split,.cs-split.dark{background:rgba(226,226,205,.07);border-color:var(--hairline-dark)}
+.cs-split .cs-lead{margin:0;font-size:clamp(20px,1.7vw,24px);font-weight:600;line-height:1.3;letter-spacing:-.01em;color:var(--ink,#2B0D03)}
+.cs-split .cs-premise{margin:12px 0 0;font-size:16px;line-height:1.55;color:var(--ink,#2B0D03)}
+.dark .cs-split .cs-lead,.dark .cs-split .cs-premise,.cs-split.dark .cs-lead,.cs-split.dark .cs-premise{color:var(--linen,#E2E2CD)}
+@media (max-width:760px){.cs-split{grid-template-columns:minmax(0,1fr);gap:20px;padding:22px}}
+
+/* ---- 3. anchor rows: a glyph, a 600 lead, a 400 tail; hairlines between ---- */
+.cs-rows{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.cs-row{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;padding:14px 0;border-top:1px solid var(--hairline)}
+.cs-row:first-child{border-top:0;padding-top:0}
+.cs-row:last-child{padding-bottom:0}
+.cs-row.noglyph{grid-template-columns:minmax(0,1fr)}
+.cs-row p{margin:0;font-size:16px;line-height:1.5;color:var(--ink,#2B0D03)}
+.cs-row b{font-weight:600}
+.cs-row .cs-tail{display:block;font-weight:400;font-size:15px;color:var(--ink,#2B0D03);opacity:.82}
+.dark .cs-row{border-top-color:var(--hairline-dark)}
+.dark .cs-row p,.dark .cs-row .cs-tail{color:var(--linen,#E2E2CD)}
+.cs-rows.loose .cs-row{padding:18px 0}
+
+/* ---- 4. metric callout: a big figure, a short caption, a moss source ---- */
+.cs-metrics{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:clamp(18px,2.4vw,32px)}
+.cs-metric{display:grid;gap:8px;align-content:start;padding-top:18px;border-top:1px solid var(--hairline)}
+.cs-metric b{font-family:var(--sans);font-weight:600;font-size:clamp(2.6rem,4vw,3.5rem);line-height:1;letter-spacing:-.03em;color:var(--violet,#5B41C0)}
+.cs-metric.lilac b{color:var(--lilac,#CDBDF6)}
+.cs-metric p{margin:0;font-size:15px;line-height:1.45;color:var(--ink,#2B0D03)}
+.cs-metric .src{font-size:13px;color:var(--moss,#818275)}
+.dark .cs-metric{border-top-color:var(--hairline-dark)}
+.dark .cs-metric b{color:var(--lilac,#CDBDF6)}
+.dark .cs-metric p{color:var(--linen,#E2E2CD)}
+.cs-metric.inline{padding-top:0;border-top:0}
+.cs-metric.inline b{font-size:clamp(2rem,3vw,2.5rem)}
+
+/* ---- 5. bento: three (or two) quiet cards, a glyph, a 600 lead, one line ---- */
+.cs-bento{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.cs-bento.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cs-bento li{display:grid;gap:12px;align-content:start;padding:24px;border:1px solid var(--lilac,#CDBDF6);border-radius:20px;background:#EDE7FB;min-width:0}
+.cs-bento li .duo{width:32px;height:32px}
+.cs-bento h3,.cs-bento .cs-h{margin:0;font-family:var(--sans);font-size:17px;font-weight:600;line-height:1.35;letter-spacing:0;color:var(--ink,#2B0D03)}
+.cs-bento p{margin:0;font-size:15px;line-height:1.5;color:var(--ink,#2B0D03)}
+.cs-bento .cs-sub{font-size:14px;color:var(--moss,#818275)}
+.cs-bento li.wide{grid-column:1 / -1}
+.cs-bento li.dark{background:var(--seaweed,#2B0D03);border-color:var(--violet,#5B41C0)}
+.cs-bento li.dark h3,.cs-bento li.dark .cs-h,.cs-bento li.dark p{color:var(--linen,#E2E2CD)}
+.cs-bento li.dark .duo{color:var(--linen,#E2E2CD)}
+.cs-bento li.dark .duo .f{fill:var(--lilac,#CDBDF6)}
+.dark .cs-bento li{background:rgba(226,226,205,.08);border-color:var(--hairline-dark)}
+.dark .cs-bento h3,.dark .cs-bento .cs-h,.dark .cs-bento p{color:var(--linen,#E2E2CD)}
+@media (max-width:860px){.cs-bento{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.cs-bento,.cs-bento.two{grid-template-columns:minmax(0,1fr)}}
+
+/* ---- 6. horizontal track: numbered stops, a title, one line ---- */
+.cs-track{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(var(--stops,5),minmax(0,1fr));gap:clamp(14px,2vw,28px);counter-reset:cs}
+.cs-track li{display:grid;gap:10px;align-content:start;padding-top:16px;border-top:1px solid var(--hairline);counter-increment:cs;min-width:0}
+.cs-track li::before{content:counter(cs,decimal-leading-zero);font-size:13px;font-weight:600;letter-spacing:.22em;color:var(--moss,#818275)}
+.cs-track h3,.cs-track .cs-h{margin:0;font-family:var(--sans);font-size:17px;font-weight:600;line-height:1.3;letter-spacing:0;color:var(--ink,#2B0D03)}
+.cs-track p{margin:0;font-size:15px;line-height:1.5;color:var(--ink,#2B0D03)}
+.cs-track .cs-fig{font-weight:600;font-size:24px;line-height:1;color:var(--violet,#5B41C0)}
+.dark .cs-track li{border-top-color:var(--hairline-dark)}
+.dark .cs-track h3,.dark .cs-track .cs-h,.dark .cs-track p{color:var(--linen,#E2E2CD)}
+.dark .cs-track .cs-fig{color:var(--lilac,#CDBDF6)}
+@media (max-width:860px){.cs-track{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.cs-track{grid-template-columns:minmax(0,1fr)}}
+
+/* ---- 7. text chips (the audit convention: ink text with middle dots, stacked on phone) ---- */
+.cs-chips{display:flex;flex-wrap:wrap;gap:4px 0;margin:0;padding:0;list-style:none;font-size:15px;font-weight:500;color:var(--ink,#2B0D03)}
+.cs-chips li+li::before{content:"\00a0\00b7\00a0";color:var(--moss,#818275)}
+.dark .cs-chips{color:var(--linen,#E2E2CD)}
+@media (max-width:700px){.cs-chips{display:grid;gap:4px}.cs-chips li+li::before{content:none}}
+
+/* ---- 8. FAQ and card leads: first sentence first, then rows ---- */
+.cs-faq-lead,.faq-item .cs-faq-lead{margin:0 0 10px;font-size:17px;font-weight:600;line-height:1.4;color:var(--ink,#2B0D03)}
+.faq-item .cs-rows{margin-top:6px}
+.faq-item .cs-rows .cs-row p{font-size:15px}
+.faq-item .cs-track{margin:8px 0 4px}
+.faq-item .cs-track h3,.faq-item .cs-track .cs-h{font-size:15px}
+.faq-item .cs-track p{font-size:14px}
+.faq-item .cs-chips{margin:6px 0}
+.cs-note{margin:10px 0 0;font-size:14px;line-height:1.5;color:var(--moss,#818275)}
+.cs-link{display:inline-block;margin-top:8px;font-size:15px;font-weight:600;color:var(--violet,#5B41C0);text-decoration:none;border-bottom:1.5px solid currentColor}
+.dark .cs-link{color:var(--lilac,#CDBDF6)}
+
+/* ---- 9. a section lead line above a component (the pulled first sentence) ---- */
+.cs-section-lead{margin:0 0 clamp(18px,2vw,28px);font-size:clamp(20px,1.7vw,24px);font-weight:600;line-height:1.3;letter-spacing:-.01em;color:var(--ink,#2B0D03);max-width:30ch}
+.dark .cs-section-lead{color:var(--linen,#E2E2CD)}
+.cs-support{margin:0 0 clamp(18px,2vw,28px);font-size:16px;line-height:1.55;color:var(--ink,#2B0D03);max-width:60ch}
+.dark .cs-support{color:var(--linen,#E2E2CD)}
+
+/* ---- 10. deliverable chip on a step row ---- */
+.cs-get{display:inline-grid;gap:2px;margin-top:10px;padding:10px 14px;border:1px solid var(--lilac,#CDBDF6);border-radius:14px;background:#EDE7FB;font-size:14px;line-height:1.4;color:var(--ink,#2B0D03)}
+.cs-get .label{font-size:11px;letter-spacing:.22em;color:var(--moss,#818275)}
+
+/* ---- motion: these components arrive with their section; nothing extra ---- */
+
+/* ===== oct18-structure-a.css ===== */
+/* oct18-structure-a.css: the structural pass (Oct 18, 2026), group A: Home, Work with me, Known For First Look, Known For Executive.
+   Loads after oct18-structure.css. Page-specific overrides only; the shared components live in oct18-structure.css.
+   Tokens: sage #E2E2CD, mahogany #2B0D03, violet #5B41C0, purple #7F63C9 (shapes), lilac #CDBDF6, quiet fill #EDE7FB,
+   deeper sage #D2D2B6, moss #818275 (labels only). Instrument Sans only. Borders, not shadows. Changes no older rule. */
+
+/* ===== Home ===== */
+
+/* Digital presence is equity: the display line left, three anchor rows right, lilac hairlines between */
+.statement.band-v .eq-rows{align-self:center}
+.statement.band-v .eq-rows .cs-row{border-top-color:rgba(205,189,246,.55);padding:16px 0}
+.statement.band-v .eq-rows .cs-row:first-child{padding-top:0}
+.statement.band-v .eq-rows .cs-row p{font-size:clamp(17px,1.3vw,19px);line-height:1.4;color:#fff}
+.statement.band-v .eq-rows .cs-row b{font-weight:600}
+.statement.band-v .eq-rows .cs-tail{display:inline;font-size:inherit;color:#fff;opacity:.9;font-weight:400}
+.statement.band-v .eq-rows mark{background:linear-gradient(transparent 58%,rgba(205,189,246,.42) 58%);color:#fff;font-weight:600;padding:0 .08em}
+@media (max-width:860px){.statement.band-v .eq-rows{margin-top:8px}}
+
+/* The method: a deliverable chip beside the step title on steps 2 and 5 */
+.steps .step-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-bottom:10px}
+.steps .step-head h3{margin:0}
+.steps .step-head .cs-get{margin-top:0}
+.steps .cs-get .label{display:block;text-transform:uppercase;font-weight:600;font-size:13px}
+
+/* Proof: lead line, one premise line, the stat rings, then the sign-off */
+.proof-premise{color:var(--linen,#E2E2CD);opacity:.88;font-size:clamp(1.02rem,1.25vw,1.2rem);line-height:1.5;max-width:62ch;margin:0 0 34px}
+.proof-premise .proof-premise-2{display:inline}
+.proof-signoff{margin:14px 0 0;font-size:15px;line-height:1.5;color:var(--linen,#E2E2CD);opacity:.88;text-align:right}
+.proof-signoff a{color:inherit;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:700px){
+  .proof-premise{margin-bottom:26px}
+  .proof-premise .proof-premise-2{display:block;margin-top:6px}
+  .proof-signoff{text-align:left;margin-top:18px}
+}
+
+/* Trust panel: two anchor rows (lock, door) in place of the two paragraphs */
+.trust .trust-rows .cs-row{padding:18px 0}
+.trust .trust-rows .cs-row:first-child{padding-top:0}
+.trust .trust-rows .cs-row p{font-size:17px;line-height:1.45}
+.trust .trust-rows .cs-row b{display:block;font-weight:600;color:var(--seaweed,#2B0D03)}
+.trust .trust-rows .cs-tail{margin-top:4px;font-size:15px;opacity:1}
+.trust .trust-rows .duo{width:32px;height:32px;margin-top:2px}
+@media (max-width:860px){.trust .trust-rows .cs-row{padding:16px 0}}
+
+/* ===== Work with me ===== */
+
+/* Who you're working with: a three-card credential bento on the violet band */
+.whoband.v2 .who-row{display:block}
+.whoband.v2 .who-cred li{grid-template-rows:none;gap:10px;position:relative;z-index:1}
+.whoband.v2 .who-cred .cs-era{font-size:13px}
+.whoband.v2 .who-cred .li-badge,.whoband.v2 .who-cred .g-badge,.whoband.v2 .who-cred .sf-badge{margin-top:0;justify-self:start}
+.whoband.v2 .who-cred .cs-num{display:block;font-size:clamp(2.4rem,3.4vw,3.2rem);font-weight:600;line-height:.95;letter-spacing:-.04em;color:var(--violet,#5B41C0);margin-top:4px}
+.whoband.v2 .who-cred li b{font-size:clamp(18px,1.4vw,21px);line-height:1.25}
+.whoband.v2 .who-cred li p{font-size:15px;line-height:1.5;color:var(--ink,#2B0D03);max-width:none}
+.whoband.v2 .who-cred li .cs-foot{font-weight:600;margin-top:auto}
+.whoband.v2 .who-cred .xos-link{color:inherit}
+.whoband.v2 .who-read{margin:22px 0 0;position:relative;z-index:1}
+.whoband.v2 .who-read .tlink{padding-block:4px}
+@media (max-width:1100px){.whoband.v2 .who-cred{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.whoband.v2 .who-cred li{padding:20px 18px}}
+@media (max-width:760px){.whoband.v2 .who-cred{grid-template-columns:minmax(0,1fr)}}
+
+/* Program cards: two labelled anchor columns in place of the two dotted lists */
+.program .cs-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 28px;align-items:start}
+.program .cs-card-grid .label{margin:0 0 4px;font-size:13px;letter-spacing:.22em;color:var(--moss,#818275)}
+.program.dark .cs-card-grid .label{color:var(--lilac,#CDBDF6)}
+.program .cs-card-grid .cs-row{padding:9px 0}
+.program .cs-card-grid .cs-row:first-child{padding-top:0}
+.program .cs-card-grid .cs-row p{font-size:15px;line-height:1.45}
+.program.dark .cs-card-grid .cs-row{border-top-color:var(--hairline-dark)}
+.program.dark .cs-card-grid .cs-row p{color:var(--linen,#E2E2CD)}
+.program.dark .cs-card-grid .xos-link{color:inherit}
+@media (max-width:600px){.program .cs-card-grid{grid-template-columns:minmax(0,1fr);gap:14px}}
+@media (max-width:700px){.js .program .fine{display:block}}
+
+/* The 30-day metric callout inside the Executive card */
+.program.dark .cs-accel{gap:6px;padding:16px 18px;border:1px solid var(--hairline-dark);border-radius:14px;background:rgba(226,226,205,.07)}
+.program.dark .cs-accel b{font-size:40px;line-height:1;color:var(--lilac,#CDBDF6)}
+.program.dark .cs-accel p{font-size:15px;line-height:1.45;color:var(--linen,#E2E2CD);max-width:none}
+.program.dark .cs-accel .cs-then{opacity:.85}
+
+/* The ExecutiveOS card: a lead and two anchor rows */
+.xos-card .cs-faq-lead{margin:0 0 6px;font-size:clamp(17px,1.3vw,19px);max-width:30ch}
+.xos-card .cs-rows .cs-row{padding:10px 0}
+.xos-card .cs-rows .cs-row p{font-size:16px;line-height:1.45}
+
+/* Your LinkedIn is the outcome: a three-stop vertical track, then one "where it shows up" line */
+.layer .cs-vwrap{display:grid;gap:10px}
+.layer .cs-vwrap .label{margin:0;font-size:13px;letter-spacing:.22em;color:var(--moss,#818275)}
+.layer .cs-vtrack{list-style:none;margin:0;padding:0;display:grid;gap:0;position:relative}
+.layer .cs-vtrack::before{content:"";position:absolute;left:7px;top:22px;bottom:22px;width:1px;background:var(--hairline)}
+.layer .cs-vtrack li{position:relative;padding:12px 0 12px 30px}
+.layer .cs-vtrack li::before{content:"";position:absolute;left:1px;top:calc(12px + .4em);width:13px;height:13px;border-radius:50%;background:var(--violet,#5B41C0)}
+.layer .cs-vtrack li:nth-child(even)::before{background:var(--purple,#7F63C9)}
+.layer .cs-vtrack p{margin:0;font-size:clamp(17px,1.3vw,19px);font-weight:600;line-height:1.4;color:var(--ink,#2B0D03)}
+.layer .cs-where{margin:0;padding-top:16px;border-top:1px solid var(--hairline);font-size:15px;line-height:1.5;color:var(--ink,#2B0D03)}
+.layer .cs-where .label{display:block;margin:0 0 4px;font-size:13px;letter-spacing:.22em;color:var(--moss,#818275)}
+.layer .cs-where .xos-link{color:inherit}
+
+/* What you leave with: the ExecutiveOS split card under the list */
+.leave .cs-xos{margin-top:28px}
+.leave .cs-xos .cs-lead{color:var(--linen,#E2E2CD)}
+.leave .cs-xos .cs-row p{font-size:16px}
+.leave .cs-xos .duo{color:var(--linen,#E2E2CD)}
+.leave .cs-xos .duo .f{fill:var(--lilac,#CDBDF6)}
+.leave .cs-xos+.note{margin-top:24px}
+@media (max-width:700px){.leave .cs-xos{margin-top:20px}}
+
+/* Real people. Real seats.: the four quotes stack on phones instead of swiping */
+@media (max-width:700px){
+  section[aria-labelledby="outcomes-h"] .quotes{grid-template-columns:minmax(0,1fr);grid-auto-flow:row;grid-auto-columns:auto;overflow:visible;margin:0;padding:0;scroll-snap-type:none}
+}
+
+/* What success looks like: three cards (Honesty, Pace, Async) */
+.cs-success h3{font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss,#818275);font-weight:600;line-height:1.3}
+.cs-success .cs-h{font-size:17px;font-weight:600;line-height:1.35;color:var(--ink,#2B0D03)}
+.cs-success li{gap:10px}
+.cs-success li .duo{margin-bottom:4px;color:var(--ink,#2B0D03)}
+
+/* FAQ: the two program rows inside "How long does it take?" */
+.faq-item .cs-rows .cs-row p{padding:0;max-width:62ch}
+.faq-item .cs-howlong{margin:0 0 14px}
+.faq-item .cs-howlong .cs-row{padding:10px 0}
+.faq-item .cs-howlong .cs-row:first-child{padding-top:0}
+.faq-item .cs-howlong b{font-weight:600}
+.faq-item .cs-howlong .cs-dur{display:inline-block;margin-left:8px;padding:2px 11px;border:1px solid var(--hairline);border-radius:999px;font-size:14px;font-weight:600;line-height:1.4;vertical-align:middle;white-space:nowrap}
+.faq-item .cs-howlong .cs-tail{margin-top:4px;opacity:1}
+
+/* Leadership gets lonely fast: setup line, lead, one support line, the pull */
+.v17-room .cs-setup{margin:14px 0 0;font-size:15px;line-height:1.45;font-weight:600;color:var(--lilac,#CDBDF6);max-width:34ch}
+.v17-room .cs-setup+h2{margin-top:14px}
+.v17-room .beat .body p.cs-section-lead{margin:0;font-size:clamp(20px,1.8vw,26px);font-weight:600;line-height:1.3;letter-spacing:-.01em;max-width:30ch;color:var(--linen,#E2E2CD)}
+.v17-room .beat .body p.cs-section-lead mark{font-weight:600}
+
+/* ===== Known For Executive ===== */
+
+/* What's in it: the 30 / 6 metric row above the two cards */
+.p-in .cs-shape{grid-template-columns:repeat(2,minmax(0,1fr));margin:0 0 28px}
+.p-in .cs-shape .cs-metric{padding-top:16px}
+.p-in .cs-shape .cs-metric p{font-size:15px;line-height:1.45;color:var(--ink,#2B0D03);max-width:36ch}
+@media (max-width:700px){.p-in .cs-shape{gap:16px;margin-bottom:20px}.p-in .cs-shape .cs-metric b{font-size:2.6rem}}
+
+/* The four Before moments under "Prep for the room" */
+.inout .cs-moments{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:8px}
+.inout .cs-moments .moment{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:600;line-height:1.2;color:var(--ink,#2B0D03)}
+.inout .cs-moments .duo{width:24px;height:24px;color:var(--ink,#2B0D03);flex:none}
+
+/* ===== both program pages ===== */
+
+/* The hero credential card: three rows, one badge and one clause each */
+.hero-photo.cred-card .cred .cs-cred li{grid-template-columns:96px minmax(0,1fr);gap:14px;align-items:center}
+.hero-photo.cred-card .cred .cs-cred li>span{margin:0;justify-self:start}
+.hero-photo.cred-card .cred .cs-cred li p{font-size:15px;line-height:1.45}
+.hero-photo.cred-card .cred .cs-cred li+li{border-top-color:var(--hairline)}
+
+/* Who you're working with: the paragraph is gone; the badges and the link remain */
+.who-lite .body{gap:18px}
+
+/* Program pages: Who you're working with, without the paragraph, reads as one band (review fix 3) */
+.p-hero~.who-lite .wrap,.who-lite .wrap{align-items:center}
+.who-lite .body{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;justify-content:flex-start}
+.who-lite .body p{margin:0}
+.who-lite h2{max-width:18ch}
+@media (max-width:860px){.who-lite .body{justify-content:flex-start}}

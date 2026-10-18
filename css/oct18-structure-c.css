@@ -1,0 +1,150 @@
+/* oct18-structure-c.css: the structural pass (Oct 18, 2026), group C page rules.
+   ExecutiveOS, About, Questions, Contact. Loaded after oct18-structure.css.
+   Tokens only: sage #E2E2CD, mahogany #2B0D03, violet #5B41C0, purple #7F63C9 (shapes), lilac #CDBDF6,
+   quiet fill #EDE7FB, deeper sage #D2D2B6, moss #818275 (labels only). Instrument Sans only. Borders, not shadows. */
+
+/* ---- credential cards: the figure stands on its own ---- */
+.cs-cred.cards li{gap:14px}
+.cs-cred.cards li b{font-size:clamp(28px,2.6vw,40px);line-height:1;letter-spacing:-.03em;margin-bottom:6px;color:var(--violet,#5B41C0)}
+.cs-cred.cards li p{font-size:15px;line-height:1.4}
+.cs-cred.cards .li-badge,.cs-cred.cards .g-badge,.cs-cred.cards .sf-badge{width:max-content;max-width:100%;background:#fff}
+
+/* About hero: the cards stack inside the text column, badge left, figure and clause right */
+.open-text .cs-cred.cards.v12-open-cred{justify-self:stretch;width:100%;margin-top:4px;grid-template-columns:minmax(0,1fr);gap:10px}
+.open-text .cs-cred.cards.v12-open-cred li{grid-template-columns:108px minmax(0,1fr);grid-template-rows:none;align-items:center;gap:16px;padding:14px 18px;border-radius:16px}
+.open-text .cs-cred.cards.v12-open-cred li b{font-size:clamp(22px,2vw,28px);margin-bottom:2px}
+@media (max-width:860px){.open-text .cs-cred.cards.v12-open-cred li{padding:12px 14px;gap:12px}}
+@media (max-width:420px){.open-text .cs-cred.cards.v12-open-cred li{grid-template-columns:minmax(0,1fr);gap:8px}}
+
+/* ExecutiveOS "Who you're working with": the lead line sits beside the headline, the cards run the full width under both */
+.xos-who .wrap .cs-cred.cards{grid-column:1 / -1;margin-top:clamp(8px,1vw,16px)}
+.xos-who .cs-cred.cards li p{font-size:15px;line-height:1.4;max-width:none}
+
+/* Questions foot and Contact: the cards replace the credential paragraph */
+.q-list .cs-cred.cards.q-cred{margin-top:40px}
+.ct-top .cs-cred.ct-cred-rows{margin-top:44px;max-width:640px}
+.ct-top .cs-cred.ct-cred-rows li{grid-template-columns:108px minmax(0,1fr);padding:14px 0}
+.ct-top .cs-cred.ct-cred-rows li b{font-size:22px;margin-bottom:2px}
+.ct-top .cs-cred.ct-cred-rows .li-badge,.ct-top .cs-cred.ct-cred-rows .g-badge,.ct-top .cs-cred.ct-cred-rows .sf-badge{width:max-content;max-width:100%;background:#fff}
+@media (max-width:860px){.q-list .cs-cred.cards.q-cred{margin-top:28px}.ct-top .cs-cred.ct-cred-rows{margin-top:32px}}
+
+/* ---- ExecutiveOS #coach ---- */
+.xos-coach .coach-grid .coach-say .cs-section-lead{max-width:none;margin-bottom:14px}
+.xos-coach .coach-grid .coach-say .cs-section-lead mark{font-weight:600}
+.xos-coach .coach-grid .coach-say .cs-support{max-width:58ch}
+.xos-coach .coach-grid .coach-say .cs-rows .cs-row p{font-size:16px;line-height:1.5;max-width:none;margin:0}
+.xos-coach .coach-grid .coach-say .cs-rows .cs-row p+p{margin-top:0}
+.xos-coach .coach-grid .coach-say .cs-rows{border-top:1px solid var(--hairline);padding-top:4px}
+.xos-coach .coach-grid .coach-say .cs-row:first-child{padding-top:14px}
+.xos-coach .coach-grid .card.coach-start .cs-faq-lead{margin:18px 0 0;font-size:17px;max-width:none}
+.xos-coach .coach-grid .card.coach-start .coach-ask{margin-top:16px;padding-top:16px;border-top:1px solid var(--hairline);display:grid;gap:6px}
+.xos-coach .coach-grid .card.coach-start .coach-ask p.label{font-size:14px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;line-height:1.35;color:var(--moss,#818275);margin:0;max-width:none}
+.xos-coach .coach-grid .card.coach-start .coach-ask .coach-ask-q{margin:0;font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.15;letter-spacing:-.02em;font-weight:600;color:var(--ink,#2B0D03);max-width:none}
+/* fluency: the heading column left, two stacked quiet cards right */
+.xos-coach .coach-grid.coach-fluency{grid-template-columns:minmax(0,4fr) minmax(0,8fr)}
+.xos-coach .coach-grid.coach-fluency .cs-bento.stack{grid-template-columns:minmax(0,1fr);gap:16px}
+.xos-coach .coach-grid.coach-fluency .cs-bento.stack li{padding:26px 28px}
+.xos-coach .coach-grid.coach-fluency .cs-bento.stack h3{font-size:clamp(1.15rem,1.5vw,1.4rem);line-height:1.25;letter-spacing:-.01em}
+.xos-coach .coach-grid.coach-fluency .cs-bento.stack h3 mark{font-weight:600}
+.xos-coach .coach-grid.coach-fluency .cs-bento.stack p{font-size:16px;line-height:1.5;max-width:none;margin:0}
+.xos-coach .coach-grid.coach-fluency .cs-bento.stack .cs-chips{margin-top:4px;font-size:15px}
+.xos-coach .coach-grid.coach-fluency .cs-bento.stack .cs-chips li{display:inline;padding:0;border:0;background:transparent;border-radius:0;min-width:0}
+@media (max-width:700px){.xos-coach .coach-grid.coach-fluency .cs-bento.stack .cs-chips li{display:block}}
+/* six weeks in: three cards across the full width */
+.xos-coach .coach-six{margin-top:clamp(36px,4vw,56px)}
+.xos-coach .coach-six p.label{font-size:clamp(1.3rem,1.6vw,1.5rem);font-weight:600;letter-spacing:-.02em;text-transform:none;line-height:1.15;color:var(--ink,#2B0D03);max-width:none;margin:0 0 10px}
+.xos-coach .coach-six .cs-support{font-size:1.05rem;max-width:58ch}
+.xos-coach .coach-six .cs-bento h3{font-size:1.1rem}
+.xos-coach .coach-six .cs-bento p{font-size:15px}
+/* from the field: one split card per case, stacked */
+.xos-coach .coach-field .cases.cs-cases{grid-template-columns:minmax(0,1fr);gap:16px}
+.xos-coach .coach-field .cases.cs-cases li.cs-split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,56px);padding:28px;background:#EDE7FB;border:1px solid var(--lilac,#CDBDF6);border-radius:20px}
+.xos-coach .coach-field .cases.cs-cases .cs-premise{margin:0;font-size:16px;line-height:1.5}
+.xos-coach .coach-field .cases.cs-cases .cs-chips{margin-top:12px;font-size:14px;color:var(--moss,#818275)}
+.xos-coach .coach-field .cases.cs-cases .cs-chips li{display:inline;padding:0;border:0;background:transparent;border-radius:0}
+.xos-coach .coach-field .cases.cs-cases .cs-rows{padding:0;margin:0}
+.xos-coach .coach-field .cases.cs-cases .cs-rows li{padding:12px 0;border:0;border-top:1px solid var(--hairline);border-radius:0;background:transparent;display:grid}
+.xos-coach .coach-field .cases.cs-cases .cs-rows li:first-child{border-top:0;padding-top:0}
+.xos-coach .coach-field .cases.cs-cases .cs-rows li:last-child{padding-bottom:0}
+.xos-coach .coach-field .cases.cs-cases .cs-rows p{font-size:16px;line-height:1.45}
+@media (max-width:1100px){
+  .xos-coach .coach-grid.coach-fluency{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:860px){
+  .xos-coach .coach-field .cases.cs-cases li.cs-split{grid-template-columns:minmax(0,1fr);gap:18px;padding:22px 20px}
+  .xos-coach .coach-grid.coach-fluency .cs-bento.stack li{padding:22px 20px}
+}
+
+/* ---- ExecutiveOS business case, Q1: "Both." then two anchor rows ---- */
+.xos-qa dd .cs-rows{margin-top:4px}
+.xos-qa dd p:has(+ .cs-rows){font-weight:600;font-size:clamp(1.25rem,1.8vw,1.65rem);line-height:1.2}
+.xos-qa dd .cs-row p{font-size:17px;line-height:1.5;max-width:60ch}
+.xos-qa dd .cs-row p mark{font-weight:600}
+.xos-qa dd .cs-row .cs-tail{font-size:16px}
+
+/* ---- ExecutiveOS guard band: the canon line sits under the three columns ---- */
+.xos-guard .xos-guard-fine{margin:clamp(24px,3vw,36px) 0 0;padding-top:18px;border-top:1px solid var(--hairline-dark);font-size:15px;line-height:1.5;color:var(--moss,#818275);max-width:70ch}
+
+/* ---- ExecutiveOS stat captions: the figure is not repeated in words ---- */
+.xos-why .stat-big p{max-width:34ch}
+
+/* ---- About: By day card ---- */
+.v12-mandate .v12-card.day .day-k{font-size:17px;font-weight:600;line-height:1.4;max-width:none}
+.v12-mandate .v12-card.day .day-display{font-size:clamp(1.25rem,1.9vw,1.6rem);line-height:1.25;letter-spacing:-.015em;font-weight:600;max-width:none}
+.v12-mandate .v12-card.day .day-display mark{font-weight:600}
+.v12-mandate .v12-card.day .cs-rows{margin-top:4px}
+.v12-mandate .v12-card.day .cs-row p{font-size:16px;line-height:1.5;max-width:none}
+.v12-mandate .v12-card.day .cs-row .cs-tail{font-size:15px}
+.v12-mandate .v12-card.day .day-go{color:var(--ink,#2B0D03);text-decoration:none;border-bottom:1.5px solid currentColor;padding-block:0;margin-top:4px}
+
+/* ---- About: Gartner chapter, the callout and the split card ---- */
+.chapter .body .ch-callout{display:grid;gap:12px;padding:22px 24px;border:1px solid var(--lilac,#CDBDF6);border-radius:20px;background:#EDE7FB;max-width:none}
+.chapter .beat .body .ch-callout p{margin:0;font-size:17px;line-height:1.5;color:var(--ink,#2B0D03);max-width:none}
+.chapter .body .ch-callout .cs-chips{color:var(--ink,#2B0D03);font-size:15px}
+.chapter .body .cs-split.dark{max-width:none;grid-template-columns:minmax(0,1fr);gap:18px}
+.chapter .body .cs-split.dark .cs-rows{border-top:1px solid var(--hairline-dark);padding-top:4px}
+.chapter .body .cs-split.dark .cs-row:first-child{padding-top:14px}
+.chapter .beat .body .cs-split .cs-lead{font-size:clamp(20px,1.7vw,24px);line-height:1.3;max-width:none}
+.chapter .beat .body .cs-split .cs-lead mark{font-weight:600}
+.chapter .beat .body .cs-split .cs-row p{font-size:16px;line-height:1.5;max-width:none;color:var(--linen,#E2E2CD)}
+.chapter .beat .body .cs-split .cs-row .cs-tail{color:var(--linen,#E2E2CD)}
+
+/* ---- About: LinkedIn chapter, the credential rows under the "1 of 3" card ---- */
+.chapter .beat .ch-li-rows{margin-top:18px;max-width:520px}
+.chapter .beat .ch-li-rows .cs-row{padding:11px 0}
+.chapter .beat .ch-li-rows .cs-row p{font-size:16px;line-height:1.45;color:var(--linen,#E2E2CD);font-weight:500}
+@media (max-width:860px){.chapter .beat .ch-li-rows{max-width:none;margin-top:14px}}
+
+/* ---- About: 2010 to 2020, the three-stop track and the display line ---- */
+.chapter .beat .body .ch-track{display:grid;gap:18px;max-width:none}
+.chapter .beat .body .ch-track .ch-cap{margin:0;font-size:14px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;line-height:1.4;color:var(--moss,#818275);max-width:none}
+.cs-track.three{--stops:3}
+.chapter .beat .body .ch-track .cs-track p{margin:0;max-width:none}
+.chapter .beat .body .ch-track .cs-track .cs-h{font-size:clamp(1.15rem,1.5vw,1.4rem);line-height:1.2;letter-spacing:-.01em}
+.chapter .beat .body .ch-track .ch-display{margin:6px 0 0;font-size:clamp(1.35rem,2vw,1.8rem);line-height:1.25;letter-spacing:-.015em;font-weight:600;max-width:30ch;color:var(--ink,#2B0D03)}
+@media (max-width:520px){.chapter .beat .body .ch-track .cs-track{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.chapter .beat .body .ch-track .cs-track .cs-h{font-size:1rem}}
+
+/* ---- Questions: structured answers inside the accordion ---- */
+.faq-item .cs-ans{padding:0 0 28px;max-width:62ch}
+.faq-item .cs-ans p{padding:0}
+.faq-item .cs-ans .cs-faq-lead{margin:0 0 10px;font-size:18px}
+.faq-item .cs-ans .cs-rows{margin-top:0}
+.faq-item .cs-ans .cs-row{padding:12px 0}
+.faq-item .cs-ans .cs-row:first-child{padding-top:4px}
+.faq-item .cs-ans .cs-row p{font-size:16px;line-height:1.5}
+.faq-item .cs-ans .cs-row .cs-tail{font-size:15px}
+.faq-item .cs-ans .cs-row .cs-tail a{color:var(--violet,#5B41C0);font-weight:600}
+.faq-item .cs-ans .cs-track{margin:4px 0 0}
+.faq-item .cs-ans .cs-track li{padding-top:12px;gap:8px}
+.faq-item .cs-ans .cs-track .cs-h{font-size:16px}
+.faq-item .cs-ans .cs-track .cs-h .kf{font-size:1em}
+.faq-item .cs-ans .cs-track .cs-fig{font-size:24px}
+.faq-item .cs-ans .cs-track p{font-size:15px}
+.faq-item .cs-ans .cs-chips{margin:0;font-size:16px}
+.faq-item .cs-ans .cs-chips .kf{font-size:1em}
+.faq-item .cs-ans .cs-note{margin-top:12px}
+.faq-item .cs-ans .cs-note .kf{font-size:1em}
+@media (max-width:860px){.faq-item .cs-ans{padding-bottom:22px}}
+
+/* Questions: the How long answer as two program stops (the review fold) */
+.cs-track.two{--stops:2}
