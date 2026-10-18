@@ -137,14 +137,14 @@
     each(batch, function (el, i) {
       io.unobserve(el);
       if (el._gw) { playWords(el, el._gw); return; }
-      el.style.setProperty('--d', Math.min(i, 5) * 110 + 'ms');
+      el.style.setProperty('--d', Math.min(i, 5) * 40 + 'ms');
       el.className += ' rv-in';
       setTimeout(function () {
         el.className = el.className.replace(' rv-in', '').replace(/(^|\s)rv(?=\s|$)/, '').replace(/^\s+/, '');
         el.style.removeProperty('--d');
-      }, 2200 + Math.min(i, 5) * 110);
+      }, 900 + Math.min(i, 5) * 40);
     });
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
+  }, { rootMargin: '0px 0px -6% 0px', threshold: 0 });
   each(targets, function (el) {
     if (el._gw) return;                                   /* it arrives word by word instead */
     var r = el.getBoundingClientRect();
@@ -161,6 +161,21 @@
     each(wordy, function (el) { if (el.className.indexOf('gw-on') < 0) { io.unobserve(el); playWords(el, el._gw); } });
   };
   win.addEventListener('scroll', atEnd, { passive: true });
+  /* Oct 18 (audit C7): a safety net. 900ms after the page loads, anything still hidden inside the viewport shows itself. */
+  var safety = function () {
+    var H = vh();
+    each(doc.querySelectorAll('.rv:not(.rv-in)'), function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < H && r.bottom > 0) { io.unobserve(el); el.className += ' rv-in'; }
+    });
+    each(wordy, function (el) {
+      if (el.className.indexOf('gw-on') >= 0) return;
+      var r = el.getBoundingClientRect();
+      if (r.top < H && r.bottom > 0) { io.unobserve(el); playWords(el, el._gw); }
+    });
+  };
+  setTimeout(safety, 900);
+  win.addEventListener('load', function () { setTimeout(safety, 900); });
 
   /* highlights draw in */
   var marks = doc.querySelectorAll('mark, .trust-points b, .trust-points strong');
@@ -171,32 +186,7 @@
     each(marks, function (m) { mo.observe(m); });
   }
 
-  /* numbers count up */
-  var nums = [];
-  each(doc.querySelectorAll('.proof b'), function (b) {
-    var m = /^(\d+)(\D*)$/.exec((b.textContent || '').replace(/\s+/g, ''));
-    if (!m || +m[1] < 20) return;
-    b._end = +m[1]; b._tail = m[2]; b._text = b.textContent;
-    nums.push(b);
-  });
-  if (nums.length) {
-    var no = new IntersectionObserver(function (entries) {
-      each(entries, function (en) {
-        if (!en.isIntersecting) return;
-        var b = en.target; no.unobserve(b);
-        var t0 = null, dur = 1900;
-        b.style.minWidth = b.getBoundingClientRect().width + 'px'; b.style.display = 'inline-block';
-        var step = function (t) {
-          if (t0 === null) t0 = t;
-          var k = clamp((t - t0) / dur, 0, 1), e = 1 - Math.pow(1 - k, 4);
-          if (k < 1) { b.textContent = Math.round(b._end * e) + b._tail; win.requestAnimationFrame(step); }
-          else { b.textContent = b._text; b.style.minWidth = ''; b.style.display = ''; }
-        };
-        win.requestAnimationFrame(step);
-      });
-    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.5 });
-    each(nums, function (b) { no.observe(b); });
-  }
+  /* numbers count up: removed Oct 18 (audit C7). The figures are final from the first frame; they rise in with their section. */
 
   /* ================= 3. The cursor: a soft circle, buttons that lean, cards that tilt ================= */
   var pointer = { x: -9999, y: -9999, on: false };
@@ -215,7 +205,8 @@
       if (!started) { started = true; cx = tx; cy = ty; }
       var t = e.target, hot = t && t.closest ? t.closest('a,button,[role="button"],summary,label,input,select,textarea') : null;
       var frame = t && t.tagName === 'IFRAME';
-      dot.className = 'gs-cursor' + (frame ? '' : ' on') + (hot ? ' big' : '');
+      var inHero = t && t.closest ? !!t.closest('main > section:first-of-type, .close-box') : false;   /* Oct 18 (audit P1): the circle stays out of the reading areas */
+      dot.className = 'gs-cursor' + (frame || !inHero ? '' : ' on') + (hot && inHero ? ' big' : '');
       if (!moving) { moving = true; win.requestAnimationFrame(follow); }
     }, { passive: true });
     root.addEventListener('mouseleave', function () { dot.className = 'gs-cursor'; });

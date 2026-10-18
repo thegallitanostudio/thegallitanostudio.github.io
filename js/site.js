@@ -25,6 +25,14 @@
     }
   }
 
+  /* Oct 18 (audit C6): the header compacts once the page has scrolled. CSS makes it sticky on desktop. */
+  var sh = doc.querySelector('.site-head');
+  if (sh) {
+    var compact = function () { var on = (window.pageYOffset || doc.documentElement.scrollTop) > 80; if (on !== (sh.className.indexOf(' is-compact') >= 0)) sh.className = on ? sh.className + ' is-compact' : sh.className.replace(' is-compact', ''); };
+    window.addEventListener('scroll', compact, { passive: true });
+    compact();
+  }
+
   /* Phone menu: a bottom sheet */
   var btn = doc.getElementById('menu-btn');
   var sheet = doc.getElementById('menu-sheet');

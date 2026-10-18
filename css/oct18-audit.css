@@ -36,3 +36,142 @@
 .form .sent:focus{outline:none}
 .form .sent.err{color:var(--ink,#2B0D03)}
 .form .btn:disabled{opacity:.7;cursor:default}
+
+/* ---- Oct 18 audit, tier one and the approved tiers below (Angela, Oct 17, 9:18pm: "go"). Loaded last on every page. ---- */
+
+/* C5: one quote can take the full row */
+.quotes .quote.wide{grid-column:1 / -1}
+@media (max-width:700px){ .quotes .quote.wide{grid-column:auto} }
+
+/* C7: motion at reading speed. Headlines rise as one piece (every word shares one timing), sections resolve in about a third of a second, highlights draw in faster. */
+.gs-motion .gw{transition:opacity .32s cubic-bezier(.22,1,.36,1),transform .38s cubic-bezier(.22,1,.36,1);transition-delay:0ms;transform:translateY(.22em)}
+.gs-motion .gw-on .gw{transform:none}
+.gs-motion:not(.gs-ready) main h1{animation-delay:.9s}
+.gs-motion .rv{transform:translateY(14px)}
+.gs-motion .rv.rv-in{transition:opacity .32s cubic-bezier(.22,1,.36,1),transform .38s cubic-bezier(.22,1,.36,1)}
+.gs-motion mark,.gs-motion .trust-points b,.gs-motion .trust-points strong{transition:background-size .6s cubic-bezier(.22,1,.36,1) .1s}
+
+/* C6: the header stays with the reader on desktop and compacts once the page has scrolled */
+@media (min-width:861px){
+  .site-head{position:sticky;top:0;z-index:60;background:rgba(226,226,205,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);transition:box-shadow .25s ease}
+  .site-head .wrap{transition:min-height .25s ease}
+  .site-head.is-compact .wrap{min-height:64px}
+  .site-head.is-compact{box-shadow:0 1px 0 #D2D2B6}
+  .site-head.is-compact .nav .btn{min-height:40px;padding:0 18px;font-size:15px}
+}
+
+/* H1: Home hero. Buttons right under the descriptor; the audience line, the chips and the hook follow. */
+.home-hero .hero-text .hero-ctas{grid-area:auto;margin:4px 0 8px;align-self:auto}
+.home-hero .hero-text .hero-for{margin-top:6px}
+@media (max-width:700px){
+  .home-hero .hero-ctas.ctas{display:flex;order:1;margin-top:4px}
+  .home-hero .hero-photo{order:1}
+  .doors-ctas{display:none}
+}
+
+/* H1 and P7: audience and moment chips read as a line of text, not filters. Tier labels (.flag) stay pills. */
+.chips{display:flex;flex-wrap:wrap;gap:4px 0;align-items:baseline}
+.chips .chip:not(.flag){display:inline;min-height:0;padding:0;border:0;background:transparent;border-radius:0;font-size:15px;font-weight:500;line-height:1.5;color:var(--moss,#818275);white-space:normal;cursor:default}
+.chips .chip.solid:not(.flag){background:transparent;color:var(--moss,#818275)}
+.dark .chips .chip:not(.flag),.band-dark .chips .chip:not(.flag),.door.dark .chips .chip:not(.flag){color:#D2D2B6}
+.chips .chip:not(.flag)+.chip:not(.flag)::before{content:"\00a0\00b7\00a0";color:inherit;opacity:.7}
+.hero .chips,.p-hero .chips{margin-top:10px}
+.door .chips{margin-top:12px}
+
+/* H2: For companies hero. The credential card sits where the dot grid was. */
+.hero-photo.cred-card{background:none;aspect-ratio:auto;max-width:420px;justify-self:end;align-self:center}
+.hero-photo.cred-card::before,.hero-photo.cred-card::after{display:none}
+.hero-photo.cred-card .cred{display:grid;gap:14px;background:#EDE7FB;border:1px solid var(--lilac,#CDBDF6);border-radius:24px;padding:26px 28px}
+.hero-photo.cred-card .cred p{margin:0;font-size:16px;line-height:1.5;color:var(--ink,#2B0D03)}
+@media (max-width:860px){.hero-photo.cred-card{max-width:none;width:100%;justify-self:stretch;margin-top:8px}}
+@media (max-width:700px){.hero-photo.cred-card{order:1;aspect-ratio:auto;overflow:visible}}
+
+/* H3: the one offer card is mahogany, like every other dark card on the page */
+.one-offer .card.dark.lead-offer{background:var(--seaweed,#2B0D03);border:1px solid var(--violet,#5B41C0)}
+.one-offer .card.dark.lead-offer .who{color:var(--lilac,#CDBDF6)}
+.one-offer .card.dark.lead-offer .sub{color:var(--lilac,#CDBDF6)}
+.one-offer .card.dark.lead-offer p,.one-offer .card.dark.lead-offer li{color:#E2E2CD}
+
+/* H4: step and run copy at reading contrast */
+.runs5 p,.steps p,.steps4 p,.xos-steps p,.how-steps p{color:var(--ink,#2B0D03);opacity:.8;font-size:1rem;line-height:1.55}
+.runs5 b,.steps b,.steps4 b{color:var(--ink,#2B0D03)}
+
+/* H6: the two program cards end where their content ends; the First Look close line sits right under its lists */
+@media (min-width:861px){
+  .programs.two{align-items:start}
+  .programs.two .program .fine{margin-top:8px}
+}
+
+/* H5: the close band carries the four-stop track on Home and Work with me only; elsewhere the markup is gone */
+
+/* H7: the program-page heroes use their right half for the credential card */
+@media (min-width:861px){
+  .hero.plain.p-hero .wrap{grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);grid-template-areas:"text photo" "ctas photo";column-gap:48px;align-items:center}
+  .hero.plain.p-hero .hero-text{grid-area:text}
+  .hero.plain.p-hero .hero-ctas{grid-area:ctas}
+  .hero.plain.p-hero .cred-card{grid-area:photo;justify-self:end}
+  .hero.plain.p-hero .dl-row{grid-column:1 / -1}
+}
+
+/* H8: About opens on the studio-grade portrait; the beach photo moves to Where it started. Book shows the studio headshot. */
+.open-photo.open-portrait img{aspect-ratio:17/13;object-position:50% 22%}
+.beat-photo{margin:22px 0 0}
+.beat-photo img{width:100%;max-width:420px;aspect-ratio:17/13;object-fit:cover;object-position:50% 40%;border-radius:var(--r-card,20px);display:block}
+@media (max-width:860px){.beat-photo{margin:16px 0 4px}}
+
+/* H10: Book. Headline, then the calendar, then the access line as a caption, the Referred band with the portrait, then the credential strip. */
+.book-top-slim::after{display:none}
+#calendar #gs-booking.live{max-width:1040px;margin:0 auto}
+#calendar .access-line{max-width:60ch;margin:22px auto 0;text-align:center;font-size:16px;line-height:1.55;color:var(--ink,#2B0D03);opacity:.8}
+.referred .intro .ref-photo{margin:26px 0 0;max-width:240px;position:relative}
+.referred .intro .ref-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:120px 120px 20px 20px;display:block}
+.referred .intro .ref-photo::after{content:"";position:absolute;width:34%;aspect-ratio:1;border-radius:50%;background:var(--purple,#7F63C9);right:-9%;bottom:8%}
+@media (max-width:860px){.referred .intro .ref-photo{display:none}}
+.book-cred{padding-top:28px;padding-bottom:48px}
+.book-cred .cred{display:grid;gap:12px;border-left:4px solid var(--violet,#5B41C0);padding-left:18px;max-width:72ch}
+.book-cred .cred p{margin:0;font-size:16px;line-height:1.5}
+.book-cred .cred b{font-weight:600}
+
+/* H12: the Collective paragraph gets a lead line; card 03 leads with its first sentence. No copy change. */
+.collective .for-line.for-lead{font-size:clamp(1.25rem,1.7vw,1.5rem);line-height:1.35;font-weight:500;color:var(--ink,#2B0D03);max-width:40ch;margin-bottom:12px}
+.collective .for-line.for-rest{margin-top:0}
+.leave5 li.wide p.lead-line{font-size:1.25rem;line-height:1.35;font-weight:500;color:var(--linen,#E2E2CD);margin-bottom:8px}
+.leave5 li.wide p+p{margin-top:0}
+
+/* P6: a second footer row a vendor office can use */
+.site-foot .foot-legal{flex-basis:100%;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px;color:var(--moss,#818275);padding-top:14px;border-top:1px solid #D2D2B6}
+.site-foot .foot-legal a{color:var(--ink,#2B0D03);text-decoration:underline;text-underline-offset:3px}
+@media (max-width:700px){.site-foot .foot-legal{flex-direction:column;gap:8px}}
+
+/* P2: five rings on phone, the last one centered on its own row */
+@media (max-width:640px){
+  .stat-ring li:last-child{grid-column:1 / -1;max-width:calc(50% - 5px);margin:0 auto;width:100%}
+}
+
+/* P4: display tracking */
+h1{letter-spacing:-.022em;line-height:1.04}
+h2{letter-spacing:-.015em}
+.display{letter-spacing:-.02em}
+
+/* P5: quotes read as editorial pulls: a short rule instead of the big glyph; attribution at reading contrast */
+.quote::before{content:"";display:block;width:36px;height:2px;background:currentColor;opacity:.55;font-size:0;line-height:0;height:2px}
+.quote footer{font-size:14px;font-weight:600;letter-spacing:.02em;opacity:.92}
+
+/* P9: bands breathe with the viewport instead of a fixed 112px */
+:root{--section:clamp(64px,9vw,112px)}
+
+/* P10: the phone dock never covers the last line of a section */
+@media (max-width:860px){
+  .has-dock body,body.has-dock{padding-bottom:0}
+  .has-dock main{padding-bottom:88px}
+  html{scroll-padding-bottom:88px}
+}
+
+/* H2 and H7 fix: the credential card is not a photo. Its logo images keep the badge sizing, not the portrait rules. */
+.hero-photo.cred-card{background:none;aspect-ratio:auto}
+.hero-photo.cred-card img{position:static;inset:auto;width:auto;height:auto;object-fit:contain;border-radius:0}
+.hero-photo.cred-card .li-badge.sm img{height:17px}
+.hero-photo.cred-card .g-badge.sm img{height:16px}
+.hero-photo.cred-card .sf-badge.sm img{height:32px}
+.hero.small-photo .hero-photo.cred-card{max-width:420px}
+@media (max-width:860px){.hero.small-photo .hero-photo.cred-card{max-width:none}}
