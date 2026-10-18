@@ -1,0 +1,7 @@
+/* Oct 17, 2026, evening: Angela's voice pass. About (By day, The arena, Behind closed doors, Where it started), Behind closed doors on Work with me, "Why me" on ExecutiveOS. New file, loaded last before motion.css. Older files untouched. */
+.v17-room .beat .body p.pull,.v17-work .beat .body p.pull{max-width:26ch}
+.v17-room.band-dark .beat .body p.pull{color:#CDBDF6}
+.v17-room .v17-ctas{margin-top:10px}
+.v17-work .beat>div:first-child h2{max-width:16ch}
+.v17-work .sf-badge{display:inline-flex;margin-top:18px}
+@media (max-width:860px){.v17-room .beat .body p.pull,.v17-work .beat .body p.pull{max-width:none}}
