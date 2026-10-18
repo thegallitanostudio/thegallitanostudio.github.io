@@ -175,3 +175,48 @@ h2{letter-spacing:-.015em}
 .hero-photo.cred-card .sf-badge.sm img{height:32px}
 .hero.small-photo .hero-photo.cred-card{max-width:420px}
 @media (max-width:860px){.hero.small-photo .hero-photo.cred-card{max-width:none}}
+
+/* Oct 17, 9:50pm (Angela): the three employer marks sit in badges of one height, and the Salesforce cloud is trimmed to the same visual size as the other two */
+.li-badge,.g-badge,.sf-badge{min-height:40px;padding:8px 14px;border-radius:12px;box-sizing:border-box;align-items:center}
+.li-badge.sm,.g-badge.sm,.sf-badge.sm{min-height:34px;padding:7px 12px;border-radius:9px}
+.li-badge img,.li-badge.sm img{height:17px}
+.g-badge img,.g-badge.sm img{height:16px}
+.sf-badge img{height:22px}
+.sf-badge.sm img{height:20px}
+.li-badge:not(.sm) img{height:19px}
+.g-badge:not(.sm) img{height:18px}
+.sf-badge:not(.sm) img{height:24px}
+.hero-photo.cred-card .sf-badge.sm img{height:20px}
+
+/* Oct 17, 9:50pm (Angela): the chips inside the doors and heroes read in the card's own color, and on phone each one takes its own line with no stray dot */
+.chips .chip:not(.flag){color:var(--ink,#2B0D03);opacity:.78;font-weight:500}
+.chips .chip.solid:not(.flag){color:var(--ink,#2B0D03)}
+.dark .chips .chip:not(.flag),.band-dark .chips .chip:not(.flag),.door.dark .chips .chip:not(.flag),.card.dark .chips .chip:not(.flag){color:var(--linen,#E2E2CD);opacity:.85}
+@media (max-width:700px){
+  .chips{display:grid;gap:6px}
+  .chips .chip:not(.flag){display:block;line-height:1.35}
+  .chips .chip:not(.flag)+.chip:not(.flag)::before{content:none}
+}
+
+/* Oct 18, 2026 · audit: the "How I coach it" section on ExecutiveOS (section.xos-coach#coach) drifted from the house style in oct17-offers.css.
+   These overrides pull it back: eyebrow as a p.label line in moss; the five sub-heads as sentence-case h3 style; the "Where we start" card,
+   the "Six weeks in" cards and the two "From the field" cards as quiet lilac cards; the violet quote band keeps its fill, with
+   "Failure is required" as a small lilac label above the quote. Layout and the two-column grid are untouched. Overrides only. */
+.xos-coach .eyebrow{color:var(--moss,#818275)}
+.xos-coach .coach-grid p.label,
+.xos-coach .coach-field p.label{font-size:clamp(1.3rem,1.6vw,1.5rem);font-weight:600;letter-spacing:-.02em;text-transform:none;line-height:1.15;color:var(--ink,#2B0D03);max-width:none}
+.xos-coach .coach-grid p.label{margin:0 0 14px}
+.xos-coach .coach-grid p.label .kf,
+.xos-coach .coach-field p.label .kf{font-size:1em;letter-spacing:inherit}
+.xos-coach .coach-grid .card,
+.xos-coach .coach-three li,
+.xos-coach .coach-field .cases li{background:#EDE7FB;border:1px solid var(--lilac,#CDBDF6);border-radius:20px;padding:28px}
+.xos-coach .coach-quote p.label{font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;line-height:1.3;color:var(--lilac,#CDBDF6);max-width:none;margin:0 0 4px;white-space:normal}
+.xos-coach .coach-quote{grid-template-columns:minmax(0,1fr);gap:12px}
+.xos-coach .coach-quote p:not(.label){color:var(--linen,#E2E2CD)}
+.xos-coach .coach-field .cases small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--moss,#818275)}
+@media (max-width:700px){
+  .xos-coach .coach-grid .card,
+  .xos-coach .coach-three li,
+  .xos-coach .coach-field .cases li{padding:22px 20px}
+}
