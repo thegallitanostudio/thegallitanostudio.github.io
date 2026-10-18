@@ -1,0 +1,7 @@
+/* Oct 17, 2026 (evening, later): the Before rows on Work with me and the two program pages. The moments are duotone icons with labels, the same icon style as the five steps and the close on Home, instead of pills (Angela, Oct 17). Loads before oct17-offers.css. Changes no older rule. */
+.before .moment{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:600;line-height:1.2;color:var(--ink,#2B0D03);margin-right:10px}
+.before .moment .duo{width:28px;height:28px;color:var(--ink,#2B0D03)}
+.program.dark .before .moment{color:var(--linen,#E2E2CD)}
+.program.dark .before .moment .duo{color:var(--linen,#E2E2CD)}
+.program.dark .before .moment .duo .f{fill:var(--lilac,#CDBDF6)}
+@media (max-width:640px){.before .moment{font-size:13px;margin-right:6px}.before .moment .duo{width:24px;height:24px}}
