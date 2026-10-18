@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="../css/oct17-pill.css?v=1017p">
 <link rel="stylesheet" href="../css/oct17-logos.css?v=1017l">
 <link rel="stylesheet" href="../css/motion.css?v=1011j">
-<link rel="stylesheet" href="../css/oct18-audit.css?v=1018a">
+<link rel="stylesheet" href="../css/oct18-audit.css?v=1018c">
 <script>document.documentElement.className += ' js';if(window.matchMedia&&'IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.className+=' gs-motion';</script>
 </head>
 <body>
@@ -80,13 +80,16 @@
       <p class="serif-line">Someone you trust sent you here. Let’s talk.</p>
       <p>Tell me who sent you, and you’ll get my first open slot.</p>
     </div>
-    <form class="form" id="ref-form" action="mailto:angela@thegallitanostudio.com" method="post" enctype="text/plain">
-      <label for="ref-who">Who sent you?<input id="ref-who" name="Who sent me" type="text" autocomplete="off" required></label>
-      <label for="ref-name">Your name<input id="ref-name" name="My name" type="text" autocomplete="name" required></label>
-      <label for="ref-role">Your role<input id="ref-role" name="My role" type="text" autocomplete="organization-title"></label>
-      <label for="ref-email">Best email<input id="ref-email" name="Best email" type="email" autocomplete="email" required></label>
+    <form class="form" id="ref-form" action="https://usebasin.com/f/78059ef9b768" method="post" accept-charset="UTF-8">
+      <label for="ref-who">Who sent you?<input id="ref-who" name="who_sent_me" type="text" autocomplete="off" required></label>
+      <label for="ref-name">Your name<input id="ref-name" name="name" type="text" autocomplete="name" required></label>
+      <label for="ref-role">Your role<input id="ref-role" name="role" type="text" autocomplete="organization-title"></label>
+      <label for="ref-email">Email<input id="ref-email" name="email" type="email" autocomplete="email" required></label>
+      <input type="hidden" name="page" value="Book, Referred">
+      <input class="gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
       <button class="btn" type="submit">Request my first open slot</button>
-      <p class="sent" id="ref-sent" role="status" hidden>Your email app should have opened with the request. If it didn’t, <a class="tlink gs-mail" data-subject="Referred: first open slot, please" href="mailto:angela@thegallitanostudio.com">email me directly</a> and I’ll find you my first open slot.</p>
+      <p class="sent" id="ref-sent" role="status" tabindex="-1" hidden>Got it. You’ll hear from me within one business day with my first open slot.</p>
+      <p class="sent err" id="ref-err" role="alert" hidden>That didn’t go through. <a class="tlink gs-mail" data-subject="Referred: first open slot, please" href="mailto:angela@thegallitanostudio.com">Email me directly</a> and I’ll find you my first open slot.</p>
     </form>
   </div>
 </section>
@@ -106,8 +109,8 @@
   <div class="ctas"><a class="btn" href="../book/">Book a 20-minute conversation</a><a class="ref" href="../book/#referred">Referred? Start here.</a></div>
 </div>
 
-<script src="../config.js?v=1012d"></script>
-<script src="../js/site.js?v=1018b"></script>
+<script src="../config.js?v=1018c"></script>
+<script src="../js/site.js?v=1018c"></script>
 <script src="../js/motion.js?v=1011j"></script>
 </body>
 </html>

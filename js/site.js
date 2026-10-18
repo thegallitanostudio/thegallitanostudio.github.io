@@ -132,16 +132,27 @@
     for (var q = 0; q < pairs.length; q++) rail.appendChild(pairs[q]);
   }
 
-  /* Referred form: opens a prefilled email (no backend) */
+  /* Referred form: posts to Basin (config.js formEndpoint) without leaving the page.
+     With scripts off, the form posts to Basin directly and Basin shows its own thank-you page. */
   var form = doc.getElementById('ref-form');
-  if (form) {
+  if (form && window.fetch && window.FormData) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var g = function (id) { var el = doc.getElementById(id); return el ? el.value.trim() : ''; };
-      var body = 'Who sent me: ' + g('ref-who') + '\nMy name: ' + g('ref-name') + '\nMy role: ' + g('ref-role') + '\nBest email: ' + g('ref-email') + '\n';
-      var href = 'mailto:' + (cfg.contactEmail || '') + '?subject=' + encodeURIComponent('Referred: first open slot, please') + '&body=' + encodeURIComponent(body);
-      var sent = doc.getElementById('ref-sent'); if (sent) sent.hidden = false;
-      setTimeout(function () { try { window.location.href = href; } catch (err) {} }, 150);
+      var sent = doc.getElementById('ref-sent'), err = doc.getElementById('ref-err');
+      var submit = form.querySelector('button[type=submit]');
+      var url = cfg.formEndpoint || form.getAttribute('action');
+      if (sent) sent.hidden = true; if (err) err.hidden = true;
+      if (submit) { submit.disabled = true; submit.textContent = 'Sending\u2026'; }
+      fetch(url, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+        .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r; })
+        .then(function () {
+          form.className += ' is-done';
+          if (sent) { sent.hidden = false; try { sent.focus(); } catch (x) {} }
+        })
+        .catch(function () {
+          if (err) err.hidden = false;
+          if (submit) { submit.disabled = false; submit.textContent = 'Request my first open slot'; }
+        });
     });
   }
 

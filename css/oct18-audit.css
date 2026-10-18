@@ -27,3 +27,12 @@
   #gs-booking.live #gs-cal iframe{border-radius:12px}
   #gs-booking.live .cal-fallback{padding:0 8px 4px}
 }
+
+/* The Referred form (audit C2): posts to Basin. Honeypot hidden; a done state that keeps the success line and the card. */
+.form .gotcha{position:absolute;left:-10000px;width:1px;height:1px;opacity:0;pointer-events:none}
+.form{position:relative}
+.form.is-done label,.form.is-done button{display:none}
+.form .sent{font-size:17px;line-height:1.5;margin:0}
+.form .sent:focus{outline:none}
+.form .sent.err{color:var(--ink,#2B0D03)}
+.form .btn:disabled{opacity:.7;cursor:default}
