@@ -2464,3 +2464,21 @@ h2{letter-spacing:-.015em}
 }
 .home-hero .chips.chips-roles .chip:not(.flag)+.chip:not(.flag)::before{content:none}
 .home-hero .chips.chips-roles .chip:not(.flag):not(:last-child)::after{content:"\00a0\00a0\00b7\00a0\00a0";color:var(--violet,#5B41C0);font-weight:600}
+
+/* ===== oct20-oba.css ===== */
+/* Oct 20, 2026: the Salesforce mark comes off every page but About (Angela's call on the
+   outside-activity policy). Its slot in the credential stack and badge rows is the Agentic AI
+   badge: a duotone node drawing plus the word, sized to the LinkedIn and Gartner badges. */
+.ai-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--ink,#2B0D03);border-radius:12px;padding:8px 14px 8px 10px;min-height:40px;box-sizing:border-box;width:max-content;max-width:100%;font-size:15px;font-weight:600;line-height:1.2;letter-spacing:0}
+.ai-badge.sm{min-height:34px;padding:6px 12px 6px 8px;border-radius:9px;font-size:13px}
+.ai-badge .duo{width:24px;height:24px;color:var(--ink,#2B0D03)}
+.ai-badge.sm .duo{width:22px;height:22px}
+.ai-badge .duo .f{fill:var(--purple,#5B41C0)}
+.ai-badge .ai-cap{white-space:nowrap}
+.hero-photo.cred-card .cred .cs-cred .ai-badge.sm{min-width:84px;justify-content:center}
+.cs-cred .ai-badge{flex:none}
+.cs-cred.cards .ai-badge,.ct-top .cs-cred.ct-cred-rows .ai-badge{width:max-content;max-width:100%}
+.whoband.v2 .who-cred .ai-badge{margin-top:0;justify-self:start}
+.badge-row .ai-badge{margin-top:0}
+.program.dark .ai-badge,.dark .cs-cred .ai-badge{background:#fff}
+.credbar .k .ai-badge .ai-cap,.ai-badge .ai-cap{text-transform:none;letter-spacing:0;font-size:inherit}

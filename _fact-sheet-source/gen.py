@@ -14,7 +14,7 @@ def glance(what,time,get,now=WAIT):
     return '<section class="glance"><div class="lab">At a glance</div><dl>'+''.join(f'<div class="row">{IC[k]}<div><dt>{t}</dt><dd>{d}</dd></div></div>' for k,t,d in rows)+'</dl></section>'
 def ul(items): return '<ul>'+''.join(f'<li>{x}</li>' for x in items)+'</ul>'
 EVERY='<section class="every"><div class="lab">In every program</div><span>Drafts and revisions</span><span>Your résumé</span><span>Hands-on AI automation and coaching for your day to day</span></section>'
-FOOT=f'''<div class="foot"><div><h3>Angela Gallitano · The Gallitano Studio</h3><p>One of three leaders of LinkedIn’s global Rock Your Profile program. Then Gartner, working with CHROs, CIOs and their executive teams. Today, Salesforce, where I’m Customer Zero for some of the most advanced agentic AI on the market. 350+ rooms since 2020. 125+ executives one to one. Every engagement is strictly guarded.</p></div>
+FOOT=f'''<div class="foot"><div><h3>Angela Gallitano · The Gallitano Studio</h3><p>One of three leaders of LinkedIn’s global Rock Your Profile program. Then Gartner, working with CHROs, CIOs and their executive teams. Today, Salesforce Enterprise AI. I build with agentic AI daily, and I teach leaders to do the same. 350+ rooms since 2020. 125+ executives one to one. Every engagement is strictly guarded.</p></div>
 <div class="cta"><div><b>Book a 20-minute conversation</b><a>thegallitanostudio.com/book</a><small>Referred? Start there too.</small><small>angela@thegallitanostudio.com</small></div><img src="file://{R}/qr-book.svg"></div></div>'''
 def page(title,tag,hero,body):
     co=' co' if ('companies' in tag or title=='Known For Executive') else ''
