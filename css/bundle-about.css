@@ -2385,3 +2385,44 @@ h2{letter-spacing:-.015em}
 .badge-row .ai-badge{margin-top:0}
 .program.dark .ai-badge,.dark .cs-cred .ai-badge{background:#fff}
 .credbar .k .ai-badge .ai-cap,.ai-badge .ai-cap{text-transform:none;letter-spacing:0;font-size:inherit}
+
+/* ===== oct21-a11y.css ===== */
+/* Oct 21, 2026: accessibility pass (WCAG AA contrast, 4.5:1 for small text).
+   Same palette, one step deeper where small labels sat on lilac, sage or violet.
+   Loaded last on every page. Older stylesheets untouched. */
+
+:root{
+  --moss-deep:#5A5B4F;      /* moss, one step deeper: 5.7:1 on lilac */
+  --moss-deeper:#555649;    /* on sage cards: 4.9:1 */
+  --lilac-hi:#E9E1FC;       /* lilac label on violet: 5.6:1 */
+  --linen-hi:#F4F4E9;       /* linen caption on purple: 4.9:1 */
+  --violet-deep:#4A33A6;    /* violet link on lilac: 5.3:1 */
+}
+
+/* Moss labels on lilac cards (dark cards keep their own colors) */
+html body .card.program:not(.dark) .before .lbl,
+html body .card.program:not(.dark) .cs-card-grid .label,
+html body .step-head .cs-get .label,
+html body .cs-metric.inline .src,
+html body .xos-coach .coach-grid .card.coach-start .coach-ask p.label,
+html body .cs-cases .cs-split.plain small,
+html body .cs-split.plain .cs-chips li,
+html body .cs-bento.cs-success h3,
+html body #gs-booking.live p.cal-fallback,
+html body #gs-booking .cal-fallback{color:var(--moss-deep)}
+
+/* Moss caption on sage (About, 2010 to 2020 track) */
+html body .chapter .beat .body .ch-track .ch-cap{color:var(--moss-deeper)}
+
+/* Lilac labels on violet bands */
+html body .xos-coach .coach-quote .label,
+html body section[aria-labelledby="ch2"] .story .beat .label{color:var(--lilac-hi)}
+
+/* Linen captions on purple (About credential stats) */
+html body .cred-stats li span{color:var(--linen-hi)}
+
+/* Violet link on lilac (business case header) */
+html body .p-how-head a.tlink{color:var(--violet-deep)}
+
+/* Phone quote rows: keyboard focus ring when tabbed into */
+.quotes:focus-visible{outline:3px solid var(--violet);outline-offset:4px;border-radius:12px}
