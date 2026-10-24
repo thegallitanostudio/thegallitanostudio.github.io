@@ -2569,3 +2569,32 @@ html body .fl-cadence b{display:block;font-weight:600;font-size:16px;line-height
 html body .fl-cadence p{font-size:14.5px;line-height:1.5;color:var(--ink,#2B0D03);margin:0}
 @media (max-width:1100px){html body .fl-cadence ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){html body .fl-cadence ol{grid-template-columns:1fr}}
+
+/* Work with me: the two program cards share one top grid (Oct 23, 10:15pm).
+   Each card is a head (tier, Before, headline, name, for-line, lead) and a body.
+   On desktop the heads sit on a shared subgrid, so every divider and the length
+   line align across both cards; the bodies end where their content ends. */
+@media (min-width:861px){
+  html body .programs.two{grid-template-rows:repeat(5,auto) auto;row-gap:0;column-gap:24px;align-items:stretch}
+  html body .programs.two > .card.program{display:contents}
+  html body .programs.two > .card.program:first-child > *{grid-column:1}
+  html body .programs.two > .card.program:nth-child(2) > *{grid-column:2}
+  html body .programs.two .pc-head{grid-row:1 / 6;display:grid;grid-template-rows:subgrid;row-gap:0;padding:44px 40px 0;border-radius:24px 24px 0 0;align-content:start}
+  html body .programs.two .pc-head > *{margin:0;padding-bottom:18px;align-self:start}
+  html body .programs.two .pc-head > .chip.flag.tier{justify-self:start;padding-bottom:0;margin-bottom:22px}
+  html body .programs.two .pc-head > h3{padding-top:18px;margin:0}
+  html body .programs.two .pc-body{grid-row:6;align-self:start;display:flex;flex-direction:column;gap:16px;padding:6px 40px 44px;border-radius:0 0 24px 24px}
+  html body .programs.two .card.program:not(.dark) > .pc-head,
+  html body .programs.two .card.program:not(.dark) > .pc-body{background:#EDE7FB}
+  html body .programs.two .card.program.dark > .pc-head,
+  html body .programs.two .card.program.dark > .pc-body{background:var(--seaweed,#2B0D03)}
+  html body .programs.two .pc-body > .length{margin:0}
+  html body .programs.two .pc-body > p:first-child:not([class]){margin:0;font-size:19px;line-height:1.5}
+  html body .programs.two .pc-body > .more-page{margin-top:8px}
+}
+@media (max-width:860px){
+  html body .programs.two .pc-head,html body .programs.two .pc-body{display:contents}
+}
+@media (min-width:861px) and (max-width:1180px){
+  html body .programs.two .cs-card-grid{grid-template-columns:minmax(0,1fr);row-gap:18px}
+}
