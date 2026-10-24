@@ -1,0 +1,15 @@
+/* Oct 23, 2026 (Angela: "I love A3! lets lock it in!", scope B: every duotone icon except the badge).
+   A3, "seated on a circle": the same drawings, a finer line, no fill inside the shapes, and a soft lilac circle
+   behind each icon, offset up and to the left like the circles in the logo. On dark cards the circle is purple
+   and the line stays linen. Pure CSS: the circle is the icon's own background. Loaded last. Changes no older file. */
+.duo{stroke-width:1.15;--halo:var(--lilac,#CDBDF6);
+  background:radial-gradient(circle closest-side at 34% 34%,var(--halo) 97%,transparent 100%) no-repeat;
+  overflow:visible}
+.duo .f{fill:none}
+.steps li .duo,.steps svg.duo{color:var(--ink,#2B0D03)}
+.program.dark .before .moment .duo,.leave .cs-xos .duo,.dark .cs-row .duo,.dark .cs-bento .duo,.dark .cs-track .duo,
+.cs-bento li.dark .duo,.dark .duo,.band-dark .duo,.card.dark .duo{--halo:var(--purple,#7F63C9)}
+.program.dark .before .moment .duo .f,.leave .cs-xos .duo .f,.dark .cs-row .duo .f,.dark .cs-bento .duo .f,.dark .cs-track .duo .f,.cs-bento li.dark .duo .f{fill:none}
+/* The Before rows breathe a little more (the mockup's 32px) */
+.before .moment .duo{width:32px;height:32px}
+@media (max-width:640px){.before .moment .duo{width:28px;height:28px}}

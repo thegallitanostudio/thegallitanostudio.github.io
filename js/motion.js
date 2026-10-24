@@ -248,7 +248,7 @@
   }
 
   /* ================= 4. Home: the circles ================= */
-  var C = { purple: '#7F63C9', lilac: '#CDBDF6', violet: '#5B41C0', sage2: '#D2D2B6', mahogany: '#2B0D03', raspberry: '#B3325F' };
+  var C = { purple: '#7F63C9', lilac: '#CDBDF6', violet: '#5B41C0', sage2: '#E7E5EC', mahogany: '#2B0D03', raspberry: '#B3325F' };
   function hex(c) { return [parseInt(c.substr(1, 2), 16), parseInt(c.substr(3, 2), 16), parseInt(c.substr(5, 2), 16)]; }
   function mix(a, b, t) { var A = hex(a), B = hex(b); return 'rgb(' + Math.round(lerp(A[0], B[0], t)) + ',' + Math.round(lerp(A[1], B[1], t)) + ',' + Math.round(lerp(A[2], B[2], t)) + ')'; }
   function makeCanvas(cls) { var c = doc.createElement('canvas'); c.className = cls; c.setAttribute('aria-hidden', 'true'); return c; }

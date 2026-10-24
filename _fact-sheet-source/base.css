@@ -1,6 +1,6 @@
 @font-face{font-family:IS;src:url(file:///home/claude/thegallitanostudio.github.io/fonts/InstrumentSans.woff2);font-weight:100 900;font-style:normal}
 @font-face{font-family:IS;src:url(file:///home/claude/thegallitanostudio.github.io/fonts/InstrumentSans-Italic.woff2);font-weight:100 900;font-style:italic}
-:root{--sage:#E2E2CD;--ink:#2B0D03;--violet:#5B41C0;--purple:#7F63C9;--lilac:#CDBDF6;--dsage:#D2D2B6;--moss:#6f7064;--rasp:#B3325F;--raspl:#F2A7C3;--tint:#EDE7FB}
+:root{--sage:#F4F3F6;--ink:#2B0D03;--violet:#5B41C0;--purple:#7F63C9;--lilac:#CDBDF6;--dsage:#E7E5EC;--moss:#5F5A68;--rasp:#B3325F;--raspl:#F2A7C3;--tint:#EDE7FB}
 *{box-sizing:border-box;margin:0;padding:0}
 @page{size:8.5in 11in;margin:0}
 html,body{background:var(--sage)}
@@ -105,3 +105,7 @@ ol.n li b{font-weight:600}
 .co .card p,.co li{font-size:11.4px;line-height:1.3}
 .co .card h3{font-size:15px}
 .co .stat b{font-size:26px}
+
+/* Oct 23, 2026: Pearl replaces sage; icons in the A3 style (fine line, no fill, a circle behind: purple on the dark panels) */
+.glance svg{stroke-width:1.15;background:radial-gradient(circle closest-side at 34% 34%,var(--purple) 97%,transparent 100%) no-repeat}
+.glance svg .f{fill:none}

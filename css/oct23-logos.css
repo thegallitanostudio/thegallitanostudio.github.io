@@ -1,0 +1,27 @@
+/* Oct 23, 2026 (Angela: "re-add the salesforce logo everywhere it was originally ... resize the logo so all of the logos are the same size").
+   The Salesforce mark is back in every slot the Agentic AI badge held since Oct 20. All three employer badges
+   (LinkedIn, Gartner, Salesforce) are one size: the same white box, and logos sized to read as the same weight
+   (the two wordmarks to one width, the Salesforce cloud to the box height). A badge with a caption keeps its width
+   and shares the height. Loaded last. Changes no older file. */
+.li-badge,.g-badge,.sf-badge{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;
+  width:156px;height:52px;min-height:0;padding:0 14px;border-radius:12px;background:#fff;flex:none}
+.li-badge.sm,.g-badge.sm,.sf-badge.sm{width:124px;height:42px;padding:0 10px;border-radius:10px}
+.li-badge img,.li-badge.sm img{width:96px;height:auto}
+.g-badge img,.g-badge.sm img{width:96px;height:auto}
+.sf-badge img,.sf-badge.sm img{height:38px;width:auto}
+.li-badge.sm img,.g-badge.sm img{width:80px}
+.sf-badge.sm img{height:32px}
+.li-badge:has(.badge-cap){width:auto;padding:0 14px}
+.hero-photo.cred-card .li-badge.sm img,.hero-photo.cred-card .g-badge.sm img{width:80px;height:auto}
+.hero-photo.cred-card .sf-badge.sm img{height:32px;width:auto}
+.hero-photo.cred-card .cred .cs-cred .li-badge.sm,.hero-photo.cred-card .cred .cs-cred .g-badge.sm,.hero-photo.cred-card .cred .cs-cred .sf-badge.sm{min-width:0}
+.cs-cred.cards .li-badge,.cs-cred.cards .g-badge,.cs-cred.cards .sf-badge,
+.ct-top .cs-cred.ct-cred-rows .li-badge,.ct-top .cs-cred.ct-cred-rows .g-badge,.ct-top .cs-cred.ct-cred-rows .sf-badge{width:124px;max-width:100%}
+.cs-cred.cards .li-badge:not(.sm),.cs-cred.cards .g-badge:not(.sm),.cs-cred.cards .sf-badge:not(.sm){width:156px}
+.li-badge img,.g-badge img,.sf-badge img{max-width:100%;object-fit:contain}
+.whoband.v2 .who-cred .li-badge.sm,.whoband.v2 .who-cred .g-badge.sm,.whoband.v2 .who-cred .sf-badge.sm{width:124px;white-space:nowrap}
+/* Older rules size these images with longer selectors; these sizes are the ones that stand. */
+.li-badge img,.g-badge img{height:auto!important;width:96px!important}
+.li-badge.sm img,.g-badge.sm img{width:80px!important}
+.sf-badge img{width:auto!important;height:44px!important}
+.sf-badge.sm img{height:36px!important}
