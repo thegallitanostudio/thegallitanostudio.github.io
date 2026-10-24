@@ -2330,3 +2330,37 @@ html body .one-offer .models-two a.model-card p.way-tag{color:var(--violet-deep,
 
 /* About: the "Selected as" label on the light 1 of 3 card (Oct 23, 11pm). */
 html body .chapter .nom .label{color:var(--violet-deep,#4A33A6)}
+
+/* Known For Executive, Gemini round six (Oct 23, about 11:20pm). */
+html body .p-hero .ex-aud{margin:14px 0 0;font-size:14px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--violet-deep,#4A33A6)}
+html body .sec.ex-moments{padding-block:clamp(48px,6vw,80px)}
+html body .ex-moments .sec-head h2{max-width:28ch}
+html body .ex-moments .moments-list{margin-top:8px}
+html body .ex-arch .ex-lead{max-width:62ch;margin-top:16px}
+html body .ex-arch .sec-head h2{max-width:30ch}
+html body .ex-phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:clamp(28px,4vw,44px);align-items:start}
+html body .ex-phase{display:flex;flex-direction:column;gap:10px;padding:32px 30px;border-radius:24px}
+html body .ex-phase .ex-n{margin:0;font-weight:600;font-size:14px;letter-spacing:.08em;color:var(--violet-deep,#4A33A6)}
+html body .ex-phase.dark .ex-n,html body .ex-phase.dark .ex-when{color:var(--lilac-hi,#E9E1FC)}
+html body .ex-phase h3{margin:0;font-size:clamp(1.35rem,1.9vw,1.7rem);line-height:1.15}
+html body .ex-phase h3 .xos-link{color:inherit;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
+html body .ex-phase .ex-when{margin:0 0 6px;font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--moss-deep,#4F4A5A)}
+html body .ex-phase .ex-intro{margin:0 0 4px;font-size:15.5px;line-height:1.55}
+html body .ex-phase ul.dots{margin:0;display:flex;flex-direction:column;gap:12px}
+html body .ex-phase ul.dots > li{font-size:15.5px;line-height:1.55}
+html body .ex-phase ul.dots b{font-weight:600}
+html body .ex-phase .ex-sub{list-style:disc;margin:8px 0 0;padding-left:16px;display:flex;flex-direction:column;gap:4px}
+html body .ex-phase .ex-sub li{font-size:15px;line-height:1.5}
+html body .ex-phase .ex-sub li::before{content:none}
+@media (max-width:1100px){html body .ex-phases{grid-template-columns:1fr}}
+@media (max-width:640px){html body .ex-phase{padding:24px 20px}}
+html body .sec.ex-cad-sec{padding-block:clamp(48px,6vw,80px)}
+html body .ex-cadence{margin-top:0;padding-top:0;border-top:0}
+html body .ex-cadence ol{grid-template-columns:repeat(4,minmax(0,1fr))}
+html body .ex-cadence li > div{display:flex;flex-direction:column}
+@media (max-width:1100px){html body .ex-cadence ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){html body .ex-cadence ol{grid-template-columns:1fr}}
+html body .ex-moments .moments-list.moments-icons li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:flex-start}
+html body .ex-moments .moments-list.moments-icons li .duo{width:32px;height:32px;color:var(--ink,#2B0D03)}
+@media (max-width:640px){html body .ex-moments .moments-list.moments-icons li{padding:16px 18px}html body .ex-moments .moments-list.moments-icons li .duo{width:28px;height:28px}}
+html body .ex-phase:not(.dark) b .kf{color:#7A1640}

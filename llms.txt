@@ -11,7 +11,7 @@ A plain summary of the site for AI systems and search tools. The wording below i
 - Angela Gallitano is the founder of The Gallitano Studio, an executive story and presence advisory.
 - For senior executives, and the ones on their way: CxOs, SVPs, VPs, board directors and executive teams.
 - For companies: I partner with CEOs, CHROs, and executive sponsors to calibrate individual leadership authority so it reinforces institutional credibility, board trust, and commercial momentum.
-- One of three leaders of LinkedIn's global Rock Your Profile program. Then Gartner, working with CHROs, CIOs and their executive teams. Today, Salesforce Enterprise AI. I build with agentic AI daily, and I teach leaders to do the same.
+- One of three leaders of LinkedIn's global Rock Your Profile program. Then Gartner, working with CHROs, CIOs and their executive teams. Today, Salesforce Enterprise AI. I architect, deploy, and scale agentic workflows across my own team every day, and I teach leaders to do the same.
 - 350+ rooms since 2020. 125+ executives one to one. 15+ industries.
 - Global footprint: The US, the UK, EMEA and APAC.
 - Based in Huntsville and Madison, Alabama.
@@ -33,14 +33,14 @@ No one can write your leadership story for you. Together, we articulate your ins
 
 ## Programs for leaders
 
-- [Known For First Look](https://thegallitanostudio.com/work-with-me/first-look/): the 2-week strategic narrative sprint. Your career outran your public presence. In two weeks, we align them: the Narrative Diagnostic, the Executive Dossier (your LinkedIn, executive bio and résumé) and the Calibration.
-- [Known For Executive](https://thegallitanostudio.com/work-with-me/executive/): a 6-month retainer that opens with 30 days of the Accelerator. The 6-month retained advisory: a comprehensive, retained partnership that anchors your authority and stays beside you as the room changes.
+- [Known For First Look](https://thegallitanostudio.com/work-with-me/first-look/): the 2-week strategic narrative sprint. Your career outran your public presence. In two weeks, we align them. You leave with your Known For Leadership Thesis, your Executive Dossier (LinkedIn, executive bio and résumé) and the Calibration readout. The timeline: a tailored intake, a 60-minute extraction session, the build, a 30-minute readout and 15-minute final calibration sessions.
+- [Known For Executive](https://thegallitanostudio.com/work-with-me/executive/): the 6-month retained advisory. A comprehensive retained partnership that anchors your strategic narrative, deploys private AI leverage, and stays beside you as the room changes. It opens with a 30-day foundation sprint. Three phases: the strategic foundation (first 30 days: Narrative Diagnostic, The Known For Architecture, Executive Surface Deployment), the ongoing advisory (months 2 to 6: room prep, a confidential sounding board, the executive readout) and ExecutiveOS (private agentic workflows inside your company's approved tools, calibrated to your voice). Time: 1 to 2 hours a month of focused strategic dialogue, plus narrative calibration by message between sessions.
 - [ExecutiveOS](https://thegallitanostudio.com/executiveos/): one leader's AI, built for them inside the tools their company already approves. It knows their story, their voice and the work in front of them.
 
 ## For companies
 
 - [Known For Leadership Collective](https://thegallitanostudio.com/for-companies/#collective): for the bench. Enterprise cohort advisory, 30 to 90 days. It opens with Known For Live, an intensive alignment session with the full leadership group, then structured 1:1 advisory sessions with each executive.
-- [Known For Live](https://thegallitanostudio.com/for-companies/#live): for the retreat. The executive alignment intensive, half day to multi-day; the launchpad for the Collective or a standalone session.
+- [Known For Live](https://thegallitanostudio.com/for-companies/#live): for the retreat. The executive alignment intensive, half day to multi-day, on-site or virtual. Offered on its own or as the opening of the Leadership Collective.
 - [1:1 Executive Advisory](https://thegallitanostudio.com/for-companies/#sponsor): for the successor. 3, 6 or 12 months. Known For Executive, sponsored by the company, for a single executive.
 - [The business case](https://thegallitanostudio.com/for-companies/business-case/)
 
