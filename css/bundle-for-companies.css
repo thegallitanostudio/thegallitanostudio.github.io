@@ -2805,3 +2805,6 @@ html body ol.leave5.leave6 li{align-content:start}
 html body .close-box h2 em{color:var(--lilac,#CDBDF6);font-style:normal}
 html body .one-offer .models-two a.model-card p.who{color:var(--moss-deep,#4F4A5A);opacity:1}
 html body .one-offer .models-two a.model-card p.way-tag{color:var(--violet-deep,#4A33A6);opacity:1}
+
+/* About: the "Selected as" label on the light 1 of 3 card (Oct 23, 11pm). */
+html body .chapter .nom .label{color:var(--violet-deep,#4A33A6)}
