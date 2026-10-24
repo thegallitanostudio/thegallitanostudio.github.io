@@ -2249,3 +2249,16 @@ html body .offer-next .way-tag{display:block;color:var(--violet-deep,#4A33A6);ma
 /* For companies: How it runs as three stages. */
 html body ol.runs5.runs3{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:860px){html body ol.runs5.runs3{grid-template-columns:1fr}}
+
+/* First Look: the scope lead and the cadence (Oct 23, 10pm). */
+html body .p-how-head .scope-lead{font-size:17px;line-height:1.5;max-width:34ch;margin-top:14px}
+html body .fl-cadence{grid-column:1/-1;margin-top:clamp(36px,5vw,56px);padding-top:clamp(24px,3vw,32px);border-top:1px solid rgba(43,13,3,.3)}
+html body .fl-cadence .label{margin-bottom:8px}
+html body .fl-cadence h3{font-size:clamp(1.4rem,2.2vw,1.9rem);line-height:1.15;margin:0 0 22px}
+html body .fl-cadence ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+html body .fl-cadence li{background:#FBFAFD;border:1px solid var(--lilac,#CDBDF6);border-radius:18px;padding:18px 16px;display:flex;flex-direction:column;gap:10px}
+html body .fl-cadence .n{width:32px;height:32px;border-radius:50%;background:var(--violet,#5B41C0);color:#fff;display:grid;place-items:center;font-weight:600;font-size:14px}
+html body .fl-cadence b{display:block;font-weight:600;font-size:16px;line-height:1.25;color:var(--ink,#2B0D03);margin-bottom:6px}
+html body .fl-cadence p{font-size:14.5px;line-height:1.5;color:var(--ink,#2B0D03);margin:0}
+@media (max-width:1100px){html body .fl-cadence ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){html body .fl-cadence ol{grid-template-columns:1fr}}
