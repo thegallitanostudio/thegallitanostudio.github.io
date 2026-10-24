@@ -109,3 +109,13 @@ ol.n li b{font-weight:600}
 /* Oct 23, 2026: Pearl replaces sage; icons in the A3 style (fine line, no fill, a circle behind: purple on the dark panels) */
 .glance svg{stroke-width:1.15;background:radial-gradient(circle closest-side at 34% 34%,var(--purple) 97%,transparent 100%) no-repeat}
 .glance svg .f{fill:none}
+
+/* Oct 23: the three stages */
+.steps.three{grid-template-columns:repeat(3,1fr);gap:18px}
+.runs h2{font-size:16px;line-height:1.25}
+.every.two{grid-template-columns:auto 1fr 2fr}
+.co .runs h2{font-size:14.5px;margin-bottom:6px}
+.co .steps.three div{font-size:11px;line-height:1.28}
+.co .leave p{margin-top:3px}
+.co .glance{padding:10px 8px 9px}
+.co .glance dd{line-height:1.25}

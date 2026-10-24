@@ -2682,3 +2682,48 @@ body{background-color:#F4F3F6}
 .li-badge.sm img,.g-badge.sm img{width:80px!important}
 .sf-badge img{width:auto!important;height:44px!important}
 .sf-badge.sm img{height:36px!important}
+
+/* ===== oct23-positioning.css ===== */
+/* Oct 23, about 9:30pm CT: the Gemini positioning pass (decisions-2026-10-23-gemini-positioning-pass.md).
+   Loaded last on every page. Older stylesheets are not edited. */
+
+/* One button, site-wide: the Referred note sits under (or beside) the Book button as quiet text. */
+html body .ref-note{display:block;flex-basis:100%;font-size:14px;line-height:1.4;color:var(--moss-deep,#4F4A5A);font-weight:500;margin:0}
+html body .dark .ref-note,html body .band-dark .ref-note,html body .close-box .ref-note,html body .band-v .ref-note{color:var(--lilac-hi,#E9E1FC)}
+html body .ctas:has(.ref-note){row-gap:8px}
+@media (max-width:700px){html body .ctas .ref-note{text-align:center}}
+
+/* Home: three stages instead of five steps. */
+html body ol.steps.stages3 > li{padding-block:22px}
+html body .stage-own{margin-top:10px;font-weight:600;color:var(--ink,#1C0A03)}
+html body #method-h{max-width:30ch}
+
+/* Program pages: three stages in the numbered list. */
+html body ol.steps4.stages3{grid-template-columns:1fr}
+html body .stage-tag{font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink,#2B0D03);margin:2px 0 6px}
+html body .p-how-head h2{max-width:32ch}
+
+/* Home: the doors now follow the method (10A). */
+html body main .sec.method + .doors{padding-top:clamp(8px,2vw,24px)}
+
+/* Home close: moments only, no assets under the dots. */
+html body .close .track .stop .dot{margin-bottom:0}
+
+/* Work with me and the program pages. */
+html body .card.program .for-who,html body .p-hero .for-who{font-size:15px;line-height:1.5;font-style:italic;color:var(--moss-deep,#4F4A5A);margin:6px 0 4px}
+html body .card.program.dark .for-who{color:var(--lilac-hi,#E9E1FC)}
+html body .time-line{font-size:14.5px;font-weight:500;margin:4px 0 10px}
+html body .card.program.dark .time-line{color:var(--lilac-hi,#E9E1FC)}
+html body .card.program .cs-rows b{font-weight:600}
+html body .xos-card .xos-sub{margin-top:10px;font-size:15px;line-height:1.5}
+html body .xos-card .what li b{font-weight:600}
+html body .xos-card .what li{line-height:1.45}
+
+/* For companies: "For the bench" and "For the successor". */
+html body .way-tag{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin:0 0 6px}
+html body .lead-offer .way-tag{color:#F2A7C3}
+html body .offer-next .way-tag{display:block;color:var(--violet-deep,#4A33A6);margin-bottom:4px}
+
+/* For companies: How it runs as three stages. */
+html body ol.runs5.runs3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:860px){html body ol.runs5.runs3{grid-template-columns:1fr}}
