@@ -2704,3 +2704,11 @@ html body .ex-moments .moments-list.moments-icons li{display:grid;grid-template-
 html body .ex-moments .moments-list.moments-icons li .duo{width:32px;height:32px;color:var(--ink,#2B0D03)}
 @media (max-width:640px){html body .ex-moments .moments-list.moments-icons li{padding:16px 18px}html body .ex-moments .moments-list.moments-icons li .duo{width:28px;height:28px}}
 html body .ex-phase:not(.dark) b .kf{color:#7A1640}
+
+/* ===== oct27-audit.css ===== */
+/* Oct 27, 2026 (pushed Oct 28): outside site review fixes. Loaded last on every page.
+   Phone: the footer email and LinkedIn links get a full 44px tap row. */
+@media (max-width:700px){
+  .site-foot .foot-legal{gap:4px}
+  .site-foot .foot-legal a{display:inline-flex;align-items:center;min-height:44px;align-self:flex-start}
+}
