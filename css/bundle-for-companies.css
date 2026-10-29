@@ -2850,3 +2850,8 @@ html body .ex-phase:not(.dark) b .kf{color:#7A1640}
   .site-foot .foot-legal{gap:4px}
   .site-foot .foot-legal a{display:inline-flex;align-items:center;min-height:44px;align-self:flex-start}
 }
+
+/* ===== oct28-proof.css ===== */
+/* Oct 28, 2026: the "Selected as 1 of 3" callout beside "Why companies bring me in" removed (Angela). The heading runs one column. */
+.why-head{grid-template-columns:minmax(0,1fr)}
+.why-head .why-lead{max-width:62ch}

@@ -1,0 +1,3 @@
+/* Oct 28, 2026: the "Selected as 1 of 3" callout beside "Why companies bring me in" removed (Angela). The heading runs one column. */
+.why-head{grid-template-columns:minmax(0,1fr)}
+.why-head .why-lead{max-width:62ch}
