@@ -82,7 +82,7 @@
     var dock = doc.createElement('div');
     dock.className = 'dock';
     var dBook = doc.createElement('a');
-    dBook.className = 'btn'; dBook.href = navBook.getAttribute('href'); dBook.textContent = 'Book a 20-minute conversation';
+    dBook.className = 'btn'; dBook.href = navBook.getAttribute('href'); dBook.textContent = (document.body.getAttribute('data-book') || 'Book a 20-minute conversation');
     var dMenu = doc.createElement('button');
     dMenu.className = 'dock-menu'; dMenu.type = 'button';
     dMenu.setAttribute('aria-label', 'Menu'); dMenu.setAttribute('aria-haspopup', 'dialog'); dMenu.setAttribute('aria-controls', 'menu-sheet');
