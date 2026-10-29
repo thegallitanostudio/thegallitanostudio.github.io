@@ -2887,3 +2887,7 @@ html body .logo .wm .om{width:.74em;height:.74em;overflow:visible;vertical-align
 html body .logo .wm .txt{display:inline-flex;align-items:baseline;white-space:nowrap}
 html body .logo .wm .i{margin-right:.02em}
 @media (max-width:860px){html body .logo .wm .om{width:.74em;height:.74em}}
+
+/* ===== oct28-nav.css ===== */
+/* Oct 28, 2026 (Angela, approved 9:23pm): the simplified navigation. Loaded last. The phone menu's button may wrap to two lines. */
+html body .sheet .ctas .btn{white-space:normal;text-align:center;line-height:1.2}
