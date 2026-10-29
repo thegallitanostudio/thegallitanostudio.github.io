@@ -15,10 +15,10 @@ def glance(what,time,get,now=WAIT,inv=None):
 def ul(items): return '<ul>'+''.join(f'<li>{x}</li>' for x in items)+'</ul>'
 EVERY='<section class="every two"><div class="lab">In every program</div><span>Your résumé</span><span>Hands-on AI automation and coaching for your day to day</span></section>'
 FOOT=f'''<div class="foot"><div><h3>Angela Gallitano · The Gallitano Studio</h3><p>Selected as 1 of 3 Global Rock Your Profile Leaders at LinkedIn. Set the engagement standard for ambassadors delivering it. Then Gartner, working with CHROs, CIOs and their executive teams. Today, Salesforce Enterprise AI. I architect, deploy, and scale agentic workflows across my own team every day, and I teach leaders to do the same. 350+ rooms since 2020. 125+ executives one to one. Every engagement is strictly guarded.</p></div>
-<div class="cta"><div><b>{{BTN}}</b><a>thegallitanostudio.com/book</a><small>Referred? Note your introduction when scheduling.</small><small>angela@thegallitanostudio.com</small></div><img src="file://{R}/qr-book.svg"></div></div>'''
+<div class="cta"><div><b>Book a 20-minute conversation</b><a>thegallitanostudio.com/book</a><small>Referred? Note your introduction when scheduling.</small><small>angela@thegallitanostudio.com</small></div><img src="file://{R}/qr-book.svg"></div></div>'''
 def page(title,tag,hero,body):
     co=' co' if ('companies' in tag or title in ('Known For Executive','Known For First Look')) else ''
-    return f'<!doctype html><html lang="en"><meta charset="utf-8"><title>{title}: fact sheet</title><link rel="stylesheet" href="base.css">\n<div class="page{co}">\n<div class="top">{WM}<span class="tag">{tag}</span></div>\n{hero}\n{body}\n{FOOT.replace('{BTN}','Book a Leadership Collective Discovery Call' if title == 'For companies' else 'Book a conversation')}\n</div></html>'
+    return f'<!doctype html><html lang="en"><meta charset="utf-8"><title>{title}: fact sheet</title><link rel="stylesheet" href="base.css">\n<div class="page{co}">\n<div class="top">{WM}<span class="tag">{tag}</span></div>\n{hero}\n{body}\n{FOOT}\n</div></html>'
 def hero(lab,h1,prog='',sub=''):
     return f'<section class="hero"><div class="lab">{lab}</div><h1>{h1}</h1>'+(f'<div class="prog">{prog}</div>' if prog else '')+(f'<p class="sub">{sub}</p>' if sub else '')+'</section>'
 def steps(items,cls=''):
