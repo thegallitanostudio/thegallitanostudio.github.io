@@ -2769,3 +2769,11 @@ html body .ex-cad-sec .ex-peer p{margin:0;font-size:clamp(1.1rem,1.5vw,1.3rem);l
 /* Phone bottom bar: the company label is longer, so it may take two lines instead of clipping */
 html body .dock .btn{white-space:normal;text-align:center;line-height:1.2;min-width:0;padding-left:16px;padding-right:16px}
 html body[data-book^="Book a Leadership"] .dock .btn{font-size:14px}
+
+/* ===== oct28-wordmark.css ===== */
+/* Oct 28, 2026: the ring "o" in Studio on phone. The phone header rule `.logo svg{width:38px;height:32px}` also hit the ring (.om),
+   leaving it a 14px box that clipped the circles and let the i-dot overlap. The ring now keeps its own size at every width. Loaded last. */
+html body .logo .wm .om{width:.74em;height:.74em;overflow:visible;vertical-align:-.09em;margin-left:.04em;flex:none}
+html body .logo .wm .txt{display:inline-flex;align-items:baseline;white-space:nowrap}
+html body .logo .wm .i{margin-right:.02em}
+@media (max-width:860px){html body .logo .wm .om{width:.74em;height:.74em}}

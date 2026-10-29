@@ -2653,3 +2653,11 @@ html body .ex-phase:not(.dark) b .kf{color:#7A1640}
   .site-foot .foot-legal{gap:4px}
   .site-foot .foot-legal a{display:inline-flex;align-items:center;min-height:44px;align-self:flex-start}
 }
+
+/* ===== oct28-wordmark.css ===== */
+/* Oct 28, 2026: the ring "o" in Studio on phone. The phone header rule `.logo svg{width:38px;height:32px}` also hit the ring (.om),
+   leaving it a 14px box that clipped the circles and let the i-dot overlap. The ring now keeps its own size at every width. Loaded last. */
+html body .logo .wm .om{width:.74em;height:.74em;overflow:visible;vertical-align:-.09em;margin-left:.04em;flex:none}
+html body .logo .wm .txt{display:inline-flex;align-items:baseline;white-space:nowrap}
+html body .logo .wm .i{margin-right:.02em}
+@media (max-width:860px){html body .logo .wm .om{width:.74em;height:.74em}}
