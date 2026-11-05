@@ -2957,3 +2957,51 @@ html body .logo .wm .i{margin-right:.02em}
 /* ===== oct28-nav.css ===== */
 /* Oct 28, 2026 (Angela, approved 9:23pm): the simplified navigation. Loaded last. The phone menu's button may wrap to two lines. */
 html body .sheet .ctas .btn{white-space:normal;text-align:center;line-height:1.2}
+
+/* ===== nov05-collective.css ===== */
+/* Nov 5, 2026: For companies rebuilt around the Collective after the CLO feedback (Angela's brief).
+   The talent lead, the "Not thought leadership" block, the four-stage method, the finite-build aside,
+   and the talent band on the business case. Loaded last on For companies and The business case. */
+
+/* The hero lead on For companies runs a little larger: it is the thesis now. */
+html body .hero .lead.nt-lead{font-size:clamp(1.15rem,1.55vw,1.35rem);line-height:1.5;max-width:58ch}
+
+/* Not thought leadership. Not a content calendar. */
+html body .nt-sec{padding-top:0}
+html body .nt-sec .nt-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px 64px;align-items:start;padding:40px 0 8px;border-top:1px solid rgba(43,13,3,.18)}
+html body .nt-sec .nt-head{display:grid;gap:14px}
+html body .nt-sec .nt-head h2{font-size:clamp(1.9rem,3.4vw,3rem);line-height:1.08;margin:0;max-width:16ch}
+html body .nt-sec .nt-head h2 em{font-style:normal;color:var(--violet,#5B41C0)}
+html body .nt-sec .nt-body{display:grid;gap:16px;max-width:60ch}
+html body .nt-sec .nt-body p{margin:0;font-size:clamp(1.05rem,1.3vw,1.2rem);line-height:1.6}
+@media (max-width:860px){html body .nt-sec .nt-grid{grid-template-columns:1fr;gap:22px;padding-top:28px}html body .nt-sec .nt-head h2{max-width:none}}
+
+/* The four-stage method inside the Collective. */
+html body .collective .nt-method{margin-top:56px;padding-top:40px;border-top:1px solid rgba(43,13,3,.18)}
+html body .collective .nt-method-head{margin-bottom:32px;max-width:none}
+html body .collective .nt-method-h{font-size:clamp(1.6rem,2.6vw,2.3rem);line-height:1.15;margin:0;font-weight:600;max-width:24ch}
+html body .collective .nt-method-h em{font-style:normal;color:var(--violet,#5B41C0)}
+html body .collective .nt-method-open{margin:0;font-size:clamp(1rem,1.2vw,1.12rem);line-height:1.55;max-width:60ch;color:var(--moss-deeper,#55505F)}
+html body .collective ol.nt-stages{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+html body .collective ol.nt-stages li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:start;padding:26px 28px;background:var(--card,#FBFAFD);border:1px solid rgba(43,13,3,.14);border-radius:18px}
+html body .collective ol.nt-stages li .n{font-size:13px;font-weight:600;letter-spacing:.08em;color:var(--violet-deep,#4A33A8);padding-top:5px}
+html body .collective ol.nt-stages li h4{margin:0 0 10px;font-size:1.15rem;line-height:1.25;font-weight:600}
+html body .collective ol.nt-stages li p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink,#2B0D03)}
+html body .collective .nt-method-close{margin:28px 0 0;font-size:clamp(1.05rem,1.3vw,1.2rem);line-height:1.55;max-width:62ch;font-weight:500}
+@media (max-width:860px){html body .collective ol.nt-stages{grid-template-columns:1fr;gap:14px}html body .collective ol.nt-stages li{padding:20px 20px;gap:14px}html body .collective .nt-method{margin-top:40px;padding-top:30px}}
+
+/* A Finite Build. Zero Recurring Obligations. */
+html body .collective .nt-finite{margin-top:36px;padding:34px 36px;background:var(--ink,#2B0D03);color:#fff;border-radius:22px;display:grid;gap:22px}
+html body .collective .nt-finite h3{margin:0;font-size:clamp(1.4rem,2.2vw,1.9rem);line-height:1.15;font-weight:600;color:#fff}
+html body .collective ul.nt-finite-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 36px}
+html body .collective ul.nt-finite-list li{position:relative;padding-left:22px;font-size:15.5px;line-height:1.55;color:rgba(255,255,255,.9)}
+html body .collective ul.nt-finite-list li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:50%;background:var(--lilac,#CDBDF6)}
+html body .collective ul.nt-finite-list li b{font-weight:600;color:#fff}
+@media (max-width:860px){html body .collective .nt-finite{padding:26px 22px;border-radius:18px}html body .collective ul.nt-finite-list{grid-template-columns:1fr;gap:12px}}
+
+/* The talent band on the business case. */
+html body .nt-talent{position:relative;overflow:hidden}
+html body .nt-talent>.wrap{position:relative;z-index:1;display:grid;gap:18px}
+html body .nt-talent .display{font-size:clamp(2rem,4.4vw,4.2rem);line-height:1.06;max-width:16ch;margin:0;font-weight:600}
+html body .nt-talent .display em{font-style:normal;color:var(--violet,#5B41C0)}
+html body .nt-talent .nt-talent-sub{margin:0;font-size:clamp(1.05rem,1.3vw,1.2rem);line-height:1.55;max-width:56ch}
